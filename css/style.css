@@ -393,7 +393,7 @@
 }
 
 .footer {
-  /* background-image: url(../img/footer.png); */
+  background-image: url(../img/footer.png);
   background-position: 0px 0px;
   background-repeat: repeat-x;
   animation: footerAnimatedBg 50s linear infinite;
@@ -452,7 +452,7 @@
 /* make menu center */
 @media (min-width: 992px) {
   .navbar-nav {
-    transform: translateX(-50px);
+    transform: translateX(-20px);
   }
 }
 
@@ -516,3 +516,112 @@
     text-align: center;
   }
 }
+
+.package-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* corner label */
+.package-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.35rem 1.25rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #000;
+  background: #d4af37; /* default gold */
+  border-bottom-left-radius: 999px;
+}
+
+/* different color for video */
+.package-ribbon-video {
+  background: #1fbf5b;
+  color: #fff;
+}
+
+/* Floating animation */
+.floating-img {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-30px); }  /* 上移一点 */
+    100% { transform: translateY(0px); }
+}
+
+
+
+
+
+/* Timeline line behind steps */
+.process-steps {
+    position: relative;
+    margin-top: 1rem;
+}
+
+.process-steps::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 8%;
+    right: 8%;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(212,175,55,0), #d4af37, rgba(212,175,55,0));
+    opacity: 0.5;
+    z-index: 0;
+}
+
+/* Step card */
+.process-step {
+    position: relative;
+    z-index: 1;
+    transition: 0.3s ease;
+}
+
+.process-step:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px rgba(212,175,55,0.35);
+}
+
+/* Icon + number circle */
+.step-icon-wrap {
+    position: relative;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    border: 2px solid #d4af37;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111;
+}
+
+.step-icon {
+    color: #d4af37;
+    font-size: 1.4rem;
+}
+
+.step-number {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    background: #d4af37;
+    color: #000;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 999px;
+}
+
+/* Mobile: hide line to avoid weird look */
+@media (max-width: 767.98px) {
+    .process-steps::before {
+        display: none;
+    }
+}
+
