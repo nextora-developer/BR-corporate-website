@@ -47,67 +47,38 @@
 
     <!-- Header Start -->
     <div class="container-fluid p-0">
-        <nav class="navbar navbar-expand-lg navbar-dark px-lg-5">
-            <a href="index.html" class="navbar-brand ms-4 ms-lg-0 d-flex align-items-center">
-                <!-- Logo (500px x 500px) – 自动缩小显示 -->
-                <img src="img/logo.png" alt="BRIF Logo"
-                    style="width:48px; height:48px; object-fit:contain; margin-right:10px;">
-
-                <!-- Text Logo -->
-                <h2 class="mb-0 text-primary text-uppercase">BRIF</h2>
-            </a>
-
-            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
-                data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav mx-auto p-4 p-lg-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <div class="nav-item dropdown">
-                        <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Services
-                        </a>
-                        <div class="dropdown-menu fade-down m-0">
-                            <a href="service-web-design-development.html" class="dropdown-item">Web Design &
-                                Development</a>
-                            <a href="service-graphicdesign-printingsolution.html" class="dropdown-item">Graphic Design &
-                                Printing Solution</a>
-                            <a href="service-social-media-marketing.html" class="dropdown-item">Social Media
-                                Marketing</a>
-                            <a href="service-accounting-tax.html" class="dropdown-item">Accounting & Tax</a>
-                            <a href="service-company-secretarial.html" class="dropdown-item">Company Secretarial</a>
-                            <a href="service-human-resource-outsource.html" class="dropdown-item">Human Resource
-                                Outsource</a>
-                        </div>
-                    </div>
-                    <a href="partner.html" class="nav-item nav-link">Partner</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
-                </div>
-
-                <div class="d-none d-lg-flex">
-                    <a class="btn btn-outline-primary border-2" href="contact.html">Contact Us</a>
-                </div>
-            </div>
-        </nav>
-
+        <div id="site-navbar"></div>
         <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="w-100" src="img/carousel-1.png" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center mt-n5">
-                        <div class="title mx-5 px-5 animated slideInDown">
-                            <div class="title-center">
-                                <h5>Welcome</h5>
-                                <h1 class="display-1">Br Innovate Future</h1>
+
+                <div class="carousel-item active hero-slide">
+                    <img class="w-100 hero-img" src="img/carousel-1.png" alt="Image">
+
+                    <!-- overlay -->
+                    <div class="hero-overlay"></div>
+
+                    <div class="carousel-caption hero-caption">
+                        <div class="container">
+                            <div class="hero-content text-center mx-auto animated slideInDown">
+
+                                <div class="hero-eyebrow text-uppercase mb-3">WELCOME TO</div>
+
+                                <h1 class="hero-title mb-4">BR INNOVATE FUTURE</h1>
+
+                                <p class="hero-subtitle mb-4">
+                                    Management Consulting, Digital Advisory &amp; Business Support Solutions
+                                </p>
+
+                                <p class="hero-desc mb-0">
+                                    We provide professional management consulting, advisory, and operational support
+                                    services —
+                                    helping businesses streamline operations, strengthen systems, and grow sustainably
+                                    in a rapidly
+                                    evolving business landscape.
+                                </p>
+
                             </div>
                         </div>
-                        <p class="fs-5 mb-5 animated slideInDown">Innovating the Future of Digital Business</p>
-                        <a href="about.html"
-                            class="btn btn-outline-primary border-2 py-3 px-5 animated slideInDown">Explore
-                            More</a>
                     </div>
                 </div>
             </div>
@@ -128,36 +99,36 @@
                                 <h1>About Br Innovate Future</h1>
                             </div>
                         </div>
-                        <p class="mb-4 wow fadeInUp" data-wow-delay="0.2s">BR Innovate Future Sdn. Bhd. (BRIF) is a
-                            Malaysia-based digital solutions company dedicated to building powerful, scalable, and
-                            future-ready business ecosystems.</p>
+                        <p class="mb-4 wow fadeInUp" data-wow-delay="0.2s">BR Innovate Future Sdn. Bhd. is a management
+                            consulting and digital solutions company delivering advisory, administrative, and IT-enabled
+                            services to support business efficiency, digital transformation, and sustainable growth.</p>
                         <ul class="list-group list-group-flush mb-5 wow fadeInUp" data-wow-delay="0.3s">
                             <li class="list-group-item bg-secondary text-body border-secondary ps-0">
-                                <i class="fa fa-check-circle text-primary me-1"></i> Customized website & system
-                                tailored to your brand and industry.
+                                <i class="fa fa-check-circle text-primary me-1"></i> Management consulting, business
+                                advisory, and operational support
                             </li>
                             <li class="list-group-item bg-secondary text-body border-secondary ps-0">
-                                <i class="fa fa-check-circle text-primary me-1"></i> Business strategy to help companies
-                                transform, modernize.
+                                <i class="fa fa-check-circle text-primary me-1"></i> Office administration and ongoing
+                                business support services
 
                             </li>
                             <li class="list-group-item bg-secondary text-body border-secondary ps-0">
-                                <i class="fa fa-check-circle text-primary me-1"></i> Driven by innovation, powered by
-                                technology, and guided by business intelligence.
+                                <i class="fa fa-check-circle text-primary me-1"></i> Digital and IT consulting,
+                                including system design and implementation
+                            </li>
+                            <li class="list-group-item bg-secondary text-body border-secondary ps-0">
+                                <i class="fa fa-check-circle text-primary me-1"></i>Website and digital platform
+                                development aligned with business goals
+                            </li>
+                            <li class="list-group-item bg-secondary text-body border-secondary ps-0">
+                                <i class="fa fa-check-circle text-primary me-1"></i>Commission-based representation,
+                                marketing, and distribution of products and services
+                            </li>
+                            <li class="list-group-item bg-secondary text-body border-secondary ps-0">
+                                <i class="fa fa-check-circle text-primary me-1"></i>Lawful activities that support or
+                                are incidental to the company’s objectives
                             </li>
                         </ul>
-                        <div class="row wow fadeInUp" data-wow-delay="0.4s">
-                            <!-- <div class="col-12 col-md-6 mb-3 mb-md-0">
-                                <a href="service.html" class="btn btn-outline-primary border-2 py-3 w-100">
-                                    View Our Work
-                                </a>
-                            </div> -->
-                            <div class="col-12 col-md-6">
-                                <a href="about.html" class="btn btn-primary py-3 w-100">
-                                    More About Us
-                                </a>
-                            </div>
-                        </div>
 
                     </div>
                 </div>
@@ -171,35 +142,43 @@
 
 
     <!-- Service Start -->
-    <div class="container-fluid py-5">
+    <div class="container-fluid py-5" id="all-services">
         <div class="container py-5">
             <div class="text-center">
-                <div class="title wow fadeInUp" data-wow-delay="0.1s">
+                <div class="wow fadeInUp" data-wow-delay="0.1s">
                     <div class="title-center">
-                        <h5>Services</h5>
-                        <h1>How We Help You</h1>
+                        <!-- <h5>Services</h5> -->
+                        <h1>Our Services</h1>
+
+                        <!-- short description -->
+                        <p class="section-desc mt-3">
+                            We provide integrated consulting, digital, and business support services designed to help
+                            organisations operate more efficiently, adopt practical technology solutions, and achieve
+                            sustainable growth
+                        </p>
                     </div>
                 </div>
             </div>
+
             <div class="service-item service-item-left">
                 <div class="row g-0 align-items-center">
                     <div class="col-md-5">
                         <div class="service-img p-5 wow fadeInRight" data-wow-delay="0.2s">
-                            <img class="img-fluid rounded-circle" src="img/service-web-design.png" alt="Web Design">
+                            <img class="img-fluid rounded-circle" src="img/accounting.png" alt="Accounting & Tax">
                         </div>
                     </div>
                     <div class="col-md-7">
                         <div class="service-text px-5 px-md-0 py-md-5 wow fadeInRight" data-wow-delay="0.5s">
-                            <h3 class="text-uppercase">Web Design</h3>
+                            <h3 class="text-uppercase">Accounting & Tax</h3>
                             <p class="mb-4">
-                                We design clean, modern and conversion-focused website layouts that reflect your brand
-                                identity and business goals.
+                                Professional accounting and tax support services to help businesses maintain accurate
+                                financial records, meet statutory requirements, and manage ongoing compliance
+                                obligations.
                                 <br><br>
-                                From corporate websites to landing pages, we focus on clear structure, visual hierarchy
-                                and strong branding — ensuring your website looks professional and easy to navigate.
+                                Our services are suitable for businesses seeking reliable accounting support without
+                                maintaining a full in-house finance team.
                             </p>
-                            <a class="btn btn-outline-primary border-2 px-4"
-                                href="services/web-design-development/web-design.html">
+                            <a class="btn btn-outline-primary border-2 px-4" href="service-accounting-tax.html">
                                 Read More <i class="fa fa-arrow-right ms-1"></i>
                             </a>
                         </div>
@@ -211,24 +190,21 @@
                 <div class="row g-0 align-items-center">
                     <div class="col-md-5 order-md-1 text-md-end">
                         <div class="service-img p-5 wow fadeInLeft" data-wow-delay="0.2s">
-                            <img class="img-fluid rounded-circle" src="img/service-accounting.png"
-                                alt="Accounting Services">
+                            <img class="img-fluid rounded-circle" src="img/business.png" alt="Business Services">
                         </div>
                     </div>
                     <div class="col-md-7">
                         <div class="service-text px-5 px-md-0 py-md-5 text-md-end wow fadeInLeft" data-wow-delay="0.5s">
-                            <h3 class="text-uppercase">Accounting Services</h3>
+                            <h3 class="text-uppercase">Business Services</h3>
                             <p class="mb-4">
-                                Professional accounting support to ensure your financial statements
-                                are accurate, compliant and prepared in accordance with applicable standards.
+                                Structured business support services designed to assist organisations with day-to-day
+                                operations, administrative processes, and operational coordination.
                                 <br><br>
-                                Ideal for businesses that require proper year-end accounts,
-                                ongoing accounting support and clear statutory reporting
-                                without maintaining a full in-house team.
+                                We support businesses across various stages with practical, flexible solutions aligned
+                                to operational needs.
                             </p>
 
-                            <a class="btn btn-outline-primary border-2 px-4"
-                                href="services/accounting-tax/accounting-services.html">
+                            <a class="btn btn-outline-primary border-2 px-4" href="service-company-secretarial.html">
                                 Read More <i class="fa fa-arrow-right ms-1"></i>
                             </a>
                         </div>
@@ -236,11 +212,133 @@
                 </div>
             </div>
 
-            <!-- <div class="text-center mt-5 wow fadeInUp" data-wow-delay="0.3s">
-                <a href="service.html" class="btn btn-primary px-5 py-3 rounded-pill">
-                    View All Services<i class="fa fa-arrow-right ms-2"></i>
-                </a>
-            </div> -->
+            <div class="service-item service-item-left">
+                <div class="row g-0 align-items-center">
+                    <div class="col-md-5">
+                        <div class="service-img p-5 wow fadeInRight" data-wow-delay="0.2s">
+                            <img class="img-fluid rounded-circle" src="img/hr.png" alt="Human Resource">
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="service-text px-5 px-md-0 py-md-5 wow fadeInRight" data-wow-delay="0.5s">
+                            <h3 class="text-uppercase">Human Resource Services</h3>
+                            <p class="mb-4">
+                                Outsourced human resource support services covering workforce administration, HR
+                                operations, and employee-related processes.
+                                <br><br>
+                                Ideal for businesses that require HR support while maintaining operational efficiency
+                                and cost control.
+                            </p>
+                            <a class="btn btn-outline-primary border-2 px-4"
+                                href="service-human-resource-outsource.html">
+                                Read More <i class="fa fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-item service-item-right">
+                <div class="row g-0 align-items-center">
+                    <div class="col-md-5 order-md-1 text-md-end">
+                        <div class="service-img p-5 wow fadeInLeft" data-wow-delay="0.2s">
+                            <img class="img-fluid rounded-circle" src="img/website.png" alt="Website">
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="service-text px-5 px-md-0 py-md-5 text-md-end wow fadeInLeft" data-wow-delay="0.5s">
+                            <h3 class="text-uppercase">Web Design & Development</h3>
+                            <p class="mb-4">
+                                Professional web design and development services focused on usability, structure, and
+                                long-term maintainability.
+                                <br><br>
+                                We build corporate websites, landing pages, and business platforms that support
+                                branding, communication, and digital presence.
+                            </p>
+
+                            <a class="btn btn-outline-primary border-2 px-4" href="service-web-design-development.html">
+                                Read More <i class="fa fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-item service-item-left">
+                <div class="row g-0 align-items-center">
+                    <div class="col-md-5">
+                        <div class="service-img p-5 wow fadeInRight" data-wow-delay="0.2s">
+                            <img class="img-fluid rounded-circle" src="img/design.png" alt="Design">
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="service-text px-5 px-md-0 py-md-5 wow fadeInRight" data-wow-delay="0.5s">
+                            <h3 class="text-uppercase">Design & Branding</h3>
+                            <p class="mb-4">
+                                Creative design and branding services to support visual identity, marketing materials,
+                                and brand communication.
+                                <br><br>
+                                From digital assets to print-ready designs, we help businesses present a consistent and
+                                professional brand image.
+                            </p>
+                            <a class="btn btn-outline-primary border-2 px-4"
+                                href="service-graphicdesign-printingsolution.html">
+                                Read More <i class="fa fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-item service-item-right">
+                <div class="row g-0 align-items-center">
+                    <div class="col-md-5 order-md-1 text-md-end">
+                        <div class="service-img p-5 wow fadeInLeft" data-wow-delay="0.2s">
+                            <img class="img-fluid rounded-circle" src="img/internet.png" alt="Internet Services">
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="service-text px-5 px-md-0 py-md-5 text-md-end wow fadeInLeft" data-wow-delay="0.5s">
+                            <h3 class="text-uppercase"> Internet & Connectivity</h3>
+                            <p class="mb-4">
+                                Internet and connectivity support services to assist businesses with access solutions,
+                                connectivity planning, and service coordination.
+                                <br><br>
+                                Designed to support operational continuity and digital infrastructure needs.
+                            </p>
+
+                            <a class="btn btn-outline-primary border-2 px-4" href="service-internet-connectivity.html">
+                                Read More <i class="fa fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-item service-item-left">
+                <div class="row g-0 align-items-center">
+                    <div class="col-md-5">
+                        <div class="service-img p-5 wow fadeInRight" data-wow-delay="0.2s">
+                            <img class="img-fluid rounded-circle" src="img/payment.png" alt="Payment Solution">
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="service-text px-5 px-md-0 py-md-5 wow fadeInRight" data-wow-delay="0.5s">
+                            <h3 class="text-uppercase">Payment Solutions</h3>
+                            <p class="mb-4">
+                                Payment solution services supporting digital transactions, payment integrations, and
+                                operational payment workflows.
+                                <br><br>
+                                We assist businesses in implementing practical payment setups aligned with operational
+                                and compliance requirements.
+                            </p>
+                            <a class="btn btn-outline-primary border-2 px-4" href="service-payment-solution.html">
+                                Read More <i class="fa fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Service End -->
@@ -252,7 +350,7 @@
                 <div class="title wow fadeInUp" data-wow-delay="0.1s">
                     <div class="title-center">
                         <h5>Testimonial</h5>
-                        <h1>Our Clients Say</h1>
+                        <h1>What Our Clients Say</h1>
                     </div>
                 </div>
             </div>
@@ -262,9 +360,8 @@
                 <div class="testimonial-item text-center"
                     data-dot="<img class='img-fluid' src='img/testimonial-1.png' alt=''>">
                     <p class="fs-5">
-                        BRIF helped us redesign our outdated company website into a clean,
-                        modern and mobile-friendly platform. Their team guided us step by step,
-                        and now our customers trust us more and enquiries have increased.
+                        BR Innovate Future redesigned our website into a modern, mobile-friendly platform that improved
+                        customer trust and enquiries.
                     </p>
                     <h5 class="text-uppercase">Michelle Tan</h5>
                     <span class="text-primary">Owner • Signature Beauty Spa</span>
@@ -274,9 +371,8 @@
                 <div class="testimonial-item text-center"
                     data-dot="<img class='img-fluid' src='img/testimonial-2.png' alt=''>">
                     <p class="fs-5">
-                        We needed a booking system for our workshops. BRIF customised
-                        everything online — payment, schedule, auto WhatsApp notification.
-                        It saves us time and helps us handle customers more efficiently.
+                        BR Innovate Future built a customised booking system with payment and automated WhatsApp
+                        notifications, saving us time and improving efficiency.
                     </p>
                     <h5 class="text-uppercase">Jason Lim</h5>
                     <span class="text-primary">Founder • Creative Studio MY</span>
@@ -286,9 +382,8 @@
                 <div class="testimonial-item text-center"
                     data-dot="<img class='img-fluid' src='img/testimonial-3.png' alt=''>">
                     <p class="fs-5">
-                        Simple process, clear communication and fast delivery.
-                        The website looks professional and works smoothly on mobile.
-                        We are confident to use it for ads and sales campaigns now.
+                        Clear communication, smooth delivery, and a professional website that works well on mobile and
+                        supports our sales campaigns.
                     </p>
                     <h5 class="text-uppercase">Aisha Rahman</h5>
                     <span class="text-primary">Marketing Manager • Nexus Trading</span>
@@ -298,30 +393,31 @@
     </div>
     <!-- Testimonial End -->
 
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer py-5 wow fadeIn" data-wow-delay="0.1s">
+    <!-- CTA SECTION -->
+    <div class="container-fluid py-5" style="background: linear-gradient(to bottom, #111, #000);">
         <div class="container text-center py-5">
-            <a href="index.html">
-                <h1 class="display-4 mb-3 text-white text-uppercase"><i class=""></i>Br Innovate Future</h1>
-            </a>
-            <div class="d-flex justify-content-center mb-4">
-                <a class="btn btn-lg-square btn-outline-primary border-2 m-1"
-                    href="https://share.google/TfHWQ9tQvlfKoqxUj"><i class="fab fa-google"></i></a>
-                <a class="btn btn-lg-square btn-outline-primary border-2 m-1"
-                    href="https://www.facebook.com/brinnovatefuture"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-lg-square btn-outline-primary border-2 m-1"
-                    href="https://www.instagram.com/brinnovatefuture?igsh=eHgzM2prcHN2MWF2"><i
-                        class="fab fa-instagram"></i></a>
-                <a class="btn btn-lg-square btn-outline-primary border-2 m-1" href="https://wa.me/60123011610"><i
-                        class="fab fa-whatsapp"></i></a>
+
+            <h2 class="text-white mb-3">Let’s Build Smarter Solutions for Your Business</h2>
+            <p class="text-white-50 mb-4">
+                From business advisory to digital systems and operational support, BR Innovate Future works with you to
+                deliver clear, practical solutions that support long-term business growth.
+            </p>
+
+            <!-- Buttons -->
+            <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
+                <a href="../../contact.html" class="btn btn-primary cta-btn mb-3 mb-md-0">
+                    <i class="fa-brands fa-whatsapp"></i> Contact Us
+                </a>
+
+                <a href="#all-services" class="btn btn-outline-light cta-btn">
+                    <i class="fa-solid fa-list me-2"></i> View Services
+                </a>
             </div>
-            <p>&copy; <a class="border-bottom" href="#">Br Innovate Future</a>, All Right Reserved.</p>
         </div>
     </div>
-    <!-- Footer End -->
 
 
+    <div id="site-footer"></div>
     <!-- Back to Top -->
     <a href="#" class="btn btn-outline-primary border-2 btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 

@@ -63,3 +63,62 @@ $(".portfolio-carousel").owlCarousel({
     992: { items: 3 },
   },
 });
+
+//Navbar and Footer
+async function loadPartials() {
+  const navbar = await fetch("/partials/navbar.html").then((r) => r.text());
+  const footer = await fetch("/partials/footer.html").then((r) => r.text());
+
+  const navEl = document.getElementById("site-navbar");
+  const footerEl = document.getElementById("site-footer");
+
+  if (navEl) navEl.innerHTML = navbar;
+  if (footerEl) footerEl.innerHTML = footer;
+
+  setActiveNav();
+}
+document.addEventListener("DOMContentLoaded", loadPartials);
+
+//Active navbar
+function setActiveNav() {
+  const path = location.pathname.toLowerCase();
+  const currentPage = path.split("/").pop();
+
+  // 1️⃣ 清掉所有 active（避免残留）
+  document.querySelectorAll(".navbar .active").forEach((el) => {
+    el.classList.remove("active");
+  });
+
+  // 2️⃣ 精确匹配当前页（普通 nav-link / dropdown-item）
+  document.querySelectorAll(".navbar a[href]").forEach((link) => {
+    const href = link.getAttribute("href");
+    if (!href || href === "#") return;
+
+    const hrefFile = href.toLowerCase().split("/").pop();
+
+    if (hrefFile === currentPage) {
+      link.classList.add("active");
+
+      // 如果是 dropdown-item，让父级 toggle 也 active
+      const parentDropdown = link.closest(".dropdown");
+      if (parentDropdown) {
+        const toggle = parentDropdown.querySelector(
+          ".nav-link.dropdown-toggle"
+        );
+        if (toggle) toggle.classList.add("active");
+      }
+    }
+  });
+
+  // 3️⃣ Services：只要是「Services 子页」就高亮父级
+  const isServicesChild =
+    currentPage.startsWith("service-") || // service-xxx.html
+    path.includes("/services/"); // /services/xxx/xxx.html
+
+  if (isServicesChild) {
+    const servicesToggle = document.querySelector(
+      '.navbar .nav-item.dropdown[data-parent="services"] > .nav-link'
+    );
+    if (servicesToggle) servicesToggle.classList.add("active");
+  }
+}

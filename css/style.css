@@ -396,6 +396,7 @@
   background-position: 0px 0px;
   background-repeat: repeat-x;
   animation: footerAnimatedBg 50s linear infinite;
+  
 }
 
 /* header logo */
@@ -990,3 +991,116 @@
     padding: 70px 0;
   }
 }
+
+/* ===== HERO CAROUSEL ===== */
+.hero-slide {
+  position: relative;
+}
+
+.hero-img {
+  height: 100vh; /* 你要更满就改 90vh / 100vh */
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-caption {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.hero-content {
+  max-width: 1100px;
+  padding: 0 16px;
+}
+
+/* small top label */
+.hero-eyebrow {
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  opacity: 0.9;
+  position: relative;
+  display: inline-block;
+  padding: 0 18px;
+}
+.hero-eyebrow:before,
+.hero-eyebrow:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 120px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.35);
+}
+.hero-eyebrow:before {
+  right: 100%;
+  margin-right: 14px;
+}
+.hero-eyebrow:after {
+  left: 100%;
+  margin-left: 14px;
+}
+
+/* main title */
+.hero-title {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  line-height: 1.05;
+  font-size: clamp(38px, 4.3vw, 84px);
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+  max-width: 100%;
+}
+
+/* gold subtitle */
+.hero-subtitle {
+  color: #d4af37;
+  font-size: clamp(16px, 1.35vw, 22px);
+  letter-spacing: 0.02em;
+}
+
+/* description */
+.hero-desc {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(14px, 1.1vw, 18px);
+  line-height: 1.7;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+/* responsive tweaks */
+@media (max-width: 576px) {
+  .hero-img {
+    height: 70vh;
+  }
+  .hero-eyebrow:before,
+  .hero-eyebrow:after {
+    width: 60px;
+  }
+}
+
+/* section short description under title */
+.section-desc {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75); /* 深色背景 */
+}
+
+/* 如果在浅色背景用 */
+.bg-light .section-desc,
+.bg-white .section-desc {
+  color: #6c757d;
+}
+
+
