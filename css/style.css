@@ -1524,39 +1524,42 @@
   font-size: 15px;
 }
 
-.exec-wrap{
+.exec-wrap {
   position: relative;
   padding: 28px 26px;
   border-radius: 20px;
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* 左侧金色竖线：代表 discipline */
-.exec-wrap::before{
-  content:"";
-  position:absolute;
+.exec-wrap::before {
+  content: "";
+  position: absolute;
   left: 0;
   top: 18px;
   bottom: 18px;
   width: 2px;
-  background: rgba(212,175,55,0.70);
+  background: rgba(212, 175, 55, 0.7);
   border-radius: 2px;
 }
 
-.final-cta{
-  background: radial-gradient(circle at 50% 30%, rgba(212,175,55,0.08), rgba(0,0,0,0.95) 70%);
+.final-cta {
+  background: radial-gradient(
+    circle at 50% 30%,
+    rgba(212, 175, 55, 0.08),
+    rgba(0, 0, 0, 0.95) 70%
+  );
 }
 
-.final-cta .section-title{
+.final-cta .section-title {
   max-width: 820px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.final-cta .section-text{
+.final-cta .section-text {
   max-width: 720px;
   margin-left: auto;
   margin-right: auto;
 }
-
