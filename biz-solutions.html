@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>BRIF - Services</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.svg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Work+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --brif-gold: #D4AF37;
+            --brif-black: #000000;
+            --brif-dark: #0A0A0C;
+        }
+
+        body {
+            background-color: #0d0d0d;
+            color: #f5f5f5;
+            font-family: 'Work Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        /* HERO */
+        .hero-section {
+            background: radial-gradient(circle at top left, rgba(212, 175, 55, 0.18), transparent 55%), #050509;
+            color: #ffffff;
+        }
+
+        .tier-badge {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--brif-gold);
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            border-radius: 999px;
+            font-size: 0.75rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .btn-gold {
+            background: var(--brif-gold);
+            border-color: var(--brif-gold);
+            color: #000;
+            font-weight: 600;
+            padding: 0.7rem 1.8rem;
+            border-radius: 999px;
+        }
+
+        .btn-gold:hover {
+            background: #caa534;
+            border-color: #caa534;
+            color: #000;
+        }
+
+        .btn-outline-gold {
+            border-color: var(--brif-gold);
+            color: var(--brif-gold);
+            font-weight: 600;
+            padding: 0.9rem 1.8rem;
+            border-radius: 999px;
+            background: transparent;
+        }
+
+        .btn-outline-gold:hover {
+            background: var(--brif-gold);
+            color: #000;
+        }
+
+        /* DARK SECTION WRAPPER */
+        .section-dark {
+            background: linear-gradient(to bottom, #111, #000);
+            color: #f5f5f5;
+        }
+
+        .section-dark .text-muted {
+            color: #9ca3af !important;
+        }
+
+        /* TABS */
+        .nav-pills .nav-link {
+            border-radius: 999px;
+            border: 1px solid rgba(212, 175, 55, 0.7);
+            color: var(--brif-gold);
+            padding: 0.7rem 1.4rem;
+            font-size: 0.9rem;
+        }
+
+        .nav-pills .nav-link:hover {
+            background: rgba(212, 175, 55, 0.16);
+        }
+
+        .nav-pills .nav-link.active {
+            background: var(--brif-gold);
+            color: #000;
+            font-weight: 600;
+        }
+
+        /* CARDS */
+        .card {
+            border: 0.2px solid #d4af37;
+            background-color: rgba(255,255,255,0.05);
+            color: #f5f5f5;
+        }
+
+        .card-title {
+            color: #f9fafb;
+        }
+
+        .card .small,
+        .card .text-muted {
+            color: #9ca3af !important;
+        }
+
+        .icon-pill {
+            width: 45px;
+            height: 45px;
+            background: rgba(212, 175, 55, 0.14);
+            color: var(--brif-gold);
+            border-radius: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        /* CHART highlight */
+        #tier-tagline {
+            color: var(--brif-gold) !important;
+        }
+
+        /* WIZARD */
+        #wizard {
+            background: radial-gradient(700px 360px at 50% 0%, rgba(212, 175, 55, 0.12), rgba(0, 0, 0, 0) 60%), linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.95));
+        }
+
+        .wizard-card {
+            border-radius: 24px;
+            border: 1px solid rgba(212, 175, 55, 0.8);
+        }
+
+        .wizard-progress-segment {
+            height: 6px;
+            border-radius: 999px;
+        }
+
+        .wizard-progress-active {
+            background: var(--brif-gold) !important;
+        }
+
+        .wizard-progress-inactive {
+            background: rgba(148, 163, 184, 0.45);
+        }
+
+        .wizard-btn {
+            border-radius: 14px;
+            border: 1px solid rgba(212, 175, 55, 0.7);
+            color: var(--brif-gold);
+            background: transparent;
+        }
+
+        .wizard-btn:hover {
+            background: var(--brif-gold);
+            color: #000;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: radial-gradient(700px 360px at 50% 0%, rgba(212, 175, 55, 0.12), rgba(0, 0, 0, 0) 60%), linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.95));
+        }
+
+        .cta-check i {
+            color: var(--brif-gold);
+        }
+
+        /* BACK TO TOP */
+        .back-to-top {
+            border-color: var(--brif-gold) !important;
+            color: var(--brif-gold) !important;
+            background: transparent;
+        }
+
+        .back-to-top:hover {
+            background: var(--brif-gold);
+            color: #000 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid p-0">
+        <div id="site-navbar"></div>
+        <div class="page-header pb-5">
+            <div class="container text-center py-5">
+                <h1 class="display-4 text-uppercase mb-3 animated slideInDown">One Stop Business Service</h1>
+                <nav aria-label="breadcrumb animated slideInDown">
+                    <ol class="breadcrumb justify-content-center text-uppercase mb-0">
+                        <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                        <li class="breadcrumb-item text-primary active" aria-current="page">Business Solutions
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Main Content Start -->
+    <!-- Section 1: Hero / Intro -->
+    <section class="py-5 hero-section">
+        <div class="container text-center">
+            <span class="tier-badge mb-3 px-3 py-2 d-inline-block">
+                Full Digital Package for Sdn Bhd
+            </span>
+            <h2 class="mb-3 fw-bold">
+                Starting a business in Malaysia<br class="d-none d-md-inline">has never been this easy
+            </h2>
+            <p class="lead text-white-50 mx-auto" style="max-width: 720px;">
+                Integrating company incorporation, secretary services, cloud accounting, and SEO marketing.
+                We handle the backend tasks so you can focus on growth.
+            </p>
+            <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4">
+                <a href="#wizard" class="btn btn-primary cta-btn mb-2 mb-md-0">
+                    Start Smart Assessment
+                </a>
+                <a href="#details" class="btn btn-outline-gold">
+                    View Service Details
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Section 2: Tabs + Charts + Feature Cards -->
+    <section id="details" class="py-5 section-dark">
+        <div class="container">
+            <!-- Title -->
+            <div class="text-center my-5">
+                <h3 class="fw-bold mb-3">Choose the Plan That Fits Your Growth Stage</h3>
+                <p class="text-muted mb-0">Click the buttons below to switch and explore features and benefits across
+                    different plans.</p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="d-flex justify-content-center mb-3">
+                <ul class="nav nav-pills gap-2">
+                    <li class="nav-item">
+                        <button id="tab-starter" class="nav-link" type="button" onclick="updateState('starter')">
+                            🌱 Starter Launch
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button id="tab-growth" class="nav-link active" type="button" onclick="updateState('growth')">
+                            🚀 Growth Expansion
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button id="tab-ultimate" class="nav-link" type="button" onclick="updateState('ultimate')">
+                            💎 Ultimate Digital Suite
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Charts Row -->
+            <div class="row g-4 my-4">
+                <div class="col-lg-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-center my-4">Capability Matrix (Coverage %)</h5>
+                            <div style="position: relative; height: 320px;">
+                                <canvas id="radarChart"></canvas>
+                            </div>
+                            <p id="tier-tagline" class="text-center fw-semibold fst-italic small mt-3 mb-0">
+                                “Ideal for fast-growing startups”
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-center my-4">Cost Savings Comparison</h5>
+                            <div style="position: relative; height: 320px;">
+                                <canvas id="barChart"></canvas>
+                            </div>
+                            <div class="mt-3 p-3 rounded text-center" style="background: rgba(15,16,20,0.9); ">
+                                <span class="text-uppercase text-muted small d-block mb-1">Estimated Savings</span>
+                                <span class="fs-2 fw-bold" style="color: var(--brif-gold);">20% – 30%</span>
+                                <p class="small text-muted mb-0">Compared to engaging multiple providers individually
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Cards -->
+            <div class="row g-4 mt-4">
+                <!-- CoSec -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="icon-pill mb-3">
+                                ⚖️
+                            </div>
+                            <h5 class="fw-bold mb-2">Company Secretary (CoSec)</h5>
+                            <ul class="small text-muted mb-0 list-unstyled" id="list-cosec"></ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Accounting -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="icon-pill mb-3">
+                                📊
+                            </div>
+                            <h5 class="fw-bold mb-2">Cloud Accounting System</h5>
+                            <ul class="small text-muted mb-0 list-unstyled" id="list-acc"></ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- HR -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="icon-pill mb-3">
+                                👥
+                            </div>
+                            <h5 class="fw-bold mb-2">HR Compliance Documents</h5>
+                            <ul class="small text-muted mb-0 list-unstyled" id="list-hr"></ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Web -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="icon-pill mb-3">
+                                💻
+                            </div>
+                            <h5 class="fw-bold mb-2">Website Development</h5>
+                            <ul class="small text-muted mb-0 list-unstyled" id="list-web"></ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- SEO -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="icon-pill mb-3">
+                                🚀
+                            </div>
+                            <h5 class="fw-bold mb-2">SEO & Digital Marketing</h5>
+                            <ul class="small text-muted mb-0 list-unstyled" id="list-seo"></ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Support -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="icon-pill mb-3">
+                                📞
+                            </div>
+                            <h5 class="fw-bold mb-2">Dedicated Consultant Support</h5>
+                            <ul class="small text-muted mb-0 list-unstyled" id="list-support"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Section 3: Wizard -->
+    <section id="wizard" class="py-5 ">
+        <div class="container" style="max-width: 720px;">
+            <div class="text-center mb-4">
+                <h3 class="fw-bold mb-2">Smart Package Recommender</h3>
+                <p class="text-muted mb-0">Just 3 steps to discover the plan that best fits your business scale.</p>
+            </div>
+
+            <div class="wizard-card p-4 p-md-5">
+                <!-- Progress -->
+                <div class="d-flex gap-2 mb-4">
+                    <div id="prog-1" class="flex-fill wizard-progress-segment wizard-progress-active"></div>
+                    <div id="prog-2" class="flex-fill wizard-progress-segment wizard-progress-inactive"></div>
+                    <div id="prog-3" class="flex-fill wizard-progress-segment wizard-progress-inactive"></div>
+                </div>
+
+                <!-- Q1 -->
+                <div id="q1" class="wizard-q">
+                    <h5 class="fw-bold mb-3">1. What type of business do you run?</h5>
+                    <button type="button" class="btn wizard-btn w-100 text-start mb-2 py-3"
+                        onclick="nextQ(1, 2, 'service')">
+                        💼 Service / Consulting (Asset-light)
+                    </button>
+                    <button type="button" class="btn wizard-btn w-100 text-start py-3" onclick="nextQ(1, 2, 'retail')">
+                        🛍️ Retail / Trading / Manufacturing (With inventory)
+                    </button>
+                </div>
+
+                <!-- Q2 -->
+                <div id="q2" class="wizard-q d-none">
+                    <h5 class="fw-bold mb-3">2. Do you need to manage large inventory?</h5>
+                    <button type="button" class="btn wizard-btn w-100 text-start mb-2 py-3" onclick="nextQ(2, 3, 'no')">
+                        ❌ No, mainly service / dropshipping
+                    </button>
+                    <button type="button" class="btn wizard-btn w-100 text-start py-3" onclick="nextQ(2, 3, 'yes')">
+                        ✅ Yes, full inventory control required
+                    </button>
+                </div>
+
+                <!-- Q3 -->
+                <div id="q3" class="wizard-q d-none">
+                    <h5 class="fw-bold mb-3">3. What is the primary purpose of your website?</h5>
+                    <button type="button" class="btn wizard-btn w-100 text-start mb-2 py-3"
+                        onclick="finishWizard('showcase')">
+                        🏢 Branding & Lead Generation (Corporate / Landing Page)
+                    </button>
+                    <button type="button" class="btn wizard-btn w-100 text-start py-3"
+                        onclick="finishWizard('ecommerce')">
+                        🛒 Online Selling & Payments (E-commerce)
+                    </button>
+                </div>
+
+                <!-- Result -->
+                <div id="q-result" class="wizard-q d-none text-center">
+                    <div class="display-4 mb-2" style="color:var(--brif-gold);">★</div>
+                    <h5 class="fw-bold mb-2">
+                        Recommended for you: <span id="res-name" style="color:var(--brif-gold);"></span>
+                    </h5>
+                    <p id="res-desc" class="text-muted small mb-4"></p>
+                    <button type="button" class="btn btn-outline-gold btn-sm" onclick="resetWizard()">Restart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container-fluid py-5" style="background: linear-gradient(to bottom, #111, #000);">
+        <div class="container py-5">
+
+            <!-- Title -->
+            <div class="text-center mb-5">
+                <h3 class="fw-bold mb-3">Sdn Bhd Digitalisation Packages</h3>
+            </div>
+
+            <!-- Packages -->
+            <div class="row g-4 justify-content-center">
+
+                <!-- Starter Launch -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.15s">
+                    <div class="h-100 p-4 p-md-5 rounded-4 border" style="
+                    background: rgba(255,255,255,0.05);
+                    border-color: rgba(212,175,55,0.22) !important;
+                    box-shadow: 0 0 0 1px rgba(212,175,55,0.10) inset;
+                    backdrop-filter: blur(10px);
+                ">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h3 class="text-white mb-0">Starter Launch</h3>
+                            <span class="badge rounded-pill" style="
+                            background: rgba(212,175,55,0.12);
+                            border: 1px solid rgba(212,175,55,0.28);
+                            color: rgba(212,175,55,0.95);
+                        ">
+                                Starter
+                            </span>
+                        </div>
+
+                        <p class="mb-4" style="color: rgba(255,255,255,0.60);">
+                            Best for new founders & asset-light service companies starting their first Sdn Bhd.
+                        </p>
+
+                        <div class="mb-4">
+                            <div class="d-flex align-items-end gap-2">
+                                <div class="display-6 fw-bold mb-0" style="color:#D4AF37;">RM 3,xxx</div>
+                                <div class="mb-2" style="color: rgba(255,255,255,0.55);">starting</div>
+                            </div>
+                            <div class="small" style="color: rgba(255,255,255,0.45);">
+                                Includes 12 months secretary & compliance
+                            </div>
+                        </div>
+
+                        <div class="pt-3" style="border-top: 1px solid rgba(255,255,255,0.08);">
+                            <div class="text-uppercase small mb-3"
+                                style="letter-spacing: .12em; color: rgba(212,175,55,0.75);">
+                                Included
+                            </div>
+                            <ul class="list-unstyled mb-0" style="color: rgba(255,255,255,0.65);">
+                                <li class="mb-2"><span style="color:#D4AF37;">★</span> 12 months Company Secretary</li>
+                                <li class="mb-2"><span style="color:#D4AF37;">★</span> SSM Incorporation Fees &
+                                    Statutory Records</li>
+                                <li class="mb-2"><span style="color:#D4AF37;">★</span> Basic Cloud Accounting Setup &
+                                    Training</li>
+                                <li class="mb-2"><span style="color:#D4AF37;">★</span> Standard HR Templates (Offer &
+                                    Contract)</li>
+                                <li class="mb-2"><span style="color:#D4AF37;">★</span> 1-page Landing Website (Mobile
+                                    Responsive)</li>
+                                <li class="mb-2"><span style="color:#D4AF37;">★</span> Basic On-page SEO Setup</li>
+                                <li class="mb-2"><span style="color:#D4AF37;">★</span> Email Support + Quarterly Tax
+                                    Reminders</li>
+                                <li class="mb-0"><span style="color:#D4AF37;">★</span> Bank Account Opening Assistance
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Growth Expansion -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.25s">
+                    <div class="h-100 p-4 p-md-5 rounded-4 border position-relative" style="
+                    background: rgba(255,255,255,0.06);
+                    border-color: rgba(212,175,55,0.35) !important;
+                    box-shadow: 0 0 0 1px rgba(212,175,55,0.14) inset, 0 18px 45px rgba(0,0,0,0.45);
+                    backdrop-filter: blur(10px);
+                ">
+
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h3 class="text-white mb-0">Growth Expansion</h3>
+                            <span class="badge rounded-pill" style="
+                            background: rgba(255,255,255,0.08);
+                            border: 1px solid rgba(255,255,255,0.14);
+                            color: rgba(255,255,255,0.85);
+                        ">
+                                Most Popular
+                            </span>
+                        </div>
+
+                        <p class="mb-4" style="color: rgba(255,255,255,0.60);">
+                            Ideal for SMEs scaling operations, hiring & going digital across HR & accounting.
+                        </p>
+
+                        <div class="mb-4">
+                            <div class="d-flex align-items-end gap-2">
+                                <div class="display-6 fw-bold mb-0" style="color:#D4AF37;">RM 6,xxx</div>
+                                <div class="mb-2" style="color: rgba(255,255,255,0.55);">starting</div>
+                            </div>
+                            <div class="small" style="color: rgba(255,255,255,0.45);">
+                                Full digital stack + advisory
+                            </div>
+                        </div>
+
+                        <div class="pt-3" style="border-top: 1px solid rgba(255,255,255,0.08);">
+                            <div class="text-uppercase small mb-3"
+                                style="letter-spacing: .12em; color: rgba(212,175,55,0.75);">
+                                Included
+                            </div>
+                            <ul class="list-unstyled mb-0" style="color: rgba(255,255,255,0.65);">
+                                <li class="mb-2"><span style="color:#D4AF37;">★</span> 12 months CoSec + Unlimited
+                                    Resolutions</li>
+                                <li class="mb-2"><span style="color:#D4AF37;">★</span> Bukku + e-Invoicing Module
+                                </li>
+                                <li class="mb-2"><span style="color:#D4AF37;">★</span> Employee Handbook + HR Templates
+                                </li>
+                                <li class="mb-2"><span style="color:#D4AF37;">★</span> Multi-page Corporate Website (5–8
+                                    pages)</li>
+                                <li class="mb-2"><span style="color:#D4AF37;">★</span> Monthly SEO Report & Google
+                                    Business Setup</li>
+                                <li class="mb-2"><span style="color:#D4AF37;">★</span> Dedicated WhatsApp Support Group
+                                </li>
+                                <li class="mb-2"><span style="color:#D4AF37;">★</span> Priority Financial & Compliance
+                                    Advisory</li>
+                                <li class="mb-0"><span style="color:#D4AF37;">★</span> Annual Audit Compliance Check
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ultimate Digital Suite -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.35s">
+                    <div class="h-100 p-4 p-md-5 rounded-4 border" style="
+                    background: rgba(255,255,255,0.04);
+                    border-color: rgba(212,175,55,0.40) !important;
+                    box-shadow: 0 0 0 1px rgba(212,175,55,0.18) inset, 0 18px 45px rgba(0,0,0,0.55);
+                    backdrop-filter: blur(10px);
+                ">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h3 class="text-white mb-0">Ultimate Digital Suite</h3>
+                            <span class="badge rounded-pill" style="
+                            background: rgba(212,175,55,0.16);
+                            border: 1px solid rgba(212,175,55,0.35);
+                            color: rgba(212,175,55,0.98);
+                        ">
+                                Enterprise
+                            </span>
+                        </div>
+
+                        <p class="mb-4" style="color: rgba(255,255,255,0.60);">
+                            Designed for traditional companies transitioning into full digital & e-commerce operations.
+                        </p>
+
+                        <div class="mb-4">
+                            <div class="d-flex align-items-end gap-2">
+                                <div class="display-6 fw-bold mb-0" style="color:#D4AF37;">RM 12,xxx</div>
+                                <div class="mb-2" style="color: rgba(255,255,255,0.55);">starting</div>
+                            </div>
+                            <div class="small" style="color: rgba(255,255,255,0.45);">
+                                Full transformation + premium support
+                            </div>
+                        </div>
+
+                        <div class="pt-3" style="border-top: 1px solid rgba(255,255,255,0.08);">
+                            <div class="text-uppercase small mb-3"
+                                style="letter-spacing: .12em; color: rgba(212,175,55,0.75);">
+                                Included
+                            </div>
+                            <ul class="list-unstyled mb-0" style="color: rgba(255,255,255,0.65);">
+                                <li class="mb-2"><span style="color:#D4AF37;">★</span> 12 months CoSec + Annual Return
+                                    (AR)</li>
+                                <li class="mb-2"><span style="color:#D4AF37;">★</span> LHDN e-Invoice Implementation +
+                                    Auto Reconciliation</li>
+                                <li class="mb-2"><span style="color:#D4AF37;">★</span> Custom HR Policy + KPI Framework
+                                </li>
+                                <li class="mb-2"><span style="color:#D4AF37;">★</span> Full E-commerce Website + Payment
+                                    Gateways</li>
+                                <li class="mb-2"><span style="color:#D4AF37;">★</span> Logistics & Inventory API
+                                    Integration</li>
+                                <li class="mb-2"><span style="color:#D4AF37;">★</span> Full SEO Strategy + Competitor
+                                    Analysis</li>
+                                <li class="mb-2"><span style="color:#D4AF37;">★</span> 1-on-1 Expert Advisory & Partner
+                                    Introductions</li>
+                                <li class="mb-0"><span style="color:#D4AF37;">★</span> Priority Compliance & Escalation
+                                    Handling</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Section 4: CTA -->
+    <section class="container-fluid cta-section py-5">
+        <div class="container text-center py-5 ">
+            <h4 class="text-white mb-3">Ready to streamline your accounting and tax processes?</h4>
+            <p class="text-white-50 mb-4">Contact our professional consultants and get a free company structure
+                consultation.</p>
+
+            <!-- Buttons -->
+            <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
+                <a href="../../contact.html" class="btn btn-primary cta-btn mb-3 mb-md-0">
+                    <i class="fa fa-envelope me-2"></i> Talk to Our Team
+                </a>
+
+                <a href="https://wa.me/60123011610" target="_blank" class="btn btn-outline-light cta-btn">
+                    <i class="fab fa-whatsapp me-2"></i> WhatsApp Us
+                </a>
+            </div>
+
+            <div class="d-flex flex-wrap justify-content-center gap-3 small text-muted cta-check mt-4">
+                <span><i class="bi bi-check-circle me-1"></i> Licensed Company Secretary</span>
+                <span><i class="bi bi-check-circle me-1"></i> LHDN-Compliant Cloud Accounting</span>
+                <span><i class="bi bi-check-circle me-1"></i> Tax Filing Reminder Service</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content End -->
+
+    <div id="site-footer"></div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-outline-primary border-2 btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Page-specific JS -->
+    <script>
+        const tiers = {
+            starter: {
+                name: "Starter Launch",
+                tagline: "“Best value for solo founders / asset-light companies”",
+                radar: [90, 40, 30, 40, 30],
+                saving: [100, 85],
+                lists: {
+                    cosec: ["12 months secretary service", "SSM Incorporation Fees (RM1,010)", "Statutory record maintenance"],
+                    acc: ["Basic bookkeeping setup", "Intro training for cloud accounting", "Monthly invoice entry guidance"],
+                    hr: ["Standard employment contract templates", "Offer Letter templates", "Basic resignation templates"],
+                    web: ["1-page high-conversion landing page", "Suitable for FB / Google ads", "Basic mobile responsiveness"],
+                    seo: ["Basic on-page SEO", "Google Search Console setup", "Meta Tag optimisation"],
+                    support: ["Email support (24h response)", "Quarterly tax reminders", "Bank account setup guidance"]
+                }
+            },
+            growth: {
+                name: "Growth Expansion",
+                tagline: "“Ideal for fast-scaling startups going fully digital”",
+                radar: [95, 85, 75, 75, 65],
+                saving: [100, 75],
+                lists: {
+                    cosec: ["12 months secretary service", "Unlimited resolutions", "Support for banking appointments"],
+                    acc: ["Cloud Accounting (Bukku/Xero)", "Pre-configured e-Invoicing module", "Advanced inventory sync"],
+                    hr: ["Full employee handbook", "10+ operational templates", "Employment Act compliance review"],
+                    web: ["Multi-page corporate website (5–8 pages)", "Service & case study pages", "Interactive enquiry form"],
+                    seo: ["Keyword ranking optimisation", "Google Map (GMB) setup", "Monthly SEO performance report"],
+                    support: ["Dedicated WhatsApp group", "Priority financial advisory", "Annual compliance audit review"]
+                }
+            },
+            ultimate: {
+                name: "Ultimate Digital Suite",
+                tagline: "“Top choice for traditional companies transforming into e-commerce”",
+                radar: [100, 100, 95, 100, 90],
+                saving: [100, 70],
+                lists: {
+                    cosec: ["24 months secretary service", "Free Annual Return (AR)", "Advanced equity structure advisory"],
+                    acc: ["Cloud accounting + auto reconciliation", "Full LHDN e-Invoice implementation", "Quarterly tax planning"],
+                    hr: ["Custom HR policy design", "KPI-based performance management", "Labour dispute risk assessment"],
+                    web: ["Full-function e-commerce platform", "Multi-channel payment gateway integration", "Logistics & inventory API integration"],
+                    seo: ["Full-scale SEO authority strategy", "Competitor traffic analysis", "Long-term content marketing"],
+                    support: ["1-on-1 expert phone support", "Strategic partnership introductions", "Top priority for compliance tasks"]
+                }
+            }
+        };
+
+        let radarChart, barChart;
+        let wizardData = {};
+
+        function initCharts() {
+            const radarCtx = document.getElementById('radarChart').getContext('2d');
+            radarChart = new Chart(radarCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['Compliance', 'Finance', 'HR', 'Web', 'Marketing'],
+                    datasets: [{
+                        data: tiers.growth.radar,
+                        backgroundColor: 'rgba(212, 175, 55, 0.18)',
+                        borderColor: '#D4AF37',
+                        pointBackgroundColor: '#D4AF37',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: { display: false },
+                            grid: {
+                                color: 'rgba(148, 163, 184, 0.35)'
+                            },
+                            angleLines: {
+                                color: 'rgba(148, 163, 184, 0.35)'
+                            }
+                        }
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+
+            const barCtx = document.getElementById('barChart').getContext('2d');
+            barChart = new Chart(barCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Individual Vendors', 'Package Model'],
+                    datasets: [{
+                        data: tiers.growth.saving,
+                        backgroundColor: ['rgba(148, 163, 184, 0.5)', '#D4AF37'],
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            grid: { display: false },
+                            ticks: {
+                                color: '#e5e7eb'
+                            }
+                        },
+                        y: { display: false }
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+
+            updateState('growth');
+        }
+
+        function updateState(key) {
+            const data = tiers[key];
+
+            ['starter', 'growth', 'ultimate'].forEach(k => {
+                document.getElementById('tab-' + k).classList.remove('active');
+            });
+            document.getElementById('tab-' + key).classList.add('active');
+
+            radarChart.data.datasets[0].data = data.radar;
+            radarChart.update();
+
+            barChart.data.datasets[0].data = data.saving;
+            barChart.update();
+
+            document.getElementById('tier-tagline').textContent = data.tagline;
+
+            const updateList = (id, items) => {
+                const el = document.getElementById('list-' + id);
+                el.innerHTML = items.map(i => '<li>• ' + i + '</li>').join('');
+            };
+
+            updateList('cosec', data.lists.cosec);
+            updateList('acc', data.lists.acc);
+            updateList('hr', data.lists.hr);
+            updateList('web', data.lists.web);
+            updateList('seo', data.lists.seo);
+            updateList('support', data.lists.support);
+        }
+
+        function nextQ(curr, next, val) {
+            wizardData[curr] = val;
+            document.getElementById('q' + curr).classList.add('d-none');
+            document.getElementById('q' + next).classList.remove('d-none');
+
+            document.getElementById('prog-' + next).classList.remove('wizard-progress-inactive');
+            document.getElementById('prog-' + next).classList.add('wizard-progress-active');
+        }
+
+        function finishWizard(val) {
+            wizardData[3] = val;
+            document.getElementById('q3').classList.add('d-none');
+            document.getElementById('q-result').classList.remove('d-none');
+
+            let rec = 'starter';
+            let desc = "";
+
+            if (wizardData[3] === 'ecommerce') {
+                rec = 'ultimate';
+                desc = "As your business requires online selling and payment gateways, the Ultimate plan provides a full e-commerce system and integration as your core infrastructure.";
+            } else if (wizardData[2] === 'yes') {
+                rec = 'growth';
+                desc = "Inventory management is a key factor for you. The Growth plan’s cloud accounting and stock sync modules suit companies that require real-time inventory flow.";
+            } else {
+                rec = 'starter';
+                desc = "As an asset-light service or consulting company, the Starter plan offers cost-effective compliance & bookkeeping while helping you build your first lead-generation page.";
+            }
+
+            document.getElementById('res-name').textContent = tiers[rec].name;
+            document.getElementById('res-desc').textContent = desc;
+        }
+
+        function resetWizard() {
+            wizardData = {};
+            document.getElementById('q-result').classList.add('d-none');
+            document.getElementById('q1').classList.remove('d-none');
+            document.getElementById('q2').classList.add('d-none');
+            document.getElementById('q3').classList.add('d-none');
+
+            document.getElementById('prog-2').classList.remove('wizard-progress-active');
+            document.getElementById('prog-2').classList.add('wizard-progress-inactive');
+            document.getElementById('prog-3').classList.remove('wizard-progress-active');
+            document.getElementById('prog-3').classList.add('wizard-progress-inactive');
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            if (document.getElementById('radarChart')) {
+                initCharts();
+            }
+        });
+    </script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
