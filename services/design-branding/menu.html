@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>BRIF - Menu & Price List Design</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../../img/favicon.svg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Work+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="../../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../../css/style.css" rel="stylesheet">
+
+    <style>
+        .tracking-widest {
+            letter-spacing: 0.3em;
+        }
+
+        .tracking-wider {
+            letter-spacing: 0.1em;
+        }
+
+        .x-small {
+            font-size: 0.85rem;
+        }
+
+        .backdrop-blur {
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+        }
+
+        .shadow-gold {
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.25);
+        }
+
+        /* 菜单漂浮感动画 */
+        .position-relative ms-5>div {
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .position-relative ms-5:hover div:first-child {
+            transform: rotate(-2deg) translateY(-10px);
+        }
+
+        .position-relative ms-5:hover div:last-child {
+            transform: translate(60px, -30px) rotate(8deg);
+        }
+
+        .italic-serif {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+
+        .hover-glow:hover {
+            background-color: rgba(212, 175, 55, 0.05) !important;
+            border-color: rgba(212, 175, 55, 0.4) !important;
+            transform: translateY(-10px);
+        }
+
+        .transition-all {
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+
+        .blur-3xl {
+            filter: blur(60px);
+        }
+
+
+        /* 时钟光圈缩放动画 */
+        .scale-up-clock {
+            animation: pulseClock 3s ease-in-out infinite;
+            width: 120% !important;
+            height: 120% !important;
+        }
+
+        @keyframes pulseClock {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(0.9);
+                opacity: 0.2;
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.1);
+                opacity: 0.5;
+            }
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Header Start -->
+    <div class="container-fluid p-0">
+        <div id="site-navbar"></div>
+        <div class="page-header pb-5">
+            <div class="container text-center py-5">
+                <h1 class="display-4 text-uppercase mb-3 animated slideInDown">Menu & Price List Design</h1>
+                <nav aria-label="breadcrumb animated slideInDown">
+                    <ol class="breadcrumb justify-content-center text-uppercase mb-0">
+                        <li class="breadcrumb-item"><a class="text-white" href="../../index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-white"
+                                href="../../service-design-branding.html">Design & Branding</a></li>
+                        <li class="breadcrumb-item text-primary active" aria-current="page">Menu & Price List Design
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <section class="position-relative bg-dark min-vh-100 d-flex align-items-center overflow-hidden">
+
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="z-index: 1;">
+            <div class="position-absolute top-0 end-0 opacity-20"
+                style="width: 50vw; height: 50vw; background: radial-gradient(circle, #D4AF37 0%, transparent 70%); filter: blur(120px); transform: translate(20%, -20%);">
+            </div>
+        </div>
+
+
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row align-items-center">
+
+                <div class="col-lg-6 text-center text-lg-start">
+                    <div class="mb-4">
+                        <span
+                            class="text-primary fw-bold text-uppercase tracking-widest small border-bottom border-primary border-2 pb-1">
+                            Culinary & Service Aesthetics
+                        </span>
+                    </div>
+
+                    <h1 class="display-3 fw-bold text-white mb-4">
+                        MENU & <span class="text-primary">PRICE LIST</span> <br>DESIGN
+                    </h1>
+
+                    <p class="lead text-white-50 mb-5 pe-lg-4">
+                        Clean, readable layouts that look <span class="text-white">premium in print</span> and function
+                        perfectly on <span class="text-white">mobile screens</span>. Enhance your guest experience from
+                        the first glance.
+                    </p>
+
+                    <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-4 mb-5">
+                        <div class="text-center">
+                            <i class="fa-solid fa-utensils text-white-50 mb-2"></i>
+                            <p class="x-small text-uppercase tracking-wider text-white-50 mb-0">Dining</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fa-solid fa-spa text-white-50 mb-2"></i>
+                            <p class="x-small text-uppercase tracking-wider text-white-50 mb-0">Salons</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fa-solid fa-bell-concierge text-white-50 mb-2"></i>
+                            <p class="x-small text-uppercase tracking-wider text-white-50 mb-0">Services</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 d-none d-lg-block">
+                    <div class="position-relative ms-5">
+                        <div class="p-4 bg-white rounded-1 shadow-2xl position-relative"
+                            style="width: 320px; height: 450px; transform: rotate(-5deg);">
+                            <div class="h-100 border border-dark border-opacity-10 p-4">
+                                <div class="bg-dark mb-4" style="height: 30px; width: 40px; opacity: 0.1;"></div>
+                                <div class="bg-dark mb-2" style="height: 10px; width: 80%; opacity: 0.2;"></div>
+                                <div class="bg-dark mb-4" style="height: 6px; width: 50%; opacity: 0.1;"></div>
+                                <div class="d-flex justify-content-between mb-3">
+                                    <div class="bg-dark" style="height: 8px; width: 60%; opacity: 0.15;"></div>
+                                    <div class="text-dark small">$28</div>
+                                </div>
+                                <div class="d-flex justify-content-between mb-3">
+                                    <div class="bg-dark" style="height: 8px; width: 55%; opacity: 0.15;"></div>
+                                    <div class="text-dark small">$35</div>
+                                </div>
+                                <div class="d-flex justify-content-between mb-3">
+                                    <div class="bg-dark" style="height: 8px; width: 70%; opacity: 0.15;"></div>
+                                    <div class="text-dark small">$19</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="position-absolute top-50 start-50 translate-middle-y bg-secondary bg-opacity-20 backdrop-blur rounded-4 border border-white border-opacity-20 shadow-lg p-2"
+                            style="width: 180px; height: 380px; transform: translate(50px, -20px) rotate(5deg); z-index: 10;">
+                            <div class="h-100 rounded-3 bg-dark overflow-hidden">
+                                <div class="bg-primary" style="height: 120px; width: 100%; opacity: 0.3;"></div>
+                                <div class="p-3">
+                                    <div class="bg-white opacity-25 mb-2" style="height: 10px; width: 80%;"></div>
+                                    <div class="bg-white opacity-10" style="height: 6px; width: 100%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container-fluid py-5 bg-dark">
+        <div class="container py-5 border-top border-secondary border-opacity-10">
+
+            <div class="row align-items-end mb-5">
+                <div class="col-lg-7">
+                    <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3 small">Versatility in Design
+                    </h6>
+                    <h2 class="text-white fw-bold display-6">Tailored for Your <br><span
+                            class="text-primary italic-serif">Specific Industry</span></h2>
+                </div>
+                <div class="col-lg-5 text-lg-end">
+                    <p class="text-white-50 small mb-0">Whether it’s a physical booklet or a digital QR system, we build
+                        layouts that enhance your service flow.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div
+                        class="p-5 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 h-100 text-center hover-glow transition-all">
+                        <div class="mb-4 text-primary">
+                            <i class="fa-solid fa-utensils fs-1"></i>
+                        </div>
+                        <h5 class="text-white fw-bold mb-3">F&B Excellence</h5>
+                        <p class="text-white-50 x-small mb-0">Restaurants, Cafés, and Caterers needing mouth-watering
+                            layouts that organize dishes by logic and price.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div
+                        class="p-5 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 h-100 text-center hover-glow transition-all">
+                        <div class="mb-4 text-primary">
+                            <i class="fa-solid fa-layer-group fs-1"></i>
+                        </div>
+                        <h5 class="text-white fw-bold mb-3">Service Packages</h5>
+                        <p class="text-white-50 x-small mb-0">Service businesses requiring clear, tier-based pricing for
+                            packages, membership plans, and corporate rates.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div
+                        class="p-5 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 h-100 text-center hover-glow transition-all">
+                        <div class="mb-4 text-primary">
+                            <i class="fa-solid fa-gem fs-1"></i>
+                        </div>
+                        <h5 class="text-white fw-bold mb-3">Aesthetic & Wellness</h5>
+                        <p class="text-white-50 x-small mb-0">Clinics, Salons, and Workshops looking for a clean,
+                            trustworthy aesthetic to showcase treatments and procedures.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5 bg-dark">
+        <div class="container py-5 border-top border-secondary border-opacity-10">
+
+            <div class="row g-5">
+                <div class="col-lg-5 order-2 order-lg-1">
+                    <div
+                        class="p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 h-100 d-flex flex-column justify-content-center">
+                        <div class="mb-4 text-center">
+                            <i class="fa-solid fa-language text-primary display-4 mb-3"></i>
+                            <h5 class="text-white fw-bold">Localized Excellence</h5>
+                            <p class="text-white-50 x-small">Expert layouts for multi-language content.</p>
+                        </div>
+                        <div class="d-flex flex-wrap justify-content-center gap-2">
+                            <span
+                                class="badge rounded-pill bg-dark border border-primary text-primary px-3 py-2">ENGLISH</span>
+                            <span class="badge rounded-pill bg-dark border border-primary text-primary px-3 py-2">中文
+                                (CN)</span>
+                            <span class="badge rounded-pill bg-dark border border-primary text-primary px-3 py-2">BAHASA
+                                MELAYU</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 order-1 order-lg-2">
+                    <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3 small">The Final Assets</h6>
+                    <h2 class="text-white fw-bold mb-4">What You’ll Receive</h2>
+
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div
+                                class="p-4 rounded-4 bg-secondary bg-opacity-5 border border-secondary border-opacity-25 h-100">
+                                <h6 class="text-white mb-2 fw-bold">Complete Menu Layouts</h6>
+                                <p class="text-white-50 x-small mb-0">Custom sizing for A4, A3, or multi-page Booklet
+                                    formats, plus a mobile-optimized <span class="text-white">QR Menu version</span>.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div
+                                class="p-4 rounded-4 bg-secondary bg-opacity-5 border border-secondary border-opacity-25 h-100">
+                                <h6 class="text-white mb-2 fw-bold">Package & Price Lists</h6>
+                                <p class="text-white-50 x-small mb-0">Clean, structured versions for service packages,
+                                    promotional flyers, or internal price sheets.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div
+                                class="p-4 rounded-4 bg-secondary bg-opacity-5 border border-secondary border-opacity-20">
+                                <div class="d-flex align-items-center gap-3">
+                                    <i class="fa-solid fa-wand-magic-sparkles text-primary"></i>
+                                    <div>
+                                        <h6 class="text-white mb-1 fw-bold">Optional: Bilingual / Trilingual Layouts
+                                        </h6>
+                                        <p class="text-white-50 x-small mb-0">Perfectly balanced designs for <span
+                                                class="text-white">CN/EN/MY</span> content, ensuring clarity regardless
+                                            of the language length.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid py-5 bg-dark">
+        <div class="container py-5 border-top border-secondary border-opacity-10">
+
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5">
+                    <div
+                        class="p-4 p-md-5 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 shadow-sm">
+                        <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3 small">Collaboration Phase
+                        </h6>
+                        <h2 class="text-white fw-bold mb-4">What we need <br><span class="text-primary">from you</span>
+                        </h2>
+                        <p class="text-white-50 small mb-4">
+                            To build a menu that actually <span class="text-white">sells</span>, we need to understand
+                            your structure. Provide these essentials, and we'll handle the visual hierarchy.
+                        </p>
+                        <div
+                            class="d-flex align-items-center gap-3 p-3 bg-dark rounded-3 border-start border-primary border-4">
+                            <i class="fa-solid fa-lightbulb text-primary"></i>
+                            <p class="text-white-50 x-small mb-0 italic">Not sure about the order? We can propose a
+                                <strong>Category Grouping</strong> strategy for you.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div
+                                class="p-4 rounded-4 bg-secondary bg-opacity-5 border border-secondary border-opacity-20 h-100">
+                                <div class="text-primary mb-3"><i class="fa-solid fa-list-check fs-4"></i></div>
+                                <h6 class="text-white mb-2 fw-bold">Full Menu & Prices</h6>
+                                <p class="text-white-50 x-small mb-0">The final list of your items and prices in a clear
+                                    document (Doc/Excel/PDF).</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div
+                                class="p-4 rounded-4 bg-secondary bg-opacity-5 border border-secondary border-opacity-20 h-100">
+                                <div class="text-primary mb-3"><i class="fa-solid fa-camera-retro fs-4"></i></div>
+                                <h6 class="text-white mb-2 fw-bold">Imagery (Optional)</h6>
+                                <p class="text-white-50 x-small mb-0">High-res photos of your star dishes or service
+                                    results for visual impact.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div
+                                class="p-4 rounded-4 bg-secondary bg-opacity-5 border border-secondary border-opacity-20">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6 mb-3 mb-md-0">
+                                        <h6 class="text-white mb-2 fw-bold"><i
+                                                class="fa-solid fa-expand me-2 text-primary"></i>Size & Format</h6>
+                                        <p class="text-white-50 x-small mb-0">Specify if it's for
+                                            <strong>Print</strong>, <strong>Digital TV</strong>, or a
+                                            <strong>WhatsApp/QR Menu</strong>.
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="d-flex flex-wrap gap-2 justify-content-md-end">
+                                            <span
+                                                class="badge bg-dark border border-secondary px-2 py-1 x-small fw-normal">A4/A3</span>
+                                            <span
+                                                class="badge bg-dark border border-secondary px-2 py-1 x-small fw-normal">4K
+                                                Screen</span>
+                                            <span
+                                                class="badge bg-dark border border-secondary px-2 py-1 x-small fw-normal">Mobile
+                                                Ready</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5 bg-dark">
+        <div class="container py-5 border-top border-secondary border-opacity-10">
+
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-center text-lg-start mb-4 mb-lg-0">
+                    <div class="d-inline-block position-relative mb-3">
+                        <div
+                            class="position-absolute top-50 start-50 translate-middle w-100 h-100 border border-primary border-opacity-25 rounded-circle scale-up-clock">
+                        </div>
+                        <div
+                            class="bg-secondary bg-opacity-10 p-4 rounded-circle border border-secondary border-opacity-25 shadow-gold">
+                            <i class="fa-solid fa-hourglass-half text-primary display-4"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-white display-5 fw-bold mt-3 mb-0">2–5</h3>
+                    <p class="text-primary text-uppercase tracking-widest fw-bold mb-0">Working Days</p>
+                </div>
+
+                <div class="col-lg-8">
+                    <div
+                        class="p-4 p-md-5 rounded-4 bg-secondary bg-opacity-5 border border-secondary border-opacity-25 position-relative overflow-hidden">
+                        <div class="position-absolute bottom-0 start-0 h-1 w-75 bg-primary opacity-25"></div>
+
+                        <h5 class="text-white mb-4 fw-bold">Efficient Creative Workflow</h5>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="d-flex gap-3">
+                                    <div class="text-primary"><i class="fa-solid fa-layer-group"></i></div>
+                                    <div>
+                                        <h6 class="text-white small mb-1">Scalable Timeline</h6>
+                                        <p class="text-white-50 x-small mb-0">Turnaround is adjusted based on the total
+                                            number of items, categories, and page count.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex gap-3">
+                                    <div class="text-primary"><i class="fa-solid fa-bolt-lightning"></i></div>
+                                    <div>
+                                        <h6 class="text-white small mb-1">Rapid Drafts</h6>
+                                        <p class="text-white-50 x-small mb-0">Initial concepts delivered swiftly to keep
+                                            your business launch on schedule.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container-fluid py-5 bg-dark">
+        <div class="container py-5 border-top border-secondary border-opacity-10">
+
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-5">
+                    <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3 small">Final Handover</h6>
+                    <h2 class="text-white fw-bold display-6 mb-4">File Formats</h2>
+                    <p class="text-white-50 small mb-0">
+                        We deliver a complete ecosystem of files, ensuring your brand looks consistent whether it’s in a
+                        customer’s hand or on their smartphone.
+                    </p>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+                            <div
+                                class="p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 h-100 transition-hover">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <div class="text-primary"><i class="fa-solid fa-file-pdf fs-3"></i></div>
+                                    <span class="badge bg-dark text-white x-small">CMYK</span>
+                                </div>
+                                <h6 class="text-white mb-2 fw-bold">Print-Ready PDF</h6>
+                                <p class="text-white-50 x-small mb-0">High-resolution file with professional bleeds and
+                                    crop marks for industrial printing.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div
+                                class="p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 h-100 transition-hover">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <div class="text-primary"><i class="fa-solid fa-mobile-screen-button fs-3"></i>
+                                    </div>
+                                    <span class="badge bg-dark border border-secondary text-white x-small">RGB</span>
+                                </div>
+                                <h6 class="text-white mb-2 fw-bold">Mobile PDF / Image</h6>
+                                <p class="text-white-50 x-small mb-0">Lightweight, fast-loading versions optimized for
+                                    QR scanning and WhatsApp sharing.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div
+                                class="p-4 rounded-4 bg-secondary bg-opacity-5 border border-secondary border-opacity-30 position-relative overflow-hidden">
+                                <div
+                                    class="position-absolute end-0 top-0 h-100 d-flex align-items-center opacity-10 pe-4">
+                                    <i class="fa-solid fa-pen-nib display-4 text-primary"></i>
+                                </div>
+
+                                <div class="row align-items-center position-relative">
+                                    <div class="col-md-8">
+                                        <h5 class="text-white fw-bold mb-2">Optional: Canva Editable Link</h5>
+                                        <p class="text-white-50 x-small mb-0 pe-lg-5">
+                                            Empower your team to make instant price updates or seasonal changes without
+                                            waiting for a designer. <strong>Perfect for dynamic businesses.</strong>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5 bg-dark">
+        <div class="container py-5 border-top border-secondary border-opacity-10">
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-10">
+                    <div
+                        class="p-5 rounded-5 bg-black border border-danger border-opacity-10 position-relative overflow-hidden">
+
+                        <!-- <div class="position-absolute bottom-0 end-0 opacity-5"
+                            style="width: 200px; height: 200px; background: radial-gradient(circle, #ff0000 0%, transparent 70%); filter: blur(50px);">
+                        </div> -->
+
+                        <div class="row align-items-center">
+                            <div class="col-lg-4 mb-4 mb-lg-0 text-center text-lg-start">
+                                <h6 class="text-danger fw-bold text-uppercase tracking-widest mb-3 small">Service Scope
+                                </h6>
+                                <h2 class="text-white fw-bold h3 mb-0">What’s <span
+                                        class="text-danger opacity-75">Not</span> Included</h2>
+                            </div>
+
+                            <div class="col-lg-8 border-start border-secondary border-opacity-25 ps-lg-5">
+                                <div class="row g-4">
+                                    <div class="col-md-6">
+                                        <div class="d-flex gap-3">
+                                            <div class="text-danger opacity-50"><i
+                                                    class="fa-solid fa-clock-rotate-left fs-4"></i></div>
+                                            <div>
+                                                <h6 class="text-white mb-2 small fw-bold">Frequent Price Updates</h6>
+                                                <p class="text-white-50 x-small mb-0">
+                                                    Our projects include final pricing at launch. Continuous updates are
+                                                    exclusive to our <span class="text-primary">Monthly Plan</span> or
+                                                    the <span class="text-white">Canva editable option</span>.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="d-flex gap-3">
+                                            <div class="text-danger opacity-50"><i class="fa-solid fa-camera fs-4"></i>
+                                            </div>
+                                            <div>
+                                                <h6 class="text-white mb-2 small fw-bold">Food Photography</h6>
+                                                <p class="text-white-50 x-small mb-0">
+                                                    High-end design is built on high-end assets. Professional
+                                                    photography is <span class="text-white">separate</span>; we work
+                                                    with your provided high-res images.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 pt-4 border-top border-secondary border-opacity-10 text-center">
+                            <p class="text-white-50 x-small mb-4 italic text-center">Ready to transform your menu into a
+                                selling machine?</p>
+                            <div class="d-flex flex-wrap justify-content-center gap-3">
+                                <a href="../../contact.html"
+                                    class="btn btn-primary px-5 py-3 fw-bold rounded-pill shadow-gold">
+                                    Start Your Menu Design <i class="fa-solid fa-chevron-right ms-2 small"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="site-footer"></div>
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-outline-primary border-2 btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/wow/wow.min.js"></script>
+    <script src="../../lib/easing/easing.min.js"></script>
+    <script src="../../lib/waypoints/waypoints.min.js"></script>
+    <script src="../../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../../lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../../js/main.js"></script>
+</body>
+
+</html>

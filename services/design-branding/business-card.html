@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>BRIF - Business Card & Company Stationery</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../../img/favicon.svg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Work+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="../../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../../css/style.css" rel="stylesheet">
+
+
+    <style>
+        /* 针对商务办公专题的微调 */
+        .text-outline-gold {
+            color: transparent;
+            -webkit-text-stroke: 1px #D4AF37;
+            letter-spacing: 0.1em;
+        }
+
+        .tracking-widest {
+            letter-spacing: 0.3em;
+        }
+
+        .x-small {
+            font-size: 0.85rem;
+        }
+
+        .shadow-gold {
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .backdrop-blur {
+            backdrop-filter: blur(10px);
+        }
+
+        /* 优雅的悬浮动画 */
+        .floating-card-1 {
+            animation: float1 6s ease-in-out infinite;
+            transform: perspective(1000px) rotateY(-15deg);
+        }
+
+        .floating-card-2 {
+            animation: float2 6s ease-in-out infinite;
+            transform: perspective(1000px) rotateY(-10deg) translate(40px, -30px);
+        }
+
+        @keyframes float1 {
+
+            0%,
+            100% {
+                transform: perspective(1000px) rotateY(-15deg) translateY(0);
+            }
+
+            50% {
+                transform: perspective(1000px) rotateY(-12deg) translateY(-20px);
+            }
+        }
+
+        @keyframes float2 {
+
+            0%,
+            100% {
+                transform: perspective(1000px) rotateY(-10deg) translate(40px, -30px);
+            }
+
+            50% {
+                transform: perspective(1000px) rotateY(-8deg) translate(45px, -50px);
+            }
+        }
+
+        /* 按钮样式补全 */
+        .btn-primary {
+            background-color: #D4AF37;
+            border-color: #D4AF37;
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            background-color: #fff;
+            border-color: #fff;
+            transform: translateY(-3px);
+        }
+
+
+        .transition-up {
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .transition-up:hover {
+            transform: translateY(-10px);
+            background-color: rgba(212, 175, 55, 0.05);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Header Start -->
+    <div class="container-fluid p-0">
+        <div id="site-navbar"></div>
+        <div class="page-header pb-5">
+            <div class="container text-center py-5">
+                <h1 class="display-4 text-uppercase mb-3 animated slideInDown">Business Card & Company Stationery</h1>
+                <nav aria-label="breadcrumb animated slideInDown">
+                    <ol class="breadcrumb justify-content-center text-uppercase mb-0">
+                        <li class="breadcrumb-item"><a class="text-white" href="../../index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-white"
+                                href="../../service-design-branding.html">Design & Branding</a></li>
+                        <li class="breadcrumb-item text-primary active" aria-current="page">Business Card & Company
+                            Stationery
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <section class="position-relative bg-dark min-vh-100 d-flex align-items-center overflow-hidden">
+
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="z-index: 1;">
+            <div class="position-absolute top-0 end-0 opacity-10 border-top border-end m-5"
+                style="width: 200px; height: 200px; border-color: #D4AF37 !important;"></div>
+            <div class="position-absolute bottom-0 start-0 opacity-10 border-bottom border-start m-5"
+                style="width: 200px; height: 200px; border-color: #D4AF37 !important;"></div>
+        </div>
+
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row align-items-center">
+
+                <div class="col-lg-7 text-center text-lg-start">
+                    <div class="d-inline-flex align-items-center mb-3">
+                        <div class="bg-primary" style="width: 30px; height: 2px;"></div>
+                        <span class="text-primary fw-bold text-uppercase tracking-widest small ms-3">
+                            Corporate Identity Systems
+                        </span>
+                    </div>
+
+                    <h1 class="display-3 fw-bold text-white mb-4">
+                        BUSINESS CARD & <br>
+                        <span class="text-outline-gold">STATIONERY</span>
+                    </h1>
+
+                    <p class="lead text-white-50 mb-5 pe-lg-5">
+                        Make your business look <span class="text-white fw-bold">credible and established</span> with
+                        consistent corporate materials designed to command respect in every handshake.
+                    </p>
+
+                    <div class="row g-3 mb-5 justify-content-center justify-content-lg-start">
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center gap-2 text-white-50 small">
+                                <i class="fa-solid fa-address-card text-primary"></i> Business Cards
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div
+                                class="d-flex align-items-center gap-2 text-white-50 small border-start border-secondary ps-3 ms-2">
+                                <i class="fa-solid fa-envelope text-primary"></i> Letterheads
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div
+                                class="d-flex align-items-center gap-2 text-white-50 small border-start border-secondary ps-3 ms-2">
+                                <i class="fa-solid fa-folder-closed text-primary"></i> Envelopes
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="position-relative">
+                        <div
+                            class="p-4 rounded-1 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 backdrop-blur shadow-2xl floating-card-1">
+                            <div class="d-flex justify-content-between align-items-start mb-5">
+                                <div class="bg-primary rounded-1" style="width: 40px; height: 40px;"></div>
+                                <div class="text-white-50 x-small tracking-widest">EST. 2024</div>
+                            </div>
+                            <div class="bg-white opacity-20 mb-2" style="height: 12px; width: 70%;"></div>
+                            <div class="bg-white opacity-10" style="height: 8px; width: 40%;"></div>
+                        </div>
+
+                        <div class="position-absolute top-0 start-0 p-4 rounded-1 bg-dark border border-primary border-opacity-20 shadow-lg floating-card-2"
+                            style="z-index: -1;">
+                            <div class="opacity-10">
+                                <div class="bg-white mb-5" style="height: 40px; width: 40px;"></div>
+                                <div class="bg-white mb-2" style="height: 12px; width: 150px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container-fluid py-5 bg-dark">
+        <div class="container py-5 border-top border-secondary border-opacity-10">
+
+            <div class="text-center mb-5">
+                <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-2">The Stationery Suite</h6>
+                <h2 class="text-white display-6 fw-bold">Professional Assets You'll Receive</h2>
+                <p class="text-white-50 small mt-3">Every touchpoint designed to maintain your brand's authority.</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+
+                <div class="col-lg-3 col-md-6">
+                    <div
+                        class="h-100 p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 text-center transition-up">
+                        <div class="mb-4 text-primary">
+                            <i class="fa-solid fa-address-card fs-1"></i>
+                        </div>
+                        <h5 class="text-white h6 fw-bold mb-3">Business Card</h5>
+                        <p class="text-white-50 x-small mb-0">Premium front & back layouts optimized for professional
+                            printing.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div
+                        class="h-100 p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 text-center transition-up">
+                        <div class="mb-4 text-primary">
+                            <i class="fa-solid fa-file-invoice fs-1"></i>
+                        </div>
+                        <h5 class="text-white h6 fw-bold mb-3">A4 Letterhead</h5>
+                        <p class="text-white-50 x-small mb-0">Clean corporate header & footer for official company
+                            correspondence.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div
+                        class="h-100 p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 text-center transition-up">
+                        <div class="mb-4 text-primary">
+                            <i class="fa-solid fa-file-signature fs-1"></i>
+                        </div>
+                        <h5 class="text-white h6 fw-bold mb-3">Admin Templates</h5>
+                        <p class="text-white-50 x-small mb-0">Professional Quotation & Invoice layouts (Word/PDF ready).
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div
+                        class="h-100 p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 text-center transition-up">
+                        <div class="mb-4 text-primary">
+                            <i class="fa-solid fa-envelope-open-text fs-1"></i>
+                        </div>
+                        <h5 class="text-white h6 fw-bold mb-3">Email Signature</h5>
+                        <p class="text-white-50 x-small mb-0">Modern digital signature to personalize your professional
+                            emails.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container-fluid py-5 bg-dark">
+        <div class="container py-5 border-top border-secondary border-opacity-10">
+
+            <div class="row g-5">
+                <div class="col-lg-5">
+                    <div class="position-sticky" style="top: 100px;">
+                        <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3 small">Kickstart Your Setup
+                        </h6>
+                        <h2 class="text-white display-6 fw-bold mb-4">The Essentials We Need</h2>
+                        <p class="text-white-50 mb-4">
+                            To ensure your corporate identity is both <span class="text-white">accurate and visually
+                                impactful</span>, please prepare the following assets for us.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="row g-4">
+
+                        <div class="col-12">
+                            <div
+                                class="p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 d-flex gap-4">
+                                <div class="text-primary"><i class="fa-solid fa-building-shield fs-4"></i></div>
+                                <div>
+                                    <h6 class="text-white mb-2">Company Essentials</h6>
+                                    <p class="text-white-50 x-small mb-0">
+                                        Full Company Name, Registration No., Registered Address, Official Phone, and
+                                        Email.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div
+                                class="p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 d-flex gap-4">
+                                <div class="text-primary"><i class="fa-solid fa-palette fs-4"></i></div>
+                                <div>
+                                    <h6 class="text-white mb-2">Logo & Visual DNA</h6>
+                                    <p class="text-white-50 x-small mb-0">
+                                        High-resolution Logo (PNG/Vector) and your preferred brand color codes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div
+                                class="p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 d-flex gap-4">
+                                <div class="text-primary"><i class="fa-solid fa-compass-drafting fs-4"></i></div>
+                                <div>
+                                    <h6 class="text-white mb-2">Preferred Style Direction</h6>
+                                    <p class="text-white-50 x-small mb-3">Which corporate vibe matches your brand best?
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span
+                                            class="badge bg-dark border border-secondary text-white-50 px-2 py-1 x-small fw-normal">Minimal</span>
+                                        <span
+                                            class="badge bg-dark border border-secondary text-white-50 px-2 py-1 x-small fw-normal">Premium</span>
+                                        <span
+                                            class="badge bg-dark border border-secondary text-white-50 px-2 py-1 x-small fw-normal">Corporate</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div
+                                class="p-4 rounded-4 bg-secondary bg-opacity-5 border border-secondary border-opacity-25 d-flex gap-4">
+                                <div class="text-primary"><i class="fa-solid fa-print fs-4"></i></div>
+                                <div>
+                                    <h6 class="text-white mb-2">Printing Specifications</h6>
+                                    <p class="text-white-50 x-small mb-0">
+                                        Specific sizes, paper thickness (GSM), or special finishes (Spot UV/Hot
+                                        Stamping) if you already have a vendor.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid py-5 bg-dark">
+        <div class="container py-5 border-top border-secondary border-opacity-10">
+            <div class="row g-5">
+
+                <div class="col-lg-6">
+                    <div class="mb-5">
+                        <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-4 small">Delivery Standards
+                        </h6>
+
+                        <div
+                            class="d-flex align-items-center gap-4 mb-4 p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25">
+                            <div class="text-primary display-6"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                            <div>
+                                <h5 class="text-white mb-1">1–3 Working Days</h5>
+                                <p class="text-white-50 x-small mb-0">Rapid turnaround from brief to first draft.
+                                    Fast-tracked for your business needs.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25">
+                            <h6 class="text-white mb-3 fw-bold">Professional File Pack</h6>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2 d-flex align-items-center gap-2 text-white-50 x-small">
+                                    <i class="fa-solid fa-file-pdf text-primary"></i> <strong>Print-ready PDF</strong>
+                                    (CMYK + Bleed)
+                                </li>
+                                <li class="mb-2 d-flex align-items-center gap-2 text-white-50 x-small">
+                                    <i class="fa-solid fa-image text-primary"></i> <strong>PNG Preview</strong> for
+                                    digital viewing
+                                </li>
+                                <li class="d-flex align-items-center gap-2 text-white-50 x-small">
+                                    <i class="fa-solid fa-pen-ruler text-primary"></i> <strong>Editable File</strong>
+                                    (AI or Canva - <em>if included</em>)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div
+                        class="p-4 p-md-5 rounded-4 bg-secondary bg-opacity-5 border border-secondary border-opacity-10 h-100">
+                        <h6 class="text-danger fw-bold text-uppercase tracking-widest mb-4 small">Important Notes</h6>
+                        <h3 class="text-white fw-bold mb-4 h4">Service Exclusions</h3>
+
+                        <div class="d-flex gap-3 mb-4">
+                            <div class="text-danger opacity-50"><i class="fa-solid fa-ban"></i></div>
+                            <div>
+                                <h6 class="text-white mb-2 small fw-bold">Content Rewriting</h6>
+                                <p class="text-white-50 x-small mb-0">We design using your provided information. Full
+                                    content creation or copy editing is available as a <span class="text-white">separate
+                                        request</span>.</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-3">
+                            <div class="text-danger opacity-50"><i class="fa-solid fa-ban"></i></div>
+                            <div>
+                                <h6 class="text-white mb-2 small fw-bold">Physical Printing</h6>
+                                <p class="text-white-50 x-small mb-0">Our service is strictly for <span
+                                        class="text-white">digital design assets</span>. We do not provide physical
+                                    printing unless explicitly quoted in a custom package.</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 pt-4 border-top border-secondary border-opacity-25">
+                            <a href="https://wa.me/60123011610"
+                                class="btn btn-primary w-100 py-3 fw-bold rounded-1 shadow-gold">
+                                Request Stationery Quote | WhatsApp Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="site-footer"></div>
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-outline-primary border-2 btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/wow/wow.min.js"></script>
+    <script src="../../lib/easing/easing.min.js"></script>
+    <script src="../../lib/waypoints/waypoints.min.js"></script>
+    <script src="../../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../../lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../../js/main.js"></script>
+</body>
+
+</html>

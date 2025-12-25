@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>BRIF - Social Media Creative Design</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../../img/favicon.svg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Work+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="../../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../../css/style.css" rel="stylesheet">
+
+    <style>
+        /* Social Media Specific Styling */
+        .text-outline-gold {
+            color: transparent;
+            -webkit-text-stroke: 1.5px #D4AF37;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .transform-rotate-3 {
+            transform: rotate(3deg);
+            transition: transform 0.5s ease;
+        }
+
+        .transform-rotate-3:hover {
+            transform: rotate(0deg);
+        }
+
+        .backdrop-blur {
+            backdrop-filter: blur(12px);
+        }
+
+        .tracking-widest {
+            letter-spacing: 0.3em;
+        }
+
+        .x-small {
+            font-size: 0.75rem;
+        }
+
+        .transition-hover {
+            transition: transform 0.3s ease;
+        }
+
+        .transition-hover:hover {
+            background-color: rgba(255, 255, 255, 0.03) !important;
+            border-color: #D4AF37 !important;
+            transform: translateY(-8px);
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+
+        .border-dashed {
+            border-style: dashed !important;
+        }
+
+        /* 针对社媒页面的微调 */
+        .shadow-gold {
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.25);
+        }
+
+        .italic-serif {
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+            /* 增加精致感 */
+        }
+
+        .btn-primary:hover {
+            background-color: #fff;
+            border-color: #fff;
+            color: #000;
+            transform: translateY(-5px);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .btn-outline-success:hover {
+            background-color: #25D366;
+            border-color: #25D366;
+            color: #fff;
+            transform: translateY(-5px);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Header Start -->
+    <div class="container-fluid p-0">
+        <div id="site-navbar"></div>
+        <div class="page-header pb-5">
+            <div class="container text-center py-5">
+                <h1 class="display-4 text-uppercase mb-3 animated slideInDown">Social Media Creative Design</h1>
+                <nav aria-label="breadcrumb animated slideInDown">
+                    <ol class="breadcrumb justify-content-center text-uppercase mb-0">
+                        <li class="breadcrumb-item"><a class="text-white" href="../../index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-white"
+                                href="../../service-design-branding.html">Design & Branding</a></li>
+                        <li class="breadcrumb-item text-primary active" aria-current="page">Social Media Creative Design
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Hero -->
+    <div class="container-fluid bg-dark position-relative overflow-hidden" style="padding: 140px 0 100px 0;">
+
+        <div class="position-absolute top-50 start-0 translate-middle-y opacity-20"
+            style="width: 300px; height: 100%; background: linear-gradient(to right, #D4AF37, transparent); filter: blur(80px); pointer-events: none;">
+        </div>
+
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row align-items-center">
+
+                <div class="col-lg-7">
+                    <div class="d-inline-flex align-items-center mb-3">
+                        <span class="text-primary fw-bold text-uppercase tracking-widest small">
+                            <i class="fa-solid fa-bolt-lightning me-2"></i> High-Impact Visuals
+                        </span>
+                    </div>
+
+                    <h1 class="display-3 fw-bold text-white mb-4">
+                        SOCIAL MEDIA <br>
+                        <span class="text-outline-gold">CREATIVE</span> DESIGN
+                    </h1>
+
+                    <p class="lead text-white-50 mb-5 pe-lg-4" style="font-size: 1.25rem;">
+                        Scroll-stopping designs for <span class="text-white">FB / IG / TikTok / WhatsApp</span> —
+                        specifically engineered to grab attention and drive conversions.
+                    </p>
+
+                </div>
+
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="position-relative">
+                        <div
+                            class="p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 backdrop-blur shadow-lg transform-rotate-3">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <div class="rounded-circle bg-primary" style="width: 30px; height: 30px;"></div>
+                                <div class="bg-secondary bg-opacity-25 rounded w-50" style="height: 10px;"></div>
+                            </div>
+                            <div class="bg-secondary bg-opacity-25 rounded w-100 mb-2" style="height: 150px;"></div>
+                            <div class="d-flex justify-content-between">
+                                <div class="text-primary small fw-bold mb-5">SCROLL-STOPPING</div>
+                                <div class="text-white-50 x-small">9:16 Optimized</div>
+                            </div>
+                        </div>
+
+                        <div class="position-absolute bottom-0 start-0 translate-middle-x p-3 rounded-4 bg-dark border border-primary border-opacity-50 shadow-lg"
+                            style="transform: translate(-20%, 20%);">
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-success fs-4"></i>
+                                <span class="text-white small fw-bold">Viral Ready</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Who This Is For -->
+    <div class="container-fluid py-5 bg-dark">
+        <div class="container py-5 border-top border-secondary border-opacity-10">
+
+            <div class="text-center mb-5">
+                <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-2">Ideal For</h6>
+                <h2 class="text-white display-6 fw-bold">Who This Is For</h2>
+                <div class="mx-auto bg-primary mt-3" style="height: 2px; width: 40px;"></div>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+
+                <!-- 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="h-100 p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 transition-hover">
+                        <div class="mb-4 d-inline-block p-3 bg-primary bg-opacity-10 rounded-3">
+                            <i class="fa-solid fa-bullhorn text-white fs-3"></i>
+                        </div>
+                        <h5 class="text-white mb-3">Businesses running monthly promos</h5>
+                        <p class="text-white-50 small mb-0">
+                            Ideal for businesses that run frequent campaigns or promotions and need fresh,
+                            consistent creative visuals every month.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="h-100 p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 transition-hover">
+                        <div class="mb-4 d-inline-block p-3 bg-primary bg-opacity-10 rounded-3">
+                            <i class="fa-solid fa-rectangle-ad text-white fs-3"></i>
+                        </div>
+                        <h5 class="text-white mb-3">Brands doing paid ads and need consistent creatives</h5>
+                        <p class="text-white-50 small mb-0">
+                            Suitable for brands running Meta / Google ads that require on-brand visuals,
+                            aligned messaging, and design consistency across campaigns.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="h-100 p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 transition-hover">
+                        <div class="mb-4 d-inline-block p-3 bg-primary bg-opacity-10 rounded-3">
+                            <i class="fa-brands fa-instagram text-white fs-3"></i>
+                        </div>
+                        <h5 class="text-white mb-3">SMEs that want a professional feed</h5>
+                        <p class="text-white-50 small mb-0">
+                            Perfect for SMEs that want a clean, professional and brand-aligned social media
+                            presence that reflects credibility and trust.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- What you’ll receive (Deliverables) -->
+    <div class="container-fluid py-5 bg-dark">
+        <div class="container py-5 border-top border-secondary border-opacity-10">
+
+            <div class="text-center mb-5">
+                <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-2">Deliverables</h6>
+                <h2 class="text-white display-6 fw-bold">What You’ll Receive</h2>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <div class="col-lg-6">
+                    <div
+                        class="h-100 p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 transition-hover">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="bg-primary bg-opacity-20 p-3 rounded-3 text-white">
+                                <i class="fa-solid fa-layer-group fs-3"></i>
+                            </div>
+                            <h4 class="text-white ms-3 mb-0">Campaign Set</h4>
+                        </div>
+                        <ul class="list-unstyled space-y-3">
+                            <li class="d-flex gap-3 text-white-50 small mb-3">
+                                <i class="fa-solid fa-check text-primary mt-1"></i>
+                                <span><strong class="text-white">Multi-Format:</strong> Square (1:1) + Portrait (4:5)
+                                    for IG/FB feed.</span>
+                            </li>
+                            <li class="d-flex gap-3 text-white-50 small mb-3">
+                                <i class="fa-solid fa-check text-primary mt-1"></i>
+                                <span><strong class="text-white">IG Story:</strong> Optimized 9:16 vertical
+                                    format.</span>
+                            </li>
+                            <li class="d-flex gap-3 text-white-50 small mb-3">
+                                <i class="fa-solid fa-check text-primary mt-1"></i>
+                                <span><strong class="text-white">Ad Ready:</strong> Optional A/B copy layouts for
+                                    testing.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div
+                        class="h-100 p-4 rounded-4 bg-secondary bg-opacity-5 border border-primary border-opacity-20 transition-hover">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="bg-primary p-3 rounded-3 text-white">
+                                <i class="fa-solid fa-calendar-check fs-3"></i>
+                            </div>
+                            <h4 class="text-white ms-3 mb-0">Monthly Support</h4>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li class="d-flex gap-3 text-white-50 small mb-3">
+                                <i class="fa-solid fa-plus text-primary mt-1"></i>
+                                <span><strong class="text-white">Fixed Plans:</strong> 12 / 20 / 30 creatives per
+                                    month.</span>
+                            </li>
+                            <li class="d-flex gap-3 text-white-50 small mb-3">
+                                <i class="fa-solid fa-plus text-primary mt-1"></i>
+                                <span><strong class="text-white">Brand Consistency:</strong> One unified design
+                                    system.</span>
+                            </li>
+                            <li class="d-flex gap-3 text-white-50 small">
+                                <i class="fa-solid fa-plus text-primary mt-1"></i>
+                                <span><strong class="text-white">Priority Queue:</strong> Regular updates for your
+                                    brand.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-12 text-center mb-3">
+                    <span class="text-white-50 x-small tracking-widest text-uppercase">Covering All Content Needs</span>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="p-3 bg-dark border border-secondary border-opacity-25 rounded-3 text-center">
+                        <i class="fa-solid fa-tags text-primary mb-2"></i>
+                        <p class="text-white x-small mb-0">Promo Posters</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="p-3 bg-dark border border-secondary border-opacity-25 rounded-3 text-center">
+                        <i class="fa-solid fa-lightbulb text-primary mb-2"></i>
+                        <p class="text-white x-small mb-0">Service Explainers</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="p-3 bg-dark border border-secondary border-opacity-25 rounded-3 text-center">
+                        <i class="fa-solid fa-star text-primary mb-2"></i>
+                        <p class="text-white x-small mb-0">Testimonials</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="p-3 bg-dark border border-secondary border-opacity-25 rounded-3 text-center">
+                        <i class="fa-solid fa-box-open text-primary mb-2"></i>
+                        <p class="text-white x-small mb-0">Product Showcases</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12">
+                    <div
+                        class="p-3 bg-dark border border-secondary border-opacity-25 rounded-3 d-flex align-items-center gap-3">
+                        <i class="fa-solid fa-circle-exclamation text-danger"></i>
+                        <p class="text-white x-small mb-0">Announcements & Warning Notices</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12">
+                    <div
+                        class="p-3 bg-dark border border-secondary border-opacity-25 rounded-3 d-flex align-items-center gap-3">
+                        <i class="fa-solid fa-chart-pie text-success"></i>
+                        <p class="text-white x-small mb-0">Simple & Clean Infographics</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Who This Is For -->
+    <div class="container-fluid py-5 bg-dark">
+        <div class="container py-5 border-top border-secondary border-opacity-10">
+
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-2">Kickstart</h6>
+                    <h2 class="text-white fw-bold">What we need from you</h2>
+                </div>
+                <div class="col-lg-6">
+                    <p class="text-white-50 mb-0">Provide these details to ensure your creatives are not just beautiful,
+                        but <span class="text-white">strategically aligned</span> with your goals.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 h-100">
+                        <div class="d-flex align-items-center gap-3 mb-3 text-primary">
+                            <i class="fa-solid fa-list-check fs-4"></i>
+                            <h6 class="text-white mb-0">Promotion Details</h6>
+                        </div>
+                        <p class="text-white-50 small mb-0">Key info: Price points, event dates, and important T&Cs you
+                            want to highlight.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 h-100">
+                        <div class="d-flex align-items-center gap-3 mb-3 text-primary">
+                            <i class="fa-solid fa-camera-retro fs-4"></i>
+                            <h6 class="text-white mb-0">Product Images</h6>
+                        </div>
+                        <p class="text-white-50 small mb-0">Your high-res photos. <span
+                                class="text-white fw-bold italic">No photos?</span> We can source high-quality stock
+                            images for you.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 h-100">
+                        <div class="d-flex align-items-center gap-3 mb-3 text-primary">
+                            <i class="fa-solid fa-fingerprint fs-4"></i>
+                            <h6 class="text-white mb-0">Brand Identity</h6>
+                        </div>
+                        <p class="text-white-50 small mb-0">Your logo (PNG/Vector) and brand colour palette to ensure
+                            consistency.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div
+                        class="p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 h-100">
+                        <div class="d-flex align-items-center gap-3 mb-3 text-primary">
+                            <i class="fa-solid fa-wand-magic-sparkles fs-4"></i>
+                            <h6 class="text-white mb-0">Preferred Style Reference</h6>
+                        </div>
+                        <p class="text-white-50 small mb-0">Send us 2-3 screenshots of designs you like. This helps us
+                            match your aesthetic vision instantly.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="p-4 rounded-4 bg-secondary bg-opacity-5 border border-primary border-opacity-20 h-100">
+                        <div class="d-flex align-items-center gap-3 mb-3 text-primary">
+                            <i class="fa-solid fa-share-nodes fs-4"></i>
+                            <h6 class="text-white mb-0">Target Platforms</h6>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2 mb-2">
+                            <span class="badge bg-dark border border-secondary px-2 py-1 x-small">Instagram</span>
+                            <span class="badge bg-dark border border-secondary px-2 py-1 x-small">Facebook</span>
+                            <span class="badge bg-dark border border-secondary px-2 py-1 x-small">TikTok</span>
+                            <span class="badge bg-dark border border-secondary px-2 py-1 x-small">WhatsApp</span>
+                        </div>
+                        <p class="text-white-50 small mb-0">Let us know where you'll be posting so we can optimize for
+                            the correct ratios.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Typical turnaround -->
+    <div class="container-fluid py-5 bg-dark">
+        <div class="container py-5 border-top border-secondary border-opacity-10">
+
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <div class="bg-primary p-1 rounded-circle"></div>
+                        <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-0 small">Speed to Market</h6>
+                    </div>
+                    <h2 class="text-white display-6 fw-bold mb-4">Fast Turnaround for Fast Trends</h2>
+                    <p class="text-white-50">
+                        Social media moves fast, and so do we. We ensure your creatives are ready while the trend is
+                        still hot.
+                    </p>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div
+                                class="p-4 bg-secondary bg-opacity-10 rounded-4 border border-secondary border-opacity-25 h-100 transition-hover">
+                                <div class="text-primary mb-3">
+                                    <i class="fa-solid fa-stopwatch fs-3"></i>
+                                </div>
+                                <h3 class="text-white fw-bold mb-1">1–3 <span
+                                        class="fs-6 fw-normal text-white-50">Days</span></h3>
+                                <p class="text-white-50 x-small mb-0">Per single design / post. Ideal for quick updates
+                                    or announcements.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div
+                                class="p-4 bg-secondary bg-opacity-10 rounded-4 border border-secondary border-opacity-25 h-100 transition-hover">
+                                <div class="text-primary mb-3">
+                                    <i class="fa-solid fa-boxes-stacked fs-3"></i>
+                                </div>
+                                <h3 class="text-white fw-bold mb-1">3–5 <span
+                                        class="fs-6 fw-normal text-white-50">Days</span></h3>
+                                <p class="text-white-50 x-small mb-0">For full campaign sets (Multi-size/A-B testing
+                                    layouts).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- File formats -->
+    <div class="container-fluid py-5 bg-dark">
+        <div class="container py-5 border-top border-secondary border-opacity-10">
+
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-4">
+                    <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-2">Technical Delivery</h6>
+                    <h2 class="text-white fw-bold mb-4">File Format</h2>
+                    <p class="text-white-50 small mb-0">
+                        We deliver high-fidelity files optimized for social media algorithms, ensuring your content
+                        stays sharp and professional on every device.
+                    </p>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div
+                                class="p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 shadow-sm">
+                                <div class="text-primary mb-3"><i class="fa-solid fa-file-image fs-4"></i></div>
+                                <h5 class="text-white h6 fw-bold">Standard Social Formats</h5>
+                                <div class="d-flex flex-wrap gap-2 mt-3">
+                                    <span class="badge bg-dark border border-secondary px-3 py-2">PNG
+                                        (Transparent)</span>
+                                    <span class="badge bg-dark border border-secondary px-3 py-2">JPG (High Res)</span>
+                                </div>
+                                <p class="text-white-50 x-small mt-3 mb-0">Web-optimized for maximum clarity and fast
+                                    loading on IG/FB feeds.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div
+                                class="p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 shadow-sm">
+                                <div class="text-primary mb-3"><i class="fa-solid fa-file-pdf fs-4"></i></div>
+                                <h5 class="text-white h6 fw-bold">Vector & Print-Ready</h5>
+                                <div class="d-flex flex-wrap gap-2 mt-3">
+                                    <span class="badge bg-primary text-dark fw-bold px-3 py-2">PDF (Vector)</span>
+                                </div>
+                                <p class="text-white-50 x-small mt-3 mb-0">Lossless quality for physical promotional
+                                    materials or large-scale displays.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div
+                                class="p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 border-dashed d-md-flex align-items-center justify-content-between">
+                                <div class="mb-3 mb-md-0">
+                                    <h5 class="text-white h6 fw-bold mb-1">Source Assets (Optional Add-on)</h5>
+                                    <p class="text-white-50 x-small mb-0">Native files for future internal edits or
+                                        adjustments.</p>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <span
+                                        class="badge bg-secondary bg-opacity-20 text-white-50 px-3 py-2 border border-secondary">AI</span>
+                                    <span
+                                        class="badge bg-secondary bg-opacity-20 text-white-50 px-3 py-2 border border-secondary">PSD</span>
+                                    <span
+                                        class="badge bg-secondary bg-opacity-20 text-white-50 px-3 py-2 border border-secondary">SVG</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- What’s not included -->
+    <div class="container-fluid py-5 bg-dark">
+        <div class="container py-5 border-top border-secondary border-opacity-10">
+
+            <div class="row g-5 align-items-start">
+                <div class="col-lg-4">
+                    <div class="p-4 rounded-4 bg-dark bg-opacity-5 h-100">
+                        <h6 class="text-danger fw-bold text-uppercase tracking-widest mb-3 small">Scope Clarity</h6>
+                        <h3 class="text-white fw-bold mb-3">What’s Not Included</h3>
+                        <p class="text-white-50 x-small mb-0">
+                            To maintain our fast turnaround and creative focus, the following services are excluded from
+                            our standard design packages unless stated otherwise.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="row g-4">
+
+                        <div class="col-md-6">
+                            <div
+                                class="p-4 bg-secondary bg-opacity-10 rounded-4 border border-secondary border-opacity-25 h-100">
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <i class="fa-solid fa-pen-nib text-danger opacity-75"></i>
+                                    <h6 class="text-white mb-0">Copywriting Strategy</h6>
+                                </div>
+                                <p class="text-white-50 x-small mb-0">We design based on your provided text. Full
+                                    campaign copywriting and marketing strategy are <span class="text-white">separate
+                                        services</span>.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div
+                                class="p-4 bg-secondary bg-opacity-10 rounded-4 border border-secondary border-opacity-25 h-100">
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <i class="fa-solid fa-camera text-danger opacity-75"></i>
+                                    <h6 class="text-white mb-0">Photo/Video Shooting</h6>
+                                </div>
+                                <p class="text-white-50 x-small mb-0">On-site photography or video production is not
+                                    included. Clients must provide assets or opt for <span class="text-white">stock
+                                        visuals</span>.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div
+                                class="p-4 bg-secondary bg-opacity-10 rounded-4 border border-secondary border-opacity-25">
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <i class="fa-solid fa-rotate text-danger opacity-75"></i>
+                                    <h6 class="text-white mb-0">Unlimited Revisions</h6>
+                                </div>
+                                <p class="text-white-50 x-small mb-0">Each request includes a fixed number of revision
+                                    rounds. This ensures project momentum and prevents "scope creep" for both parties.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5 bg-dark position-relative overflow-hidden">
+
+        <div class="position-absolute top-0 start-0 opacity-10"
+            style="width: 300px; height: 300px; background: radial-gradient(circle, #D4AF37 0%, transparent 70%); filter: blur(60px); transform: translate(-30%, -30%);">
+        </div>
+
+        <div class="container py-5 position-relative" style="z-index: 2;">
+            <div class="row justify-content-center">
+                <div class="col-lg-9 text-center">
+
+                    <h2 class="text-white display-4 fw-bold mb-4">
+                        Scale Your Presence with <br>
+                        <span class="text-primary italic-serif">Expert Creative Support</span>
+                    </h2>
+
+                    <p class="text-white-50 lead mb-5 mx-auto" style="max-width: 650px;">
+                        Stop worrying about your next post. Subscribe to a plan that keeps your feed <span
+                            class="text-white fw-bold">consistent, professional, and profitable</span> every single
+                        month.
+                    </p>
+
+                    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-5">
+                        <div class="position-relative">
+                            
+                            <a href="../../contact.html"
+                                class="btn btn-primary btn-lg px-5 py-3 fw-bold rounded-pill shadow-gold">
+                                Get Monthly Design Plan <i class="fa-solid fa-calendar-plus ms-2 small"></i>
+                            </a>
+                        </div>
+
+                        <a href="https://wa.me/60123011610"
+                            class="btn btn-outline-success btn-lg px-5 py-3 fw-bold rounded-pill border-2">
+                            <i class="fa-brands fa-whatsapp me-2 fs-5"></i>WhatsApp Us
+                        </a>
+                    </div>
+
+                    <div class="row g-3 justify-content-center">
+                        <div class="col-auto">
+                            <span class="text-white-50 x-small tracking-widest text-uppercase">
+                                <i class="fa-solid fa-bolt text-primary me-1"></i> Quick Turnaround
+                            </span>
+                        </div>
+                        <div class="col-auto d-none d-sm-block px-3 text-secondary opacity-25">|</div>
+                        <div class="col-auto">
+                            <span class="text-white-50 x-small tracking-widest text-uppercase">
+                                <i class="fa-solid fa-infinity text-primary me-1"></i> Consistent Style
+                            </span>
+                        </div>
+                        <div class="col-auto d-none d-sm-block px-3 text-secondary opacity-25">|</div>
+                        <div class="col-auto">
+                            <span class="text-white-50 x-small tracking-widest text-uppercase">
+                                <i class="fa-solid fa-shield-heart text-primary me-1"></i> Cancel Anytime
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="site-footer"></div>
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-outline-primary border-2 btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/wow/wow.min.js"></script>
+    <script src="../../lib/easing/easing.min.js"></script>
+    <script src="../../lib/waypoints/waypoints.min.js"></script>
+    <script src="../../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../../lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../../js/main.js"></script>
+</body>
+
+</html>
