@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>BRIF - Internet & Connectivity</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.svg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Work+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* 核心样式定义 */
+        :root {
+            --bs-primary: #D4AF37;
+            /* 金色，代表 Premium */
+            --bs-primary-rgb: 212, 175, 55;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .tracking-widest {
+            letter-spacing: 0.2em;
+        }
+
+        .x-small {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background-color: var(--bs-primary);
+            border-color: var(--bs-primary);
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            background-color: #bd9a2d;
+            border-color: #bd9a2d;
+            color: #000;
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-light:hover {
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+
+        /* 悬停效果：增加边框亮度和微小缩放 */
+        .transition-tile {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .transition-tile:hover {
+            background-color: rgba(212, 175, 55, 0.05) !important;
+            /* 淡淡的金色背景 */
+            border-color: #D4AF37 !important;
+            /* 金色边框 */
+            transform: translateY(-5px);
+        }
+
+        /* 强制标题在小屏幕下也能保持较小字体不换行太严重 */
+        h6.small {
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 576px) {
+            h6.small {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* 增加微交互 */
+        .col-lg-3 {
+            transition: transform 0.3s ease;
+        }
+
+        .col-lg-3:hover {
+            transform: translateY(-10px);
+        }
+
+        .col-lg-3:hover .bg-primary {
+            background-color: #fff !important;
+            color: #000 !important;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 991px) {
+            .col-lg-8 {
+                border-start: none !important;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                padding-top: 2rem;
+                padding-left: 0.75rem !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Header Start -->
+    <div class="container-fluid p-0">
+        <div id="site-navbar"></div>
+        <div class="page-header pb-5">
+            <div class="container text-center py-5">
+                <h1 class="display-4 text-uppercase mb-3 animated slideInDown">Internet & Connectivity</h1>
+                <nav aria-label="breadcrumb animated slideInDown">
+                    <ol class="breadcrumb justify-content-center text-uppercase mb-0">
+                        <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                        <li class="breadcrumb-item text-primary active" aria-current="page">Internet & Connectivity</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Hero -->
+    <div class="container-fluid bg-dark position-relative overflow-hidden" style="padding: 120px 0 100px 0;">
+
+        <div class="position-absolute top-0 start-50 translate-middle-x opacity-25"
+            style="width: 800px; height: 400px; background: radial-gradient(circle, #D4AF37 0%, transparent 70%); filter: blur(120px); pointer-events: none;">
+        </div>
+
+        <div class="container position-relative">
+            <div class="row align-items-center justify-content-center text-center">
+
+                <div class="col-lg-10 col-xl-8">
+                    <div
+                        class="d-inline-flex align-items-center bg-secondary bg-opacity-10 border border-secondary rounded-pill px-3 py-1 mb-4">
+                        <span class="text-primary fw-bold small tracking-widest text-uppercase">Internet &
+                            Connectivity</span>
+                    </div>
+
+                    <h1 class="display-3 fw-bold text-white mb-4">
+                        Reliable fibre internet for <span class="text-gradient">homes, offices, and business
+                            setups.</span>
+                    </h1>
+
+                    <p class="lead text-white-50 mb-5 px-md-5">
+                        From coverage checking to registration and installation, we help you get the <span
+                            class="text-white">best internet plan for your location and usage needs</span> — including
+                        WiFi optimisation and post-setup guidance.
+                    </p>
+
+                    <div class="pt-4 border-top border-secondary border-opacity-25">
+                        <div class="row g-3 justify-content-center">
+                            <div class="col-auto">
+                                <span class="text-white-50 x-small">
+                                    <i class="fa-solid fa-wifi text-primary me-2"></i>Home & Business Fibre
+                                </span>
+                            </div>
+                            <div class="col-auto d-none d-sm-block text-secondary opacity-25">|</div>
+                            <div class="col-auto">
+                                <span class="text-white-50 x-small">
+                                    <i class="fa-solid fa-signal text-primary me-2"></i>Coverage & Speed Check
+                                </span>
+                            </div>
+                            <div class="col-auto d-none d-sm-block text-secondary opacity-25">|</div>
+                            <div class="col-auto">
+                                <span class="text-white-50 x-small">
+                                    <i class="fa-solid fa-bolt text-primary me-2"></i>Installation & WiFi Optimisation
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="position-absolute bottom-0 start-0 w-100"
+            style="height: 100px; background: linear-gradient(to bottom, transparent, #121212);"></div>
+    </div>
+
+
+
+    <!-- Service Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center">
+                <div class="title wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="title-center">
+                        <h5>Services</h5>
+                        <h1>Supported Fibre Providers</h1>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 01 MAXIS FIBRE -->
+            <div class="service-item service-item-left">
+                <div class="row g-0 align-items-center">
+                    <div class="col-md-5">
+                        <div class="service-img p-5 wow fadeInRight" data-wow-delay="0.2s">
+                            <img class="img-fluid rounded-circle" src="img/fibre-maxis.png" alt="Maxis Fibre">
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="service-text px-5 px-md-0 py-md-5 wow fadeInRight" data-wow-delay="0.5s">
+                            <h3 class="text-uppercase">MAXIS FIBRE</h3>
+                            <p class="mb-4">
+                                Home & business fibre setup with coverage check and installation guidance.
+                            </p>
+                            <a class="btn btn-outline-primary border-2 px-4" href="services/internet-connectivity/maxis-fibre.html">
+                                View Details <i class="fa fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 02 TM UNIFI -->
+            <div class="service-item service-item-right">
+                <div class="row g-0 align-items-center">
+                    <div class="col-md-5 order-md-1 text-md-end">
+                        <div class="service-img p-5 wow FadeInLeft" data-wow-delay="0.2s">
+                            <img class="img-fluid rounded-circle" src="img/fibre-unifi.png" alt="TM Unifi Fibre">
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="service-text px-5 px-md-0 py-md-5 text-md-end wow fadeInLeft" data-wow-delay="0.5s">
+                            <h3 class="text-uppercase">TM UNIFI</h3>
+                            <p class="mb-4">
+                                Unifi fibre registration support with smooth installation coordination.
+                            </p>
+                            <a class="btn btn-outline-primary border-2 px-4" href="services/internet-connectivity/tm-unifi.html">
+                                View Details <i class="fa fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 03 TIME FIBRE -->
+            <div class="service-item service-item-left">
+                <div class="row g-0 align-items-center">
+                    <div class="col-md-5">
+                        <div class="service-img p-5 wow fadeInRight" data-wow-delay="0.2s">
+                            <img class="img-fluid rounded-circle" src="img/fibre-time.png" alt="TIME Fibre">
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="service-text px-5 px-md-0 py-md-5 wow fadeInRight" data-wow-delay="0.5s">
+                            <h3 class="text-uppercase">TIME FIBRE</h3>
+                            <p class="mb-4">
+                                TIME fibre application support for supported coverage areas and buildings.
+                            </p>
+                            <a class="btn btn-outline-primary border-2 px-4" href="services/internet-connectivity/time-fibre.html">
+                                View Details <i class="fa fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 04 CELCOMDIGI FIBRE -->
+            <div class="service-item service-item-right">
+                <div class="row g-0 align-items-center">
+                    <div class="col-md-5 order-md-1 text-md-end">
+                        <div class="service-img p-5 wow fadeInLeft" data-wow-delay="0.2s">
+                            <img class="img-fluid rounded-circle" src="img/fibre-celcomdigi.png" alt="CelcomDigi Fibre">
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="service-text px-5 px-md-0 py-md-5 text-md-end wow fadeInLeft" data-wow-delay="0.5s">
+                            <h3 class="text-uppercase">CELCOMDIGI FIBRE</h3>
+                            <p class="mb-4">
+                                CelcomDigi fibre setup guidance with plan recommendation and onboarding flow.
+                            </p>
+                            <a class="btn btn-outline-primary border-2 px-4" href="services/internet-connectivity/celcomdigi-fibre.html">
+                                View Details <i class="fa fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 05 ASTRO FIBRE -->
+            <div class="service-item service-item-left">
+                <div class="row g-0 align-items-center">
+                    <div class="col-md-5">
+                        <div class="service-img p-5 wow fadeInRight" data-wow-delay="0.2s">
+                            <img class="img-fluid rounded-circle" src="img/fibre-astro.png" alt="Astro Fibre">
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="service-text px-5 px-md-0 py-md-5 wow fadeInRight" data-wow-delay="0.5s">
+                            <h3 class="text-uppercase">ASTRO FIBRE</h3>
+                            <p class="mb-4">
+                                Astro Fibre registration support with coverage check and activation guidance.
+                            </p>
+                            <a class="btn btn-outline-primary border-2 px-4" href="services/internet-connectivity/astro-fibre.html">
+                                View Details <i class="fa fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- Service End -->
+
+    <!-- Popular Requests -->
+    <div class="container-fluid py-5 bg-dark">
+        <div class="container py-5">
+
+            <div class="text-center mb-5">
+                <h2 class="text-white fw-bold">Popular Requests</h2>
+                <p class="text-primary small fw-bold text-uppercase tracking-widest">
+                    Common Fibre & Internet Support Cases
+                </p>
+            </div>
+
+            <div class="row row-cols-2 row-cols-md-3 g-4">
+
+                <div class="col">
+                    <div
+                        class="h-100 p-4 rounded-4 border border-secondary border-opacity-25 bg-secondary bg-opacity-10 text-center transition-tile">
+                        <div class="mb-3 text-primary">
+                            <i class="fa-solid fa-location-dot fs-3"></i>
+                        </div>
+                        <h6 class="text-white small fw-bold mb-0">
+                            Check coverage before signing
+                        </h6>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div
+                        class="h-100 p-4 rounded-4 border border-secondary border-opacity-25 bg-secondary bg-opacity-10 text-center transition-tile">
+                        <div class="mb-3 text-primary">
+                            <i class="fa-solid fa-house-signal fs-3"></i>
+                        </div>
+                        <h6 class="text-white small fw-bold mb-0">
+                            New home fibre installation
+                        </h6>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div
+                        class="h-100 p-4 rounded-4 border border-secondary border-opacity-25 bg-secondary bg-opacity-10 text-center transition-tile">
+                        <div class="mb-3 text-primary">
+                            <i class="fa-solid fa-building fs-3"></i>
+                        </div>
+                        <h6 class="text-white small fw-bold mb-0">
+                            Office / shoplot fibre setup
+                        </h6>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div
+                        class="h-100 p-4 rounded-4 border border-secondary border-opacity-25 bg-secondary bg-opacity-10 text-center transition-tile">
+                        <div class="mb-3 text-primary">
+                            <i class="fa-solid fa-truck-moving fs-3"></i>
+                        </div>
+                        <h6 class="text-white small fw-bold mb-0">
+                            Fibre relocation when moving
+                        </h6>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div
+                        class="h-100 p-4 rounded-4 border border-secondary border-opacity-25 bg-secondary bg-opacity-10 text-center transition-tile">
+                        <div class="mb-3 text-primary">
+                            <i class="fa-solid fa-wifi fs-3"></i>
+                        </div>
+                        <h6 class="text-white small fw-bold mb-0">
+                            Fix Wi-Fi dead zones (mesh setup)
+                        </h6>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div
+                        class="h-100 p-4 rounded-4 border border-secondary border-opacity-25 bg-secondary bg-opacity-10 text-center transition-tile">
+                        <div class="mb-3 text-primary">
+                            <i class="fa-solid fa-tachometer-alt fs-3"></i>
+                        </div>
+                        <h6 class="text-white small fw-bold mb-0">
+                            Slow / unstable connection troubleshooting
+                        </h6>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- What You’ll Receive -->
+    <div class="container-fluid py-5 bg-dark">
+        <div class="container py-5">
+
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5">
+                    <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3">After Installation</h6>
+                    <h2 class="text-white display-6 fw-bold mb-4">What You’ll Receive</h2>
+                    <p class="text-white-50 mb-4">
+                        From new modem & router setup to stable, high-speed WiFi — we make sure your connection is ready
+                        for daily use.
+                    </p>
+
+                    <div class="p-3 rounded-4 bg-secondary bg-opacity-10 border-start border-primary border-3">
+                        <p class="text-white small mb-0 fw-semibold">
+                            <i class="fa-solid fa-triangle-exclamation text-primary me-2"></i>
+                            Mini note:
+                        </p>
+                        <p class="text-white-50 x-small mb-0">
+                            We’ll confirm coverage, plan selection, and installation details with you before submitting
+                            any application.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="row g-3">
+
+                        <!-- New Modem & WiFi Router -->
+                        <div class="col-12">
+                            <div
+                                class="p-3 bg-secondary bg-opacity-10 rounded-4 border border-secondary border-opacity-25 d-flex align-items-center gap-4">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-3">
+                                    <i class="fa-solid fa-house-signal text-white fs-4"></i>
+                                </div>
+                                <div>
+                                    <h6 class="text-white mb-1">New Modem & WiFi Router</h6>
+                                    <p class="text-white-50 x-small mb-0">
+                                        Provider-supplied modem & router, properly configured for your home or office.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fast Fibre Internet Speed -->
+                        <div class="col-12">
+                            <div
+                                class="p-3 bg-secondary bg-opacity-10 rounded-4 border border-secondary border-opacity-25 d-flex align-items-center gap-4">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-3">
+                                    <i class="fa-solid fa-gauge-high text-white fs-4"></i>
+                                </div>
+                                <div>
+                                    <h6 class="text-white mb-1">Fast Fibre Internet Speed</h6>
+                                    <p class="text-white-50 x-small mb-0">
+                                        Speed optimised according to your subscribed plan for streaming, work, and
+                                        gaming.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Strong WiFi Coverage -->
+                        <div class="col-12">
+                            <div
+                                class="p-3 bg-secondary bg-opacity-10 rounded-4 border border-secondary border-opacity-25 d-flex align-items-center gap-4">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-3">
+                                    <i class="fa-solid fa-wifi text-white fs-4"></i>
+                                </div>
+                                <div>
+                                    <h6 class="text-white mb-1">Improved WiFi Coverage</h6>
+                                    <p class="text-white-50 x-small mb-0">
+                                        Router placement advice and mesh-ready suggestions to reduce WiFi dead zones.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ongoing Support -->
+                        <div class="col-12">
+                            <div
+                                class="p-3 bg-secondary bg-opacity-10 rounded-4 border border-secondary border-opacity-25 d-flex align-items-center gap-4">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-3">
+                                    <i class="fa-solid fa-headset text-white fs-4"></i>
+                                </div>
+                                <div>
+                                    <h6 class="text-white mb-1">Support & Troubleshooting Guide</h6>
+                                    <p class="text-white-50 x-small mb-0">
+                                        Basic guidance on what to do if speed drops, connection is unstable, or WiFi
+                                        goes offline.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- How We Work -->
+    <div class="container-fluid py-5 bg-dark position-relative">
+        <div class="container py-5">
+
+            <div class="text-center mb-5">
+                <h2 class="text-white fw-bold">How We Work</h2>
+                <p class="text-white-50">Simple and transparent fibre application process from start to activation.</p>
+            </div>
+
+            <div class="row g-4 position-relative">
+                <div class="position-absolute top-50 start-0 w-100 border-top border-secondary border-opacity-25 d-none d-lg-block"
+                    style="z-index:0; transform: translateY(-30px);"></div>
+
+                <!-- 01 -->
+                <div class="col-lg-3 col-md-6 position-relative" style="z-index:1;">
+                    <div class="card bg-dark border-0 h-100 text-center text-lg-start">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary text-dark fw-bold rounded-circle mb-4 shadow-lg mx-auto mx-lg-0"
+                            style="width:50px; height:50px;">
+                            01
+                        </div>
+                        <h5 class="text-white mb-3">Get User Info</h5>
+                        <p class="text-white-50 small mb-0">
+                            We collect your address, contact details, preferred plan, and coverage confirmation.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 02 -->
+                <div class="col-lg-3 col-md-6 position-relative" style="z-index:1;">
+                    <div class="card bg-dark border-0 h-100 text-center text-lg-start">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary text-dark fw-bold rounded-circle mb-4 shadow-lg mx-auto mx-lg-0"
+                            style="width:50px; height:50px;">
+                            02
+                        </div>
+                        <h5 class="text-white mb-3">Submit Application</h5>
+                        <p class="text-white-50 small mb-0">
+                            We submit your fibre application to the provider and arrange installation scheduling.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 03 -->
+                <div class="col-lg-3 col-md-6 position-relative" style="z-index:1;">
+                    <div class="card bg-dark border-0 h-100 text-center text-lg-start">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary text-dark fw-bold rounded-circle mb-4 shadow-lg mx-auto mx-lg-0"
+                            style="width:50px; height:50px;">
+                            03
+                        </div>
+                        <h5 class="text-white mb-3">Installation Day</h5>
+                        <p class="text-white-50 small mb-0">
+                            Technician installs modem & router, connects fibre line, and performs basic speed testing.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 04 -->
+                <div class="col-lg-3 col-md-6 position-relative" style="z-index:1;">
+                    <div class="card bg-dark border-0 h-100 text-center text-lg-start">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary text-dark fw-bold rounded-circle mb-4 shadow-lg mx-auto mx-lg-0"
+                            style="width:50px; height:50px;">
+                            04
+                        </div>
+                        <h5 class="text-white mb-3">Start Using</h5>
+                        <p class="text-white-50 small mb-0">
+                            Internet activated — enjoy fast WiFi. We provide basic guidance & support if needed.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- What We Needs -->
+    <!-- What We Need -->
+    <div class="container-fluid py-5 bg-secondary bg-opacity-10 border-top border-secondary border-opacity-25">
+        <div class="container py-5">
+
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="position-sticky" style="top: 100px;">
+                        <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3">Onboarding</h6>
+                        <h2 class="text-white display-6 fw-bold mb-4">What We Need From You</h2>
+                        <p class="text-white-50 mb-4">
+                            Sharing these details upfront helps us speed up coverage checking, plan matching,
+                            and application processing — reducing unnecessary back-and-forth on WhatsApp.
+                        </p>
+
+                        <div class="d-flex align-items-center gap-3 p-3 rounded-4 bg-dark border border-secondary">
+                            <div class="text-primary">
+                                <i class="fa-solid fa-lightbulb fs-4"></i>
+                            </div>
+                            <p class="text-white-50 small mb-0 italic">
+                                Tip: The clearer the info, the faster we can proceed to installation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="row g-3">
+
+                        <!-- Address -->
+                        <div class="col-md-6">
+                            <div class="p-4 bg-dark rounded-4 border border-secondary border-opacity-50 h-100">
+                                <i class="fa-solid fa-location-dot text-primary mb-3 fs-4"></i>
+                                <h6 class="text-white mb-2">Installation Address</h6>
+                                <p class="text-white-50 small mb-0">
+                                    Full address for coverage check & fibre port availability.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Property Type -->
+                        <div class="col-md-6">
+                            <div class="p-4 bg-dark rounded-4 border border-secondary border-opacity-50 h-100">
+                                <i class="fa-solid fa-building text-primary mb-3 fs-4"></i>
+                                <h6 class="text-white mb-2">Property Type</h6>
+                                <p class="text-white-50 small mb-0">
+                                    Landed / Condo / Shoplot / Office (affects wiring & installation method).
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Usage Needs -->
+                        <div class="col-md-6">
+                            <div class="p-4 bg-dark rounded-4 border border-secondary border-opacity-50 h-100">
+                                <i class="fa-solid fa-wifi text-primary mb-3 fs-4"></i>
+                                <h6 class="text-white mb-2">Usage Needs</h6>
+                                <p class="text-white-50 small mb-0">
+                                    Streaming, gaming, WFH, POS system, CCTV, or multiple users.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Budget -->
+                        <div class="col-md-6">
+                            <div class="p-4 bg-dark rounded-4 border border-secondary border-opacity-50 h-100">
+                                <i class="fa-solid fa-wallet text-primary mb-3 fs-4"></i>
+                                <h6 class="text-white mb-2">Preferred Budget Range</h6>
+                                <p class="text-white-50 small mb-0">
+                                    Helps us recommend the most suitable fibre plan for you.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Moving Date / Relocation -->
+                        <div class="col-md-6">
+                            <div class="p-4 bg-dark rounded-4 border border-secondary border-opacity-50 h-100">
+                                <i class="fa-solid fa-truck-moving text-primary mb-3 fs-4"></i>
+                                <h6 class="text-white mb-2">Moving Date (If Relocation)</h6>
+                                <p class="text-white-50 small mb-0">
+                                    We can arrange port reservation & transfer to avoid downtime.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Optional Notes -->
+                        <div class="col-md-6">
+                            <div class="p-4 bg-dark rounded-4 border border-secondary border-opacity-50 h-100">
+                                <i class="fa-solid fa-note-sticky text-primary mb-3 fs-4"></i>
+                                <h6 class="text-white mb-2">Additional Notes (Optional)</h6>
+                                <p class="text-white-50 small mb-0">
+                                    Existing router, mesh requirement, or wiring preferences.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5 bg-dark">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div
+                        class="p-4 p-md-5 rounded-5 bg-secondary bg-opacity-5 border border-white border-opacity-5 position-relative overflow-hidden">
+
+                        <div class="position-absolute top-0 start-0 w-100 h-1"
+                            style="background: linear-gradient(90deg, transparent, #D4AF37, transparent); opacity: 0.3;">
+                        </div>
+
+                        <div class="row g-4 align-items-start">
+                            <div class="col-lg-4">
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <i class="fa-solid fa-circle-info text-primary"></i>
+                                    <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-0 small">Scope
+                                        Protection</h6>
+                                </div>
+                                <h3 class="text-white fw-bold mb-4">Important <br><span
+                                        class="text-primary italic-serif">Notes</span></h3>
+                                <p class="text-white-50 x-small pe-lg-3">
+                                    To ensure a smooth installation process, please take note of the following
+                                    infrastructure and provider dependencies.
+                                </p>
+                            </div>
+
+                            <div class="col-lg-8 border-start border-secondary border-opacity-25 ps-lg-5">
+                                <div class="row g-4">
+
+                                    <div class="col-12">
+                                        <div class="d-flex gap-3">
+                                            <div class="text-primary mt-1"><i class="fa-solid fa-tower-broadcast"></i>
+                                            </div>
+                                            <div>
+                                                <h6 class="text-white mb-1 small">Coverage & Infrastructure</h6>
+                                                <p class="text-white-50 x-small mb-0">Coverage availability and
+                                                    installation timelines are strictly dependent on <strong>service
+                                                        provider availability</strong> and your building's existing
+                                                    fibre infrastructure.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="d-flex gap-3 border-top border-secondary border-opacity-10 pt-4">
+                                            <div class="text-primary mt-1"><i class="fa-solid fa-building-user"></i>
+                                            </div>
+                                            <div>
+                                                <h6 class="text-white mb-1 small">Condo & Apartment Readiness</h6>
+                                                <p class="text-white-50 x-small mb-0">High-rise installations may
+                                                    require <strong>Management Office approval</strong> or confirmation
+                                                    of existing fibre port readiness before our team can proceed.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="d-flex gap-3 border-top border-secondary border-opacity-10 pt-4">
+                                            <div class="text-primary mt-1"><i class="fa-solid fa-calendar-day"></i>
+                                            </div>
+                                            <div>
+                                                <h6 class="text-white mb-1 small">Scheduling Autonomy</h6>
+                                                <p class="text-white-50 x-small mb-0">Final installation dates are
+                                                    determined and <strong>subject to the service provider’s master
+                                                        schedule</strong>. We facilitate the coordination but do not
+                                                    control provider time-slots.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- CTA -->
+    <div class="container-fluid py-5 bg-dark position-relative overflow-hidden">
+
+        <div class="position-absolute top-50 start-50 translate-middle opacity-10"
+            style="width: 600px; height: 600px; background: radial-gradient(circle, #D4AF37 0%, transparent 70%); filter: blur(100px); pointer-events: none;">
+        </div>
+
+        <div class="container py-5 position-relative">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8 col-xl-7">
+
+                    <h2 class="display-5 text-white fw-bold mb-4">
+                        Want Us to Recommend the <br>
+                        <span class="text-primary">Best Fibre Option?</span>
+                    </h2>
+
+                    <p class="lead text-white-50 mb-5">
+                        Send us your <span class="text-white fw-bold">address + usage needs</span>.
+                        We’ll check coverage, suggest the right plan, and guide you from setup to activation.
+                    </p>
+
+                    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-5">
+                        <a href="#" class="btn btn-primary btn-lg px-5 py-3 fw-bold shadow-lg">
+                            Check Coverage / Get Quote
+                            <i class="fa-solid fa-location-dot ms-2 small"></i>
+                        </a>
+
+                        <a href="https://wa.me/60123011610"
+                            class="btn btn-outline-success btn-lg px-5 py-3 fw-bold border-2 shadow-sm">
+                            <i class="fa-brands fa-whatsapp me-2 fs-4"></i>
+                            WhatsApp Us
+                        </a>
+                    </div>
+
+                    <div>
+                        <p class="text-white-50 small fw-bold tracking-widest text-uppercase mb-0">
+                            Fast Response <span class="mx-2 text-primary">•</span>
+                            No Hidden Charges <span class="mx-2 text-primary">•</span>
+                            Installation Guidance Provided
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="site-footer"></div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-outline-primary border-2 btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>BRIF - Maxis Fibre</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../../img/favicon.svg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Work+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="../../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../../css/style.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        :root {
+            /* Maxis 青绿色 */
+            --accent: #00b26f;
+            --cta: #d4af37 ;
+        }
+
+        .text-accent {
+            color: var(--accent) !important;
+        }
+
+        .bg-accent {
+            background-color: var(--accent) !important;
+        }
+
+        .badge-accent {
+            background-color: rgba(0, 178, 111, 0.12);
+            color: var(--accent);
+            border-radius: 999px;
+        }
+
+        .swiper-slide {
+            height: auto;
+            /* 让 slide 跟着 card 的高度走 */
+        }
+
+        /* 让卡片和 add-on 区块高度统一 */
+        .plan-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .plan-addons {
+            background-color: #101015;
+            border-radius: 1rem;
+            border: 1px solid rgba(148, 163, 184, 0.35);
+            padding: 0.9rem 1rem;
+            margin-bottom: 0.9rem;
+            min-height: 150px;
+            /* 让三行 add-on 看起来齐 */
+        }
+
+        .plan-price {
+            margin-top: auto;
+            /* 把价格推去卡片底部 */
+        }
+
+        /* 小图标统一样式 */
+        .plan-icon {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-right: 0.5rem;
+            margin-top: 0.15rem;
+        }
+
+
+        .swiper-pagination-bullet-active {
+            background: var(--accent);
+        }
+
+        
+        .btn-accent {
+            background: var(--accent);
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Header Start -->
+    <div class="container-fluid p-0">
+        <div id="site-navbar"></div>
+        <div class="page-header pb-5">
+            <div class="container text-center py-5">
+                <h1 class="display-4 text-uppercase mb-3 animated slideInDown">Maxis Fibre</h1>
+                <nav aria-label="breadcrumb animated slideInDown">
+                    <ol class="breadcrumb justify-content-center text-uppercase mb-0">
+                        <li class="breadcrumb-item"><a class="text-white" href="../../index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-white"
+                                href="../../service-internet-connectivity.html">Internet & Connectivity</a></li>
+                        <li class="breadcrumb-item text-primary active" aria-current="page">Maxis Fibre
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <div class="container-fluid py-5 bg-dark">
+        <div class="container py-4">
+
+            <div class="mb-4 text-center">
+                <h2 class="text-white fw-bold mb-1">Maxis Home Fibre Plans</h2>
+                <p class="text-white-50 small mb-0">Choose the speed that fits your home or business usage.</p>
+            </div>
+
+            <div class="swiper fibre-plans">
+                <div class="swiper-wrapper">
+
+                    <!-- 100 Mbps -->
+                    <div class="swiper-slide h-100">
+                        <div
+                            class="plan-card p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25">
+
+                            <div class="badge badge-accent fw-bold small px-3 py-2 mb-3 text-uppercase">
+                                Rebate: RM10 x 24 Months
+                            </div>
+
+                            <h6 class="text-white-50 mb-1">Maxis Home Fibre</h6>
+                            <h2 class="text-accent fw-bold mb-3">
+                                100<span class="fw-light">Mbps</span>
+                            </h2>
+
+                            <ul class="text-white-50 small mb-4 ps-3">
+                                <li>Ideal for casual browsing and online shopping.</li>
+                                <li>Recommended for 2–3 devices.</li>
+                                <li>WiFi 6 certified router.</li>
+                            </ul>
+
+                            <p class="text-white-50 x-small mb-2">Customise your plan by adding on:</p>
+                            <div class="plan-addons">
+                                <div class="d-flex align-items-start mb-2">
+                                    <i class="fa-solid fa-tv plan-icon"></i>
+                                    <p class="text-white small mb-0">4K TVs, tablets or PS5 for work and play.</p>
+                                </div>
+                                <div class="d-flex align-items-start mb-2">
+                                    <i class="fa-solid fa-user plan-icon"></i>
+                                    <p class="text-white small mb-0">Max WiFi by Maxperts for whole home coverage.</p>
+                                </div>
+                                <div class="d-flex align-items-start">
+                                    <i class="fa-solid fa-star plan-icon"></i>
+                                    <p class="text-white small mb-0">Live sports and entertainment titles on sooka.</p>
+                                </div>
+                            </div>
+
+                            <div class="plan-price">
+                                <p class="text-white-50 small mb-1">
+                                    <span class="text-decoration-line-through">RM99/mth</span>
+                                </p>
+                                <h3 class="text-white fw-bold mb-0">
+                                    RM89<span class="fw-light fs-6">/mth</span>
+                                </h3>
+                                <p class="text-accent x-small mb-0">for the first 24 months</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- 300 Mbps -->
+                    <div class="swiper-slide h-100">
+                        <div
+                            class="plan-card p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25">
+
+                            <div class="badge badge-accent fw-bold small px-3 py-2 mb-3 text-uppercase">
+                                Rebate: RM10 x 24 Months
+                            </div>
+
+                            <h6 class="text-white-50 mb-1">Maxis Home Fibre</h6>
+                            <h2 class="text-accent fw-bold mb-3">
+                                300<span class="fw-light">Mbps</span>
+                            </h2>
+
+                            <ul class="text-white-50 small mb-4 ps-3">
+                                <li>Stream 4K content effortlessly for the whole household.</li>
+                                <li>Recommended for 4–5 devices.</li>
+                                <li>WiFi 6 certified router.</li>
+                            </ul>
+
+                            <p class="text-white-50 x-small mb-2">Customise your plan by adding on:</p>
+                            <div class="plan-addons">
+                                <div class="d-flex align-items-start mb-2">
+                                    <i class="fa-solid fa-tv plan-icon"></i>
+                                    <p class="text-white small mb-0">4K TVs, tablets or PS5 for work and play.</p>
+                                </div>
+                                <div class="d-flex align-items-start mb-2">
+                                    <i class="fa-solid fa-user plan-icon"></i>
+                                    <p class="text-white small mb-0">Max WiFi by Maxperts for whole home coverage.</p>
+                                </div>
+                                <div class="d-flex align-items-start">
+                                    <i class="fa-solid fa-star plan-icon"></i>
+                                    <p class="text-white small mb-0">Live sports and entertainment titles on sooka.</p>
+                                </div>
+                            </div>
+
+                            <div class="plan-price">
+                                <p class="text-white-50 small mb-1">
+                                    <span class="text-decoration-line-through">RM139/mth</span>
+                                </p>
+                                <h3 class="text-white fw-bold mb-0">
+                                    RM129<span class="fw-light fs-6">/mth</span>
+                                </h3>
+                                <p class="text-accent x-small mb-0">for the first 24 months</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- 500 Mbps -->
+                    <div class="swiper-slide h-100">
+                        <div
+                            class="plan-card p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25">
+
+                            <div class="badge badge-accent fw-bold small px-3 py-2 mb-3 text-uppercase">
+                                Rebate: RM10 x 24 Months
+                            </div>
+
+                            <h6 class="text-white-50 mb-1">Maxis Home Fibre</h6>
+                            <h2 class="text-accent fw-bold mb-3">
+                                500<span class="fw-light">Mbps</span>
+                            </h2>
+
+                            <ul class="text-white-50 small mb-4 ps-3">
+                                <li>High-speed internet for seamless work, study and gaming.</li>
+                                <li>Recommended for 6–8 devices.</li>
+                                <li>WiFi 6 certified router.</li>
+                            </ul>
+
+                            <p class="text-white-50 x-small mb-2">Customise your plan by adding on:</p>
+                            <div class="plan-addons">
+                                <div class="d-flex align-items-start mb-2">
+                                    <i class="fa-solid fa-tv plan-icon"></i>
+                                    <p class="text-white small mb-0">4K TVs, tablets or PS5 for work and play.</p>
+                                </div>
+                                <div class="d-flex align-items-start mb-2">
+                                    <i class="fa-solid fa-user plan-icon"></i>
+                                    <p class="text-white small mb-0">Max WiFi by Maxperts for whole home coverage.</p>
+                                </div>
+                                <div class="d-flex align-items-start">
+                                    <i class="fa-solid fa-star plan-icon"></i>
+                                    <p class="text-white small mb-0">Live sports and entertainment titles on sooka.</p>
+                                </div>
+                            </div>
+
+                            <div class="plan-price">
+                                <p class="text-white-50 small mb-1">
+                                    <span class="text-decoration-line-through">RM159/mth</span>
+                                </p>
+                                <h3 class="text-white fw-bold mb-0">
+                                    RM149<span class="fw-light fs-6">/mth</span>
+                                </h3>
+                                <p class="text-accent x-small mb-0">for the first 24 months</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- 1 Gbps -->
+                    <div class="swiper-slide h-100">
+                        <div
+                            class="plan-card p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25">
+
+                            <!-- 占位让高度对齐（没有 rebate） -->
+                            <div class="mb-3" style="height:32px;"></div>
+
+                            <h6 class="text-white-50 mb-1">Maxis Home Fibre</h6>
+                            <h2 class="text-accent fw-bold mb-3">
+                                1<span class="fw-light">Gbps</span>
+                            </h2>
+
+                            <ul class="text-white-50 small mb-4 ps-3">
+                                <li>Power through peak hours with smooth performance.</li>
+                                <li>Recommended for 8–10 devices.</li>
+                                <li>WiFi 6 certified router.</li>
+                            </ul>
+
+                            <p class="text-white-50 x-small mb-2">Customise your plan by adding on:</p>
+                            <div class="plan-addons">
+                                <div class="d-flex align-items-start mb-2">
+                                    <i class="fa-solid fa-tv plan-icon"></i>
+                                    <p class="text-white small mb-0">4K TVs, tablets or PS5 for work and play.</p>
+                                </div>
+                                <div class="d-flex align-items-start mb-2">
+                                    <i class="fa-solid fa-user plan-icon"></i>
+                                    <p class="text-white small mb-0">Max WiFi by Maxperts for whole home coverage.</p>
+                                </div>
+                                <div class="d-flex align-items-start">
+                                    <i class="fa-solid fa-star plan-icon"></i>
+                                    <p class="text-white small mb-0">Live sports and entertainment titles on sooka.</p>
+                                </div>
+                            </div>
+
+                            <div class="plan-price">
+                                <h3 class="text-white fw-bold mb-0">
+                                    RM249<span class="fw-light fs-6">/mth</span>
+                                </h3>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- 2 Gbps -->
+                    <div class="swiper-slide h-100">
+                        <div
+                            class="plan-card p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25">
+
+                            <!-- 占位让高度对齐（没有 rebate） -->
+                            <div class="mb-3" style="height:32px;"></div>
+
+                            <h6 class="text-white-50 mb-1">Maxis Home Fibre</h6>
+                            <h2 class="text-accent fw-bold mb-3">
+                                2<span class="fw-light">Gbps</span>
+                            </h2>
+
+                            <ul class="text-white-50 small mb-4 ps-3">
+                                <li>Ultra-fast, low-latency WiFi for serious gamers.</li>
+                                <li>Recommended for 10+ devices.</li>
+                                <li>Premium WiFi 6E certified router.</li>
+                            </ul>
+
+                            <p class="text-white-50 x-small mb-2">Customise your plan by adding on:</p>
+                            <div class="plan-addons">
+                                <div class="d-flex align-items-start mb-2">
+                                    <i class="fa-solid fa-tv plan-icon"></i>
+                                    <p class="text-white small mb-0">4K TVs, tablets or PS5 for work and play.</p>
+                                </div>
+                                <div class="d-flex align-items-start mb-2">
+                                    <i class="fa-solid fa-user plan-icon"></i>
+                                    <p class="text-white small mb-0">Max WiFi by Maxperts for whole home coverage.</p>
+                                </div>
+                                <div class="d-flex align-items-start">
+                                    <i class="fa-solid fa-star plan-icon"></i>
+                                    <p class="text-white small mb-0">Live sports and entertainment titles on sooka.</p>
+                                </div>
+                            </div>
+
+                            <div class="plan-price">
+                                <h3 class="text-white fw-bold mb-0">
+                                    RM319<span class="fw-light fs-6">/mth</span>
+                                </h3>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="swiper-pagination mt-4"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="container-fluid py-5 bg-dark position-relative overflow-hidden">
+
+        <!-- Soft Glow -->
+        <div class="position-absolute top-50 start-50 translate-middle opacity-10" style="width:580px;height:580px;
+        background:radial-gradient(circle, #00b26f 0%, transparent 70%);
+        filter:blur(90px);pointer-events:none;">
+        </div>
+
+        <div class="container py-5 position-relative">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+
+                    <h2 class="display-6 fw-bold text-white mb-3">
+                        Not Sure Which Fibre Plan Fits You Best?
+                    </h2>
+
+                    <p class="text-white-50 mb-4">
+                        Send us your <span class="text-white fw-bold">address + usage needs</span> — we’ll check
+                        coverage,
+                        recommend the best plan, and guide you from installation to activation.
+                    </p>
+
+                    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-4">
+                        <a href="../../contact.html" class="btn btn-accent text-dark fw-bold px-5 py-3 rounded-4 shadow-lg">
+                            Check Coverage
+                            <i class="fa-solid fa-location-dot ms-2 small"></i>
+                        </a>
+
+                        <a href="https://wa.me/60123011610"
+                            class="btn btn-outline-light fw-bold px-5 py-3 rounded-4 border-2 shadow-sm">
+                            <i class="fa-brands fa-whatsapp me-2 fs-5"></i>
+                            WhatsApp Support
+                        </a>
+                    </div>
+
+                    <p class="text-white-50 small text-uppercase fw-bold tracking-widest mb-0">
+                        Fast Response <span class="mx-2 text-accent">•</span>
+                        No Hidden Fees <span class="mx-2 text-accent">•</span>
+                        Installation Guidance Included
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="site-footer"></div>
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-outline-primary border-2 btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/wow/wow.min.js"></script>
+    <script src="../../lib/easing/easing.min.js"></script>
+    <script src="../../lib/waypoints/waypoints.min.js"></script>
+    <script src="../../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../../lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../../js/main.js"></script>
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const fibreSwiper = new Swiper(".fibre-plans", {
+            slidesPerView: 1.05,
+            spaceBetween: 16,
+            breakpoints: {
+                768: { slidesPerView: 2.1, spaceBetween: 20 },
+                992: { slidesPerView: 3, spaceBetween: 24 },
+            },
+            pagination: { el: ".swiper-pagination", clickable: true },
+            on: {
+                init() {
+                    setTimeout(equalizePlanHeights, 100);
+                },
+                resize() {
+                    setTimeout(equalizePlanHeights, 100);
+                }
+            }
+        });
+
+        // 如果页面上还有别的东西 load 比较慢，可以再加：
+        window.addEventListener('load', () => {
+            setTimeout(equalizePlanHeights, 150);
+        });
+    </script>
+
+
+    <script>
+        function equalizePlanHeights() {
+            const cards = document.querySelectorAll('.plan-card');
+            if (!cards.length) return;
+
+            // 先还原，重新量
+            cards.forEach(card => card.style.height = 'auto');
+
+            let maxH = 0;
+            cards.forEach(card => {
+                const h = card.offsetHeight;
+                if (h > maxH) maxH = h;
+            });
+
+            cards.forEach(card => {
+                card.style.height = maxH + 'px';
+            });
+        }
+    </script>
+
+
+</body>
+
+</html>

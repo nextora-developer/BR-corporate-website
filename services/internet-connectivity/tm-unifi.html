@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>BRIF - TM Unifi</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../../img/favicon.svg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Work+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="../../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../../css/style.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        :root {
+            /* 深色主体 */
+            --surface: #111216;
+            --surface-light: #1a1b20;
+
+            /* 主点缀：Unifi Orange */
+            --unifi: #ff6a00;
+            --unifi-soft: #ff6a0020;
+        }
+
+        /* 卡片基础 */
+        .unifi-card {
+            background: var(--surface);
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: 22px;
+            padding: 1.6rem;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, .35);
+        }
+
+        /* BEST SELLER 卡片 */
+        .unifi-best {
+            border: 1.6px solid var(--unifi);
+            background: linear-gradient(180deg, #1a1a1e 0%, #0f0f12 45%, #111216 45%);
+            position: relative;
+        }
+
+        .unifi-ribbon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: .35rem;
+            text-align: center;
+            font-weight: 800;
+            font-size: .8rem;
+            color: #000;
+            background: linear-gradient(90deg, var(--unifi), #ffb86b);
+            border-radius: 22px 22px 0 0;
+        }
+
+        /* 顶部标签 */
+        .unifi-pill {
+            background: var(--unifi-soft);
+            color: var(--unifi);
+            font-weight: 700;
+            font-size: .75rem;
+        }
+
+        .unifi-pill-soft {
+            background: #ffefe0;
+            color: var(--unifi);
+            font-weight: 700;
+            font-size: .75rem;
+        }
+
+        /* 图标 */
+        .unifi-icon {
+            color: var(--unifi);
+            margin-right: .5rem;
+            margin-top: .18rem;
+        }
+
+        /* 价钱（保持同色系） */
+        .price-main {
+            color: var(--unifi);
+            font-weight: 800;
+        }
+
+        /* 文字 */
+        .text-fade {
+            color: #a9a9b4;
+        }
+
+        .xs {
+            font-size: .72rem;
+        }
+
+        .btn-accent {
+            background: var(--unifi);
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Header Start -->
+    <div class="container-fluid p-0">
+        <div id="site-navbar"></div>
+        <div class="page-header pb-5">
+            <div class="container text-center py-5">
+                <h1 class="display-4 text-uppercase mb-3 animated slideInDown">TM Unifi</h1>
+                <nav aria-label="breadcrumb animated slideInDown">
+                    <ol class="breadcrumb justify-content-center text-uppercase mb-0">
+                        <li class="breadcrumb-item"><a class="text-white" href="../../index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-white"
+                                href="../../service-internet-connectivity.html">Internet & Connectivity</a></li>
+                        <li class="breadcrumb-item text-primary active" aria-current="page">TM Unifi
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <div class="container-fluid py-5">
+        <div class="container py-4">
+
+            <div class="text-center mb-4">
+                <h2 class="fw-bold mb-1">Unifi Home Fibre Plans</h2>
+                <p class="text-muted small mb-0">
+                    Choose the right speed for your home usage and number of users/devices.
+                </p>
+            </div>
+            <div class="swiper unifi-plans">
+                <div class="swiper-wrapper">
+
+                    <!-- 100 Mbps -->
+                    <div class="swiper-slide">
+                        <div class="unifi-card">
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="badge rounded-pill unifi-pill">Unifi Home</span>
+                                <span class="badge rounded-pill unifi-pill-soft">3 Months Free</span>
+                            </div>
+
+                            <h3 class="fw-bold mb-1">100Mbps</h3>
+                            <p class="text-fade small mb-3">
+                                Great for small households with 2–4 users/devices.
+                            </p>
+
+                            <h6 class="fw-semibold mb-2">What’s included</h6>
+                            <ul class="list-unstyled small text-fade mb-4">
+                                <li class="d-flex mb-2"><i class="fa-solid fa-arrows-up-down unifi-icon"></i>100Mbps /
+                                    50Mbps
+                                </li>
+                                <li class="d-flex mb-2"><i class="fa-solid fa-wifi unifi-icon"></i>Wi-Fi 6 Combo Box
+                                </li>
+                                <li class="d-flex"><i class="fa-solid fa-headset unifi-icon"></i>24 Hrs Service
+                                    Guarantee</li>
+                            </ul>
+
+                            <p class="small text-unifi fw-semibold mb-1">
+                                Limited Time: RM10 Off + 3 Months Free!
+                            </p>
+
+                            <div class="mt-auto">
+                                <h3 class="price-main mb-0">RM89<span class="fs-6 text-fade">/mth</span></h3>
+                                <p class="xs text-fade mb-0"><span class="text-decoration-line-through">RRP
+                                        RM99/mth</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 300 Mbps BEST SELLER -->
+                    <div class="swiper-slide">
+                        <div class="unifi-card unifi-best">
+                            <div class="unifi-ribbon">BEST SELLER</div>
+
+                            <div class="d-flex justify-content-between mb-3" style="margin-top:1.6rem;">
+                                <span class="badge rounded-pill unifi-pill">Unifi Home</span>
+                                <span class="badge rounded-pill unifi-pill-soft">3 Months Free</span>
+                            </div>
+
+                            <h3 class="fw-bold mb-1">300Mbps</h3>
+                            <p class="text-fade small mb-3">
+                                Ideal for families & home offices with 4–6 users/devices.
+                            </p>
+
+                            <h6 class="fw-semibold mb-2">What’s included</h6>
+                            <ul class="list-unstyled small text-fade mb-4">
+                                <li class="d-flex mb-2"><i class="fa-solid fa-arrows-up-down unifi-icon"></i>300Mbps /
+                                    50Mbps
+                                </li>
+                                <li class="d-flex mb-2"><i class="fa-solid fa-wifi unifi-icon"></i>Wi-Fi 6 Combo Box
+                                </li>
+                                <li class="d-flex"><i class="fa-solid fa-headset unifi-icon"></i>24 Hrs Service
+                                    Guarantee</li>
+                            </ul>
+
+                            <p class="small text-unifi fw-semibold mb-1">
+                                Limited Time: RM10 Off + 3 Months Free!
+                            </p>
+
+                            <div class="mt-auto">
+                                <h3 class="price-main mb-0">RM129<span class="fs-6 text-fade">/mth</span></h3>
+                                <p class="xs text-fade mb-0"><span class="text-decoration-line-through">RRP
+                                        RM139/mth</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 500 Mbps -->
+                    <div class="swiper-slide">
+                        <div class="unifi-card">
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="badge rounded-pill unifi-pill">Unifi Home</span>
+                                <span class="badge rounded-pill unifi-pill-soft">3 Months Free</span>
+                            </div>
+
+                            <h3 class="fw-bold mb-1">500Mbps</h3>
+                            <p class="text-fade small mb-3">
+                                Perfect for gamers & streamers (6–8 users).
+                            </p>
+
+                            <h6 class="fw-semibold mb-2">What’s included</h6>
+                            <ul class="list-unstyled small text-fade mb-4">
+                                <li class="d-flex mb-2"><i class="fa-solid fa-arrows-up-down unifi-icon"></i>500Mbps /
+                                    100Mbps
+                                </li>
+                                <li class="d-flex mb-2"><i class="fa-solid fa-wifi unifi-icon"></i>Wi-Fi 6 Combo Box
+                                </li>
+                                <li class="d-flex"><i class="fa-solid fa-headset unifi-icon"></i>24 Hrs Service
+                                    Guarantee</li>
+                            </ul>
+
+                            <p class="small text-unifi fw-semibold mb-1">Limited Time: RM10 Off</p>
+
+                            <div class="mt-auto">
+                                <h3 class="price-main mb-0">RM149<span class="fs-6 text-fade">/mth</span></h3>
+                                <p class="xs text-fade mb-0"><span class="text-decoration-line-through">RRP
+                                        RM159/mth</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1 Gbps -->
+                    <div class="swiper-slide">
+                        <div class="unifi-card">
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="badge rounded-pill unifi-pill">Unifi Home</span>
+                            </div>
+
+                            <h3 class="fw-bold mb-1">1Gbps</h3>
+                            <p class="text-fade small mb-3">
+                                For power users in larger homes (8–10 users).
+                            </p>
+
+                            <h6 class="fw-semibold mb-2">What’s included</h6>
+                            <ul class="list-unstyled small text-fade mb-4">
+                                <li class="d-flex mb-2"><i class="fa-solid fa-arrows-up-down unifi-icon"></i>1Gbps /
+                                    500Mbps
+                                </li>
+                                <li class="d-flex mb-2"><i class="fa-solid fa-wifi unifi-icon"></i>Wi-Fi 7 Combo Box
+                                </li>
+                                <li class="d-flex mb-2"><i class="fa-solid fa-clock-rotate-left unifi-icon"></i>12H
+                                    Service
+                                    Restoration</li>
+                                <li class="d-flex"><i class="fa-solid fa-star unifi-icon"></i>Premium services</li>
+                            </ul>
+
+                            <p class="small text-unifi fw-semibold mb-1">Save RM40</p>
+
+                            <div class="mt-auto">
+                                <h3 class="price-main mb-0">RM249<span class="fs-6 text-fade">/mth</span></h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2 Gbps -->
+                    <div class="swiper-slide">
+                        <div class="unifi-card">
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="badge rounded-pill unifi-pill">Unifi Home</span>
+                            </div>
+
+                            <h3 class="fw-bold mb-1">2Gbps</h3>
+                            <p class="text-fade small mb-3">
+                                Ultimate performance for large households (10+ users).
+                            </p>
+
+                            <h6 class="fw-semibold mb-2">What’s included</h6>
+                            <ul class="list-unstyled small text-fade mb-4">
+                                <li class="d-flex mb-2"><i class="fa-solid fa-arrows-up-down unifi-icon"></i>2Gbps /
+                                    1Gbps</li>
+                                <li class="d-flex mb-2"><i class="fa-solid fa-wifi unifi-icon"></i>Wi-Fi 7 Combo Box
+                                </li>
+                                <li class="d-flex mb-2"><i class="fa-solid fa-clock-rotate-left unifi-icon"></i>12H
+                                    Service
+                                    Restoration</li>
+                                <li class="d-flex"><i class="fa-solid fa-star unifi-icon"></i>Premium services</li>
+                            </ul>
+
+                            <div class="mt-auto">
+                                <h3 class="price-main mb-0">RM319<span class="fs-6 text-fade">/mth</span></h3>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="swiper-pagination mt-4"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- CTA -->
+    <div class="container-fluid py-5 bg-dark position-relative overflow-hidden">
+
+        <!-- Soft Orange Glow -->
+        <div class="position-absolute top-50 start-50 translate-middle opacity-10" style="width:560px;height:560px;
+        background:radial-gradient(circle,#ff6a00 0%,transparent 70%);
+        filter:blur(90px);pointer-events:none;">
+        </div>
+
+        <div class="container py-5 position-relative">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+
+                    <h2 class="fw-bold text-white mb-3">
+                        Not Sure Which Unifi Plan Fits Your Home?
+                    </h2>
+
+                    <p class="text-white-50 mb-4">
+                        Send us your <span class="text-white fw-bold">address + number of users/devices</span> —
+                        we’ll check coverage and recommend the most suitable plan for your needs.
+                    </p>
+
+                    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-4">
+                        <a href="../../contact.html" class="btn btn-accent text-dark fw-bold px-5 py-3 rounded-4 shadow-lg">
+                            Check Coverage
+                            <i class="fa-solid fa-location-dot ms-2 small"></i>
+                        </a>
+
+                        <a href="https://wa.me/60123011610"
+                            class="btn btn-outline-light fw-bold px-5 py-3 rounded-4 border-2 shadow-sm">
+                            <i class="fa-brands fa-whatsapp me-2 fs-5"></i>
+                            WhatsApp Support
+                        </a>
+                    </div>
+
+                    <p class="text-white-50 small text-uppercase fw-bold tracking-widest mb-0">
+                        Fast Response <span class="mx-2 text-warning">•</span>
+                        Transparent Guidance <span class="mx-2 text-warning">•</span>
+                        Installation Support Provided
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="site-footer"></div>
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-outline-primary border-2 btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/wow/wow.min.js"></script>
+    <script src="../../lib/easing/easing.min.js"></script>
+    <script src="../../lib/waypoints/waypoints.min.js"></script>
+    <script src="../../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../../lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../../js/main.js"></script>
+
+
+    <!-- Swiper JS（如果页面已引入可省略） -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const s = new Swiper(".unifi-plans", {
+            slidesPerView: 1.05,
+            spaceBetween: 16,
+            breakpoints: {
+                768: { slidesPerView: 2.1 },
+                992: { slidesPerView: 3 },
+                1200: { slidesPerView: 3.5 }
+            },
+            pagination: { el: ".swiper-pagination", clickable: true },
+            on: {
+                init() { setTimeout(equalize, 120) },
+                resize() { setTimeout(equalize, 120) }
+            }
+        });
+
+        function equalize() {
+            const cards = document.querySelectorAll(".unifi-card");
+            let max = 0;
+            cards.forEach(c => { c.style.height = "auto"; max = Math.max(max, c.offsetHeight) });
+            cards.forEach(c => c.style.height = max + "px");
+        }
+        window.addEventListener("load", () => setTimeout(equalize, 150));
+    </script>
+
+
+
+</body>
+
+</html>

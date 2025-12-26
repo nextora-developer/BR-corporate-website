@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>BRIF - TIME Fibre</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../../img/favicon.svg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Work+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="../../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../../css/style.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        :root {
+            /* 深色主体 */
+            --surface: #111216;
+            --surface-light: #1a1b20;
+
+            /* TIME 品牌点缀：粉 + 紫 */
+            --time-main: #ff3bb5;
+            --time-main-soft: #ff3bb525;
+        }
+
+        /* 卡片基础 */
+        .time-card {
+            background: var(--surface);
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: 22px;
+            padding: 1.6rem;
+            color: #111827;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18);
+        }
+
+        /* BEST OFFER 卡片 */
+        .time-best {
+            border: 2px solid #7c3aed;
+            box-shadow: 0 20px 45px rgba(124, 58, 237, 0.4);
+            position: relative;
+        }
+
+        .time-ribbon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: .35rem;
+            text-align: center;
+            font-weight: 800;
+            font-size: .78rem;
+            color: #fff;
+            background: linear-gradient(90deg, #7c3aed, #ff3bb5);
+            border-radius: 22px 22px 0 0;
+        }
+
+        /* 顶部标签 */
+        .time-pill {
+            background: #f3e8ff;
+            color: #7c3aed;
+            font-weight: 700;
+            font-size: .75rem;
+        }
+
+        .time-pill-soft {
+            background: #fee2ff;
+            color: #be185d;
+            font-weight: 700;
+            font-size: .75rem;
+        }
+
+        /* 图标圆背景 */
+        .time-feature-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 999px;
+            background: #f5e9ff;
+            color: #7c3aed;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .9rem;
+        }
+
+        .time-feature-icon.badge-free {
+            background: #ffecb5;
+            color: #111827;
+            font-weight: 800;
+            font-size: .7rem;
+        }
+
+        /* 价格 */
+        .time-price {
+            color: #ff3bb5;
+            font-weight: 900;
+        }
+
+        .text-fade {
+            color: #6b7280;
+        }
+
+        .xs {
+            font-size: .72rem;
+        }
+
+        .btn-accent {
+            background: #7c3aed;
+            border-color: #7c3aed;
+        }
+
+        .btn-accent:hover {
+            background: #7c3aede1;
+            border-color: #7c3aede1;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--time-main);
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Header Start -->
+    <div class="container-fluid p-0">
+        <div id="site-navbar"></div>
+        <div class="page-header pb-5">
+            <div class="container text-center py-5">
+                <h1 class="display-4 text-uppercase mb-3 animated slideInDown">TIME Fibre</h1>
+                <nav aria-label="breadcrumb animated slideInDown">
+                    <ol class="breadcrumb justify-content-center text-uppercase mb-0">
+                        <li class="breadcrumb-item"><a class="text-white" href="../../index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-white"
+                                href="../../service-internet-connectivity.html">Internet & Connectivity</a></li>
+                        <li class="breadcrumb-item text-primary active" aria-current="page">TIME Fibre</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- TIME Plans -->
+    <div class="container-fluid py-5 bg-dark">
+        <div class="container py-4">
+
+            <div class="text-center mb-4">
+                <h2 class="fw-bold text-white mb-1">TIME Fibre Home Plans</h2>
+                <p class="text-white-50 small mb-0">
+                    High-speed fibre with WiFi 6/7 routers and free installation for eligible buildings.
+                </p>
+            </div>
+
+            <div class="swiper time-plans">
+                <div class="swiper-wrapper">
+
+                    <!-- 200 Mbps -->
+                    <div class="swiper-slide">
+                        <div class="time-card">
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="badge rounded-pill time-pill">TIME Fibre</span>
+                            </div>
+
+                            <h5 class="fw-bold mb-1">200Mbps</h5>
+                            <h3 class="time-price mb-4">RM99<span class="fs-6 text-dark">/month</span></h3>
+
+                            <h6 class="fw-semibold small mb-2">What you'll get</h6>
+                            <ul class="list-unstyled small mb-4 text-fade">
+                                <li class="d-flex align-items-center mb-3">
+                                    <span class="time-feature-icon me-2">
+                                        <i class="fa-solid fa-wifi"></i>
+                                    </span>
+                                    <span>WiFi 6 router</span>
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <span class="time-feature-icon badge-free me-2">
+                                        FREE
+                                    </span>
+                                    <span>Installation</span>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <span class="time-feature-icon me-2">
+                                        <i class="fa-solid fa-arrows-up-down"></i>
+                                    </span>
+                                    <span>
+                                        200Mbps / 200Mbps<br>
+                                        <span class="xs text-fade">Download / Upload</span>
+                                    </span>
+                                </li>
+                            </ul>
+
+                            <div class="mt-auto">
+                                <hr class="mt-2 mb-2">
+                                <p class="xs text-fade mb-0">Subject to TIME Fibre coverage and T&Cs.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 600 Mbps - Limited Time Offer -->
+                    <div class="swiper-slide">
+                        <div class="time-card time-best">
+                            <div class="time-ribbon">LIMITED TIME OFFER</div>
+
+                            <div class="d-flex justify-content-between mb-3" style="margin-top:1.7rem;">
+                                <span class="badge rounded-pill time-pill">WiFi7</span>
+                                <span class="badge rounded-pill time-pill-soft">Best Value</span>
+                            </div>
+
+                            <h5 class="fw-bold mb-1">600Mbps</h5>
+                            <h3 class="time-price mb-1">
+                                RM99 <span class="fs-6 text-white">for first 6 months</span>
+                            </h3>
+                            <p class="small text-fade mb-3">
+                                RRP: RM139/month thereafter.
+                            </p>
+
+                            <h6 class="fw-semibold small mb-2">What you'll get</h6>
+                            <ul class="list-unstyled small mb-4 text-fade">
+                                <li class="d-flex align-items-center mb-2">
+                                    <span class="time-feature-icon me-2">
+                                        <i class="fa-solid fa-wifi"></i>
+                                    </span>
+                                    <span>WiFi 7 router</span>
+                                </li>
+                                <li class="d-flex align-items-center mb-2">
+                                    <span class="time-feature-icon badge-free me-2">
+                                        FREE
+                                    </span>
+                                    <span>Installation</span>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <span class="time-feature-icon me-2">
+                                        <i class="fa-solid fa-arrows-up-down"></i>
+                                    </span>
+                                    <span>
+                                        600Mbps / 500Mbps<br>
+                                        <span class="xs text-fade">Download / Upload</span>
+                                    </span>
+                                </li>
+                            </ul>
+
+                            <div class="mt-auto">
+                                <hr class="mt-2 mb-2">
+                                <p class="xs text-fade mb-0">Promo price for first 6 months. T&Cs apply.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1 Gbps -->
+                    <div class="swiper-slide">
+                        <div class="time-card">
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="badge rounded-pill time-pill">WiFi7</span>
+                            </div>
+
+                            <h5 class="fw-bold mb-1">1Gbps</h5>
+                            <h3 class="time-price mb-4">RM199<span class="fs-6 text-dark">/month</span></h3>
+
+                            <h6 class="fw-semibold small mb-2">What you'll get</h6>
+                            <ul class="list-unstyled small mb-4 text-fade">
+                                <li class="d-flex align-items-center mb-3">
+                                    <span class="time-feature-icon me-2">
+                                        <i class="fa-solid fa-wifi"></i>
+                                    </span>
+                                    <span>WiFi 7 router</span>
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <span class="time-feature-icon badge-free me-2">
+                                        FREE
+                                    </span>
+                                    <span>Installation</span>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <span class="time-feature-icon me-2">
+                                        <i class="fa-solid fa-arrows-up-down"></i>
+                                    </span>
+                                    <span>
+                                        1Gbps / 500Mbps<br>
+                                        <span class="xs text-fade">Download / Upload</span>
+                                    </span>
+                                </li>
+                            </ul>
+
+                            <div class="mt-auto">
+                                <hr class="mt-2 mb-2">
+                                <p class="xs text-fade mb-0">Ideal for 8–10 active users/devices.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2 Gbps -->
+                    <div class="swiper-slide">
+                        <div class="time-card">
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="badge rounded-pill time-pill">WiFi7</span>
+                            </div>
+
+                            <h5 class="fw-bold mb-1">2Gbps</h5>
+                            <h3 class="time-price mb-4">RM379<span class="fs-6 text-dark">/month</span></h3>
+
+                            <h6 class="fw-semibold small mb-2">What you'll get</h6>
+                            <ul class="list-unstyled small mb-4 text-fade">
+                                <li class="d-flex align-items-center mb-3">
+                                    <span class="time-feature-icon me-2">
+                                        <i class="fa-solid fa-wifi"></i>
+                                    </span>
+                                    <span>High-performance WiFi router</span>
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <span class="time-feature-icon badge-free me-2">
+                                        FREE
+                                    </span>
+                                    <span>Installation</span>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <span class="time-feature-icon me-2">
+                                        <i class="fa-solid fa-arrows-up-down"></i>
+                                    </span>
+                                    <span>
+                                        2Gbps / 500Mbps<br>
+                                        <span class="xs text-fade">Download / Upload</span>
+                                    </span>
+                                </li>
+                            </ul>
+
+                            <div class="mt-auto">
+                                <hr class="mt-2 mb-2">
+                                <p class="xs text-fade mb-0">Built for 10+ heavy users and smart home setups.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="swiper-pagination mt-4"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- CTA: TIME Fibre -->
+    <div class="container-fluid py-5 bg-dark position-relative overflow-hidden">
+
+        <!-- Purple / Pink Glow -->
+        <div class="position-absolute top-50 start-50 translate-middle opacity-10" style="width:560px;height:560px;
+            background:radial-gradient(circle,#7c3aed 0%,transparent 70%);
+            filter:blur(90px);pointer-events:none;">
+        </div>
+
+        <div class="container py-5 position-relative">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+
+                    <p class="small fw-bold text-uppercase mb-2" style="letter-spacing:.16em;color:#7c3aed;">
+                        TIME FIBRE SUPPORT
+                    </p>
+
+                    <h2 class="fw-bold text-white mb-3">
+                        Want Us to Recommend the Best TIME Plan?
+                    </h2>
+
+                    <p class="text-white-50 mb-4">
+                        Send us your <span class="text-white fw-bold">building address, type of unit and usage
+                            needs</span> — we’ll check TIME coverage and guide you from signup to installation.
+                    </p>
+
+                    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-4">
+                        <a href="../../contact.html" class="btn btn-accent text-dark fw-bold px-5 py-3 rounded-4 shadow-lg">
+                            Check Coverage
+                            <i class="fa-solid fa-location-dot ms-2 small"></i>
+                        </a>
+
+                        <a href="https://wa.me/60123011610"
+                            class="btn btn-outline-light fw-bold px-5 py-3 rounded-4 border-2 shadow-sm">
+                            <i class="fa-brands fa-whatsapp me-2 fs-5"></i>
+                            WhatsApp Us
+                        </a>
+                    </div>
+
+                    <p class="text-white-50 small text-uppercase fw-bold tracking-widest mb-0">
+                        Fast Response <span class="mx-2" style="color:#7c3aed;">•</span>
+                        Clear Recommendation <span class="mx-2" style="color:#7c3aed;">•</span>
+                        Installation Guidance Included
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="site-footer"></div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-outline-primary border-2 btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/wow/wow.min.js"></script>
+    <script src="../../lib/easing/easing.min.js"></script>
+    <script src="../../lib/waypoints/waypoints.min.js"></script>
+    <script src="../../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../../lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../../js/main.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const timeSwiper = new Swiper(".time-plans", {
+            slidesPerView: 1.05,
+            spaceBetween: 16,
+            breakpoints: {
+                768: { slidesPerView: 2 },
+                992: { slidesPerView: 3 },
+                1200: { slidesPerView: 3.5 }
+            },
+            pagination: { el: ".swiper-pagination", clickable: true },
+            on: {
+                init() { setTimeout(equalizeTimeCards, 120); },
+                resize() { setTimeout(equalizeTimeCards, 120); }
+            }
+        });
+
+        function equalizeTimeCards() {
+            const cards = document.querySelectorAll(".time-card");
+            let max = 0;
+            cards.forEach(c => { c.style.height = "auto"; max = Math.max(max, c.offsetHeight); });
+            cards.forEach(c => c.style.height = max + "px");
+        }
+
+        window.addEventListener("load", () => setTimeout(equalizeTimeCards, 150));
+    </script>
+
+</body>
+
+</html>
