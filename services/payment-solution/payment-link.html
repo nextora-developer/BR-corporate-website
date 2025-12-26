@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>BRIF - Payment Link/Online Invoice Collection</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../../img/favicon.svg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Work+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="../../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../../css/style.css" rel="stylesheet">
+
+    <style>
+        .mobile-frame {
+            transform: perspective(1000px) rotateY(-15deg);
+            transition: transform 0.5s ease;
+        }
+
+        .mobile-frame:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .floating-card {
+            animation: floatVertical 4s ease-in-out infinite;
+        }
+
+        @keyframes floatVertical {
+
+            0%,
+            100% {
+                transform: translate(-30px, 0);
+            }
+
+            50% {
+                transform: translate(-30px, -20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-counter {
+                padding: 2.5rem 0;
+            }
+        }
+
+
+        /* Style Overrides for Premium Feel */
+        :root {
+            --bs-primary: #D4AF37;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #ffffff, #D4AF37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .backdrop-blur {
+            backdrop-filter: blur(10px);
+        }
+
+        .tracking-widest {
+            letter-spacing: 0.25em;
+        }
+
+        .x-small {
+            font-size: 0.75rem;
+        }
+
+        .transition-hover {
+            transition: all 0.3s ease;
+        }
+
+        .transition-hover:hover {
+            background-color: rgba(255, 255, 255, 0.03) !important;
+            border-color: #D4AF37 !important;
+            transform: translateY(-8px);
+        }
+
+        /* 移动端处理：去掉边框改为底部边框 */
+        @media (max-width: 991.98px) {
+            .border-end {
+                border-end: 0 !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+            }
+        }
+
+        /* 金色渐变边框效果 */
+        .bg-gradient-gold {
+            background: linear-gradient(135deg, #D4AF37 0%, #ffffff 50%, #D4AF37 100%);
+        }
+
+
+        .italic {
+            font-style: italic;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 767.98px) {
+            .col-md-7 {
+                border-end: 0 !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+            }
+        }
+
+        .border-dashed {
+            border-style: dashed !important;
+        }
+
+        .italic-serif {
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+        }
+
+
+        /* 按钮阴影增强 */
+        .shadow-gold {
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-primary {
+            background-color: #D4AF37;
+            border-color: #D4AF37;
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            background-color: #d4af37e1;
+            border-color: #d4af37e1;
+            color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-outline-success {
+            color: #25D366;
+            border-color: #25D366;
+        }
+
+        .btn-outline-success:hover {
+            background-color: #25D366;
+            border-color: #25D366;
+            color: #fff;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Header Start -->
+    <div class="container-fluid p-0">
+        <div id="site-navbar"></div>
+        <div class="page-header pb-5">
+            <div class="container text-center py-5">
+                <h1 class="display-4 text-uppercase mb-3 animated slideInDown">Payment Link/Online Invoice Collection
+                </h1>
+                <nav aria-label="breadcrumb animated slideInDown">
+                    <ol class="breadcrumb justify-content-center text-uppercase mb-0">
+                        <li class="breadcrumb-item"><a class="text-white" href="../../index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-white"
+                                href="../../service-design-branding.html">Design & Branding</a></li>
+                        <li class="breadcrumb-item text-primary active" aria-current="page">Payment Link/Online Invoice
+                            Collection
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Hero -->
+    <section class="hero-counter position-relative bg-dark min-vh-100 d-flex align-items-center overflow-hidden">
+
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="z-index:1; transform:translateX(300px);">
+            <svg class="opacity-10" width="100%" height="100%" viewBox="0 0 1000 1000"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,500 C200,400 300,600 500,500 C700,400 800,600 1000,500" stroke="#D4AF37" fill="transparent"
+                    stroke-width="2" />
+                <path d="M0,600 C200,500 300,700 500,600 C700,500 800,700 1000,600" stroke="#D4AF37" fill="transparent"
+                    stroke-width="1" />
+            </svg>
+        </div>
+
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6 text-center text-lg-start">
+                    <div class="mb-4">
+                        <span
+                            class="px-3 py-1 rounded-pill bg-primary bg-opacity-10 border border-primary border-opacity-30 text-white fw-bold text-uppercase tracking-widest small">
+                            Remote Collection Systems
+                        </span>
+                    </div>
+
+                    <h1 class="display-4 fw-bold text-white mb-4">
+                        PAYMENT LINKS & <br>
+                        <span class="text-primary italic-serif">REMOTE INVOICING</span>
+                    </h1>
+
+                    <p class="lead text-white-50 mb-5 pe-lg-4">
+                        Collect deposits and remote payments via <span class="text-white">secure payment links</span>.
+                        Ideal for bookings and custom orders. Professional, branded, and <span
+                            class="text-white fw-bold">delay-free</span>.
+                    </p>
+
+                    <div class="row g-3 mb-5 justify-content-center justify-content-lg-start">
+                        <div class="col-auto">
+                            <div
+                                class="text-center p-3 rounded-4 bg-secondary bg-opacity-10 border border-white border-opacity-5">
+                                <i class="fa-solid fa-calendar-check text-primary mb-1"></i>
+                                <div class="x-small text-white-50">Deposits</div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div
+                                class="text-center p-3 rounded-4 bg-secondary bg-opacity-10 border border-white border-opacity-5">
+                                <i class="fa-solid fa-box text-primary mb-1"></i>
+                                <div class="x-small text-white-50">Custom Orders</div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div
+                                class="text-center p-3 rounded-4 bg-secondary bg-opacity-10 border border-white border-opacity-5">
+                                <i class="fa-solid fa-file-invoice-dollar text-primary mb-1"></i>
+                                <div class="x-small text-white-50">Invoicing</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="position-relative d-flex justify-content-center">
+
+                        <div class="mobile-frame shadow-2xl overflow-hidden"
+                            style="width: 260px; height: 520px; background: #000; border: 8px solid #1a1a1a; border-radius: 40px; position: relative;">
+                            <div class="bg-white h-100 w-100 p-4 pt-5">
+                                <div class="text-center mb-4">
+                                    <div class="bg-dark mx-auto mb-2"
+                                        style="width: 40px; height: 40px; border-radius: 8px;"></div>
+                                    <div class="fw-bold text-dark x-small tracking-wider">BR INNOVATE FUTURE</div>
+                                </div>
+
+                                <div class="text-center mb-4 py-3 bg-light rounded-3">
+                                    <p class="text-muted x-small mb-1">Deposit for Custom Service</p>
+                                    <h3 class="text-dark fw-bold mb-0">RM 500.00</h3>
+                                </div>
+
+                                <div class="mb-4">
+                                    <p class="text-muted" style="font-size: 10px;">Select Payment Method:</p>
+                                    <div class="border rounded-2 p-2 mb-2 d-flex align-items-center gap-2">
+                                        <div class="bg-primary rounded-circle" style="width: 10px; height: 10px;"></div>
+                                        <span class="text-dark fw-bold" style="font-size: 11px;">FPX Online
+                                            Banking</span>
+                                    </div>
+                                    <div class="border rounded-2 p-2 mb-2 d-flex align-items-center gap-2 opacity-50">
+                                        <div class="bg-secondary rounded-circle" style="width: 10px; height: 10px;">
+                                        </div>
+                                        <span class="text-dark" style="font-size: 11px;">E-Wallet (TNG/Grab)</span>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-dark w-100 py-2 rounded-2 fw-bold mb-3"
+                                    style="font-size: 12px;">Pay Now</button>
+                                <p class="text-center text-muted" style="font-size: 9px;"><i
+                                        class="fa-solid fa-lock"></i> Securely processed via BR Systems</p>
+                            </div>
+                        </div>
+
+                        <div class="position-absolute top-50 start-0 translate-middle-x bg-white p-3 rounded-4 shadow-lg border border-primary border-opacity-20 floating-card"
+                            style="z-index: 10; width: 180px;">
+                            <div class="d-flex align-items-center gap-2 mb-1">
+                                <i class="fa-solid fa-circle-check text-success"></i>
+                                <span class="fw-bold text-dark" style="font-size: 11px;">Payment Confirmed</span>
+                            </div>
+                            <p class="text-muted mb-0" style="font-size: 10px;">RM 500.00 received from Client #8812</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Who This Is For -->
+    <div class="container-fluid bg-dark">
+        <div class="container py-5">
+
+            <div class="text-center mb-5">
+                <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-2">Best For</h6>
+                <h2 class="text-white display-6 fw-bold">Who This Is For</h2>
+                <div class="mx-auto bg-primary mt-3" style="height: 2px; width: 40px;"></div>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+
+                <!-- Deposit Collection -->
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="h-100 p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 transition-hover">
+                        <div class="mb-4 d-inline-block p-3 bg-primary bg-opacity-10 rounded-3">
+                            <i class="fa-solid fa-circle-check text-white fs-3"></i>
+                        </div>
+                        <h5 class="text-white mb-3">Deposit Collection</h5>
+                        <p class="text-white-50 small mb-0">
+                            Collect booking deposits, advance payments, or security fees via secure payment links.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Bookings -->
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="h-100 p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 transition-hover">
+                        <div class="mb-4 d-inline-block p-3 bg-primary bg-opacity-10 rounded-3">
+                            <i class="fa-solid fa-calendar-check text-white fs-3"></i>
+                        </div>
+                        <h5 class="text-white mb-3">Bookings & Reservations</h5>
+                        <p class="text-white-50 small mb-0">
+                            Ideal for appointments, training programs, event reservations, or rental bookings.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Custom Orders -->
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="h-100 p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 transition-hover">
+                        <div class="mb-4 d-inline-block p-3 bg-primary bg-opacity-10 rounded-3">
+                            <i class="fa-solid fa-box-open text-white fs-3"></i>
+                        </div>
+                        <h5 class="text-white mb-3">Custom / Made-to-Order Items</h5>
+                        <p class="text-white-50 small mb-0">
+                            Suitable for personalised products, build-to-order items, and quotation-based orders.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service Invoices -->
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="h-100 p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 transition-hover">
+                        <div class="mb-4 d-inline-block p-3 bg-primary bg-opacity-10 rounded-3">
+                            <i class="fa-solid fa-file-invoice text-white fs-3"></i>
+                        </div>
+                        <h5 class="text-white mb-3">Service Invoices</h5>
+                        <p class="text-white-50 small mb-0">
+                            Remote payment collection for professional services, maintenance, and project billing.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Sales Teams -->
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="h-100 p-4 p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 transition-hover">
+                        <div class="mb-4 d-inline-block p-3 bg-primary bg-opacity-10 rounded-3">
+                            <i class="fa-solid fa-people-arrows text-white fs-3"></i>
+                        </div>
+                        <h5 class="text-white mb-3">Sales Teams & Remote Collection</h5>
+                        <p class="text-white-50 small mb-0">
+                            Enable sales reps to send payment links to customers without requiring in-store checkout.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Logo concept & revision flow -->
+    <div class="container-fluid py-5 bg-dark">
+        <div class="container py-5 border-top border-secondary border-opacity-10">
+
+            <div class="row align-items-end mb-5">
+                <div class="col-md-8">
+                    <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-2">Implementation</h6>
+                    <h2 class="text-white fw-bold">What We Set Up</h2>
+                </div>
+                <div class="col-md-4 text-md-end d-none d-md-block">
+                    <p class="text-white-50 small mb-0">
+                        Practical setup for smooth remote payment collection and team consistency.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-0 rounded-4 overflow-hidden border border-secondary border-opacity-25 shadow-lg">
+
+                <!-- Step 01 -->
+                <div class="col-lg-4 bg-secondary bg-opacity-10 border-end border-secondary border-opacity-25">
+                    <div class="p-4 p-xl-5">
+
+                        <div class="d-flex align-items-center mb-4">
+                            <span class="display-6 fw-bold text-primary opacity-50 me-3">01</span>
+                            <h5 class="text-white mb-0">Payment Link<br>Template Setup</h5>
+                        </div>
+
+                        <div class="p-3 rounded-3 bg-dark border border-secondary border-opacity-25 mb-4">
+                            <span class="text-primary fw-bold">Reusable Structure</span>
+                            <p class="text-white-50 x-small mb-0 mt-1">
+                                Standardised fields for amount, reference, customer name and purpose.
+                            </p>
+                        </div>
+
+                        <p class="text-white-50 small mb-0">
+                            We create a practical payment link format so your team can reuse it across deposits,
+                            bookings and service payments.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 02 -->
+                <div class="col-lg-4 bg-secondary bg-opacity-10 border-end border-secondary border-opacity-25">
+                    <div class="p-4 p-xl-5">
+
+                        <div class="d-flex align-items-center mb-4">
+                            <span class="display-6 fw-bold text-primary opacity-50 me-3">02</span>
+                            <h5 class="text-white mb-0">Customer Message<br>Flow (WhatsApp)</h5>
+                        </div>
+
+                        <div class="p-3 rounded-3 bg-dark border border-secondary border-opacity-25 mb-4">
+                            <span class="text-primary fw-bold">Send → Confirm → Deliver</span>
+                            <p class="text-white-50 x-small mb-0 mt-1">
+                                Standard reply script for sending links, confirming payment and next-step follow-up.
+                            </p>
+                        </div>
+
+                        <p class="text-white-50 small mb-0">
+                            Your team receives a ready-to-use message flow to ensure consistent communication with
+                            customers.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 03 -->
+                <div class="col-lg-4 bg-secondary bg-opacity-10">
+                    <div class="p-4 p-xl-5">
+
+                        <div class="d-flex align-items-center mb-4">
+                            <span class="display-6 fw-bold text-primary opacity-50 me-3">03</span>
+                            <h5 class="text-white mb-0">Payment Confirmation<br>& Reference Tracking</h5>
+                        </div>
+
+                        <div class="p-3 rounded-3 bg-dark bg-opacity-10 border border-secondary border-opacity-25 mb-4">
+                            <span class="text-primary fw-bold">Verify → Record → Reference</span>
+                            <p class="text-white-50 x-small mb-0 mt-1">
+                                Includes tracking method + optional refund / fee wording block (if needed).
+                            </p>
+                        </div>
+
+                        <p class="text-white-50 small mb-0">
+                            We define how your team verifies payments, records references, and keeps transaction history
+                            consistent.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- What you’ll receive (Deliverables) -->
+    <div class="container-fluid py-5 bg-dark">
+        <div class="container py-5 border-top border-secondary border-opacity-10">
+
+            <div class="text-center mb-5">
+                <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-2">The Deliverables</h6>
+                <h2 class="text-white display-6 fw-bold">What You’ll Receive</h2>
+                <div class="mx-auto bg-primary mt-3" style="height: 2px; width: 40px;"></div>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- Column 1 -->
+                <div class="col-lg-6">
+                    <div
+                        class="h-100 p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 shadow-sm">
+
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="p-3 bg-primary bg-opacity-10 rounded-3">
+                                <i class="fa-solid fa-link text-white fs-3"></i>
+                            </div>
+                            <h4 class="text-white ms-3 mb-0">Payment Link Template</h4>
+                        </div>
+
+                        <ul class="list-unstyled">
+
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="fa-solid fa-circle-check text-primary mt-1 me-3"></i>
+                                <div>
+                                    <span class="text-white small fw-bold">Reusable link structure</span>
+                                    <p class="text-white-50 x-small mb-0">
+                                        Standard fields for name, amount, purpose / reference, and notes.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="fa-solid fa-circle-check text-primary mt-1 me-3"></i>
+                                <div>
+                                    <span class="text-white small fw-bold">Consistent entry format</span>
+                                    <p class="text-white-50 x-small mb-0">
+                                        Helps your team send links in a unified and professional way.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li class="d-flex align-items-start">
+                                <i class="fa-solid fa-circle-check text-primary mt-1 me-3"></i>
+                                <div>
+                                    <span class="text-white small fw-bold">Ready for deposits & service payments</span>
+                                    <p class="text-white-50 x-small mb-0">
+                                        Suitable for bookings, custom orders, invoices and remote collection.
+                                    </p>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="col-lg-6">
+                    <div
+                        class="h-100 p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 shadow-sm">
+
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="p-3 bg-primary bg-opacity-10 rounded-3">
+                                <i class="fa-solid fa-message text-white fs-3"></i>
+                            </div>
+                            <h4 class="text-white ms-3 mb-0">WhatsApp Scripts & Tracking</h4>
+                        </div>
+
+                        <ul class="list-unstyled">
+
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="fa-solid fa-circle-check text-primary mt-1 me-3"></i>
+                                <div>
+                                    <span class="text-white small fw-bold">Customer message flow</span>
+                                    <p class="text-white-50 x-small mb-0">
+                                        Send link → confirm payment → proceed or deliver (standard reply scripts
+                                        included).
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="fa-solid fa-circle-check text-primary mt-1 me-3"></i>
+                                <div>
+                                    <span class="text-white small fw-bold">Simple tracking structure</span>
+                                    <p class="text-white-50 x-small mb-0">
+                                        Name • Amount • Reference • Status — practical and team-friendly.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li class="d-flex align-items-start">
+                                <i class="fa-solid fa-circle-check text-primary mt-1 me-3"></i>
+                                <div>
+                                    <span class="text-white small fw-bold">Optional refund / fee wording block</span>
+                                    <p class="text-white-50 x-small mb-0">
+                                        Suggested wording for special cases (only if applicable to your workflow).
+                                    </p>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- What we need from you -->
+    <div class="container-fluid py-5 bg-dark position-relative">
+        <div class="container py-5 border-top border-secondary border-opacity-10">
+
+            <div class="row g-5">
+
+                <!-- Left Title & Intro -->
+                <div class="col-lg-4">
+                    <div class="position-sticky d-none d-lg-block" style="top: 100px;">
+                        <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3">Preparation</h6>
+                        <h2 class="text-white display-6 fw-bold mb-4">What We Need From You</h2>
+                        <p class="text-white-50 mb-4">
+                            These details help us design the right payment link structure and align it with how your
+                            team collects payments.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Content -->
+                <div class="col-lg-8">
+                    <div class="row g-3">
+
+                        <!-- Services List -->
+                        <div class="col-md-12">
+                            <div
+                                class="p-4 bg-secondary bg-opacity-10 rounded-4 border border-secondary border-opacity-25 d-flex gap-4 align-items-center">
+                                <div class="bg-dark p-3 rounded-3 text-primary">
+                                    <i class="fa-solid fa-clipboard-list fs-4"></i>
+                                </div>
+                                <div>
+                                    <h6 class="text-white mb-1">Your Services List</h6>
+                                    <p class="text-white-50 small mb-0">
+                                        The services or items you collect payments for (deposit, booking, invoice,
+                                        custom order, etc.).
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- What Payments Are Collected For -->
+                        <div class="col-md-6">
+                            <div
+                                class="p-4 bg-secondary bg-opacity-10 rounded-4 border border-secondary border-opacity-25 h-100">
+                                <i class="fa-solid fa-receipt text-primary mb-3 fs-4"></i>
+                                <h6 class="text-white mb-2">What You Collect Payments For</h6>
+                                <p class="text-white-50 small mb-0">
+                                    Example: booking fees, service invoices, custom work, partial project payments, etc.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Payment Policy -->
+                        <div class="col-md-6">
+                            <div
+                                class="p-4 bg-secondary bg-opacity-10 rounded-4 border border-secondary border-opacity-25 h-100">
+                                <i class="fa-solid fa-scale-balanced text-primary mb-3 fs-4"></i>
+                                <h6 class="text-white mb-2">Preferred Payment Policy</h6>
+                                <p class="text-white-50 small mb-0">
+                                    Deposit • Partial • Full Payment — helps shape the messaging and confirmation flow.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <!-- Typical Turnaround -->
+    <div class="container-fluid py-5 bg-dark">
+        <div class="container py-5 border-top border-secondary border-opacity-10">
+
+            <div class="row align-items-center g-5">
+
+                <!-- Left -->
+                <div class="col-lg-5">
+                    <div
+                        class="d-inline-flex align-items-center bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-pill px-3 py-1 mb-3">
+                        <i class="fa-solid fa-bolt-lightning text-white me-2 small"></i>
+                        <span class="text-white fw-bold x-small tracking-widest text-uppercase">
+                            Implementation Speed
+                        </span>
+                    </div>
+
+                    <h2 class="text-white display-6 fw-bold mb-4">Typical Turnaround</h2>
+
+                    <p class="text-white-50 mb-0">
+                        Timelines may vary depending on provider verification, documentation, and approval requirements.
+                    </p>
+                </div>
+
+                <!-- Right -->
+                <div class="col-lg-7 pt-5">
+                    <div class="position-relative p-1 rounded-4 bg-gradient-gold">
+                        <div class="bg-dark rounded-4 p-4 p-md-5">
+                            <div class="row align-items-center">
+
+                                <div class="col-md-7 border-end border-secondary border-opacity-25">
+                                    <h3 class="text-white display-4 fw-bold mb-0">1–2</h3>
+                                    <p class="text-primary fw-bold tracking-widest text-uppercase mb-3 mb-md-0">
+                                        Working Days
+                                    </p>
+                                </div>
+
+                                <div class="col-md-5 ps-md-4">
+                                    <div class="d-flex align-items-start gap-2 mb-2">
+                                        <i class="fa-solid fa-circle-info text-primary mt-1"></i>
+                                        <p class="text-white-50 small mb-0">
+                                            Simple setup (payment link / QR configuration).
+                                        </p>
+                                    </div>
+
+                                    <div class="d-flex align-items-start gap-2">
+                                        <i class="fa-solid fa-clock text-primary mt-1"></i>
+                                        <p class="text-white-50 small mb-0">
+                                            More time may be required if provider review is involved.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-center text-white-50 x-small mt-3 italic">
+                        *Excludes weekends & public holidays. Complex cases may require additional time.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- What’s not included -->
+    <div class="container-fluid py-5 bg-dark">
+        <div class="container py-5 border-top border-secondary border-opacity-10">
+
+            <div class="row g-5 align-items-center">
+
+                <div class="col-lg-4">
+                    <h3 class="text-white fw-bold mb-3">What’s Not Included</h3>
+
+                    <p class="text-white-50 small mb-4">
+                        To ensure realistic expectations and clear project boundaries, the following items are
+                        <span class="text-white fw-bold">outside of our standard implementation scope</span>
+                        unless specifically agreed in advance.
+                    </p>
+
+
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="row g-3">
+
+                        <!-- Automated Accounting Integration -->
+                        <div class="col-md-6">
+                            <div
+                                class="p-4 bg-secondary bg-opacity-10 rounded-4 border border-secondary border-opacity-25 h-100">
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <i class="fa-solid fa-ban text-danger opacity-75"></i>
+                                    <h6 class="text-white mb-0">Automated Accounting Integration</h6>
+                                </div>
+                                <p class="text-white-50 x-small mb-0">
+                                    Direct syncing to accounting software (e.g. full ledger posting, auto-reconciliation
+                                    rules) is not included unless specifically scoped and quoted as an add-on.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Chargeback Management -->
+                        <div class="col-md-6">
+                            <div
+                                class="p-4 bg-secondary bg-opacity-10 rounded-4 border border-secondary border-opacity-25 h-100">
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <i class="fa-solid fa-ban text-danger opacity-75"></i>
+                                    <h6 class="text-white mb-0">Chargeback Management (Ongoing)</h6>
+                                </div>
+                                <p class="text-white-50 x-small mb-0">
+                                    We provide policy and wording guidance only — ongoing chargeback handling,
+                                    documentation and dispute follow-up are managed by your team and/or the payment
+                                    provider.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- CTA -->
+    <div class="container-fluid py-5 bg-dark position-relative overflow-hidden">
+
+        <svg class="position-absolute top-50 start-50 translate-middle opacity-10" width="800" height="400"
+            viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg" style="pointer-events: none;">
+            <path d="M0 200C200 100 400 300 800 200" stroke="#D4AF37" stroke-width="2" stroke-dasharray="10 10" />
+        </svg>
+
+        <div class="container py-5 position-relative" style="z-index: 2;">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+
+                    <h2 class="text-white display-5 fw-bold mb-4">
+                        Ready to Set Up Your <br>
+                        <span class="text-primary italic-serif">Payment Links Workflow?</span>
+                    </h2>
+
+                    <p class="text-white-50 lead mb-5 mx-auto" style="max-width: 600px;">
+                        Tell us what you collect payments for — deposits, bookings, invoices, or custom orders — and
+                        we’ll help you set up a clear and practical payment link process for your team and customers.
+                    </p>
+
+                    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-5">
+
+                        <a href="../../contact.html"
+                            class="btn btn-primary btn-lg px-5 py-3 fw-bold rounded-pill shadow-gold">
+                            Set Up Payment Links <i class="fa-solid fa-link ms-2 small"></i>
+                        </a>
+
+                        <a href="https://wa.me/60123011610"
+                            class="btn btn-outline-success btn-lg px-5 py-3 fw-bold rounded-pill border-2">
+                            <i class="fa-brands fa-whatsapp me-2 fs-5"></i>WhatsApp Us
+                        </a>
+                    </div>
+
+                    <div class="row g-4 justify-content-center pt-4 border-top border-secondary border-opacity-25">
+
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center gap-2 text-white-50 x-small">
+                                <i class="fa-solid fa-check-double text-primary"></i>
+                                <span class="text-uppercase tracking-widest">Customer Messaging Flow</span>
+                            </div>
+                        </div>
+
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center gap-2 text-white-50 x-small">
+                                <i class="fa-solid fa-check-double text-primary"></i>
+                                <span class="text-uppercase tracking-widest">Payment Reference Tracking</span>
+                            </div>
+                        </div>
+
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center gap-2 text-white-50 x-small">
+                                <i class="fa-solid fa-check-double text-primary"></i>
+                                <span class="text-uppercase tracking-widest">Team-Ready SOP Guide</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="site-footer"></div>
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-outline-primary border-2 btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/wow/wow.min.js"></script>
+    <script src="../../lib/easing/easing.min.js"></script>
+    <script src="../../lib/waypoints/waypoints.min.js"></script>
+    <script src="../../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../../lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../../js/main.js"></script>
+</body>
+
+</html>
