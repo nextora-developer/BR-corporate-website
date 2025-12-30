@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BR Innovate Future - 2026 Grand Greeting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 主字体 -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <!-- 底部 2026 New Year Script 字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== Tokens ===== */
+        :root {
+            --bg-deep: #030408;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --gold-primary: #EFC95A;
+            --gold-light: #fff5d6;
+            --gold-dark: #b88d2d;
+            --red-accent: #ff4d4d;
+            --text-main: #f0f4ff;
+            --text-muted: rgba(240, 244, 255, 0.6);
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --shadow-gold: rgba(239, 201, 90, 0.15);
+
+            /* 给底部区块用的 */
+            --gold: #D4AF37;
+            --bg-dark: #0f0e0c;
+            --text-cream: #f4eee0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: radial-gradient(circle at center, #1a1814 0%, #0f0e0c 100%);
+            color: var(--text-main);
+            font-family: "Noto Sans SC", "Plus Jakarta Sans", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        #canvas-wrap {
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: clamp(10px, 4vw, 50px);
+        }
+
+        /* ===== 上面：BRIF 2026 主视觉 Frame ===== */
+        .frame {
+            position: relative;
+            border-radius: 40px;
+            overflow: hidden;
+            border: 1px solid rgba(239, 201, 90, 0.2);
+            box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.9);
+            background:
+                radial-gradient(circle at 0% 0%, rgba(239, 201, 90, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 100% 100%, rgba(255, 77, 77, 0.08) 0%, transparent 40%),
+                linear-gradient(180deg, #0a0c14 0%, #030408 100%);
+            padding: clamp(20px, 5vw, 40px);
+        }
+
+        .frame::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Cfilter id='noiseFilter'%3%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* Canvas Fireworks 覆盖在 Frame 背景上 */
+        canvas.fireworks {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            mix-blend-mode: screen;
+            z-index: 2;
+        }
+
+        .header-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 20;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-switch {
+            cursor: pointer;
+            padding: 8px 18px;
+            border-radius: 100px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border-glass);
+            color: var(--gold-primary);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            user-select: none;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-transform: uppercase;
+        }
+
+        .lang-switch:hover {
+            background: rgba(239, 201, 90, 0.18);
+            border-color: var(--gold-primary);
+            transform: translateY(-1px);
+        }
+
+        .countdown-pill {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border-glass);
+            padding: 10px 20px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+
+        .countdown-time {
+            font-weight: 800;
+            color: var(--gold-primary);
+            letter-spacing: 1px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .hero-layout {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 25px;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 20;
+        }
+
+        .glass-panel {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-glass);
+            border-radius: 30px;
+            padding: clamp(30px, 6vw, 50px);
+            position: relative;
+            z-index: 5;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-panel:hover {
+            border-color: rgba(239, 201, 90, 0.3);
+        }
+
+        .title-h1 {
+            font-size: clamp(38px, 6vw, 64px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.04em;
+        }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 50%, var(--gold-dark) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        .hero-desc {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 550px;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .bento-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .bento-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .icon-box {
+            width: 44px;
+            height: 44px;
+            background: rgba(239, 201, 90, 0.1);
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 16px;
+            color: var(--gold-primary);
+            font-size: 20px;
+        }
+
+        .side-panel {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+            position: relative;
+        }
+
+        .brand-logo {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 12px;
+            color: var(--gold-primary);
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .year-mark {
+            font-size: 120px;
+            font-weight: 900;
+            line-height: 0.8;
+            opacity: 0.05;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            pointer-events: none;
+        }
+
+        .lantern-container {
+            position: absolute;
+            top: -20px;
+            right: 10%;
+            z-index: 15;
+            animation: swing 6s ease-in-out infinite;
+            transform-origin: top center;
+        }
+
+        @keyframes swing {
+
+            0%,
+            100% {
+                transform: rotate(-5deg);
+            }
+
+            50% {
+                transform: rotate(5deg);
+            }
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 15px;
+            margin-top: auto;
+        }
+
+        .btn-lux {
+            flex: 1;
+            padding: 18px;
+            border-radius: 16px;
+            font-weight: 800;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 14px;
+            border: none;
+        }
+
+        .btn-gold {
+            background: linear-gradient(180deg, var(--gold-light), var(--gold-primary));
+            color: #000;
+            box-shadow: 0 10px 30px var(--shadow-gold);
+        }
+
+        .btn-gold:hover {
+            box-shadow: 0 15px 40px var(--shadow-gold);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border-glass);
+            color: #fff;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--gold-primary);
+        }
+
+        /* 这里是上面 Frame 里用到的 2026（比较小一点） */
+        .year-container {
+            position: relative;
+            text-align: left;
+            margin-bottom: 28px;
+        }
+
+        .year-2026 {
+            font-size: clamp(70px, 10vw, 130px);
+            font-weight: 900;
+            line-height: 0.85;
+            margin: 0;
+            background: linear-gradient(180deg, #f4e7c1 0%, #d4af37 40%, #8e6d13 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+            position: relative;
+        }
+
+        .year-2026::before {
+            content: "2026";
+            position: absolute;
+            left: 3px;
+            top: 5px;
+            z-index: -1;
+            -webkit-text-stroke: 4px #4a3708;
+        }
+
+        .new-year-script {
+            font-family: "Plus Jakarta Sans", cursive;
+            font-weight: 700;
+            font-size: clamp(24px, 4vw, 38px);
+            color: var(--text-main);
+            margin-top: -10px;
+            margin-left: 18%;
+            text-shadow: 2px 5px 15px rgba(0, 0, 0, 0.8);
+            transform: rotate(-4deg);
+            opacity: 0.9;
+        }
+
+        @media (max-width: 600px) {
+            .new-year-script {
+                margin-left: 8%;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .hero-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .bento-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .frame {
+                border-radius: 20px;
+                padding: 20px;
+            }
+
+            .title-h1 {
+                font-size: 34px;
+            }
+
+            .cta-group {
+                flex-direction: column;
+            }
+        }
+
+        .side-visual {
+            margin: 24px 0 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .side-visual-img {
+            max-width: 100%;
+            max-height: 260px;
+            object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+            .side-visual-img {
+                max-height: 200px;
+            }
+        }
+
+        /* ===== 上面：原本参考的 3D 2026 英文祝贺 Section ===== */
+        .vision-hero {
+            position: relative;
+            min-height: 100vh;
+            padding: 140px 20px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at center, #1a1814 0%, #0f0e0c 100%);
+            color: var(--text-cream);
+            overflow: hidden;
+        }
+
+        .vision-bg-text {
+            position: absolute;
+            font-weight: 900;
+            font-size: 15vw;
+            color: rgba(212, 175, 55, 0.03);
+            white-space: nowrap;
+            z-index: 0;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .vision-year-container {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+
+        .vision-year-2026 {
+            font-size: clamp(8rem, 20vw, 15rem);
+            font-weight: 900;
+            line-height: 0.8;
+            margin: 0;
+            background: linear-gradient(180deg, #f4e7c1 0%, #d4af37 40%, #8e6d13 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+            position: relative;
+        }
+
+        .vision-year-2026::before {
+            content: "2026";
+            position: absolute;
+            left: 2px;
+            top: 4px;
+            z-index: -1;
+            -webkit-text-stroke: 4px #4a3708;
+        }
+
+        .vision-new-year-script {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(3rem, 8vw, 6rem);
+            color: var(--text-cream);
+            margin-top: -4vw;
+            margin-left: 10vw;
+            text-shadow: 2px 5px 15px rgba(0, 0, 0, 0.8);
+            transform: rotate(-5deg);
+        }
+
+        .vision-ornament {
+            position: absolute;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+            animation: float 6s ease-in-out infinite;
+            z-index: 5;
+        }
+
+        .vision-sphere {
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle at 30% 30%, #f4e7c1, #d4af37 60%, #4a3708);
+            border-radius: 50%;
+            top: 20%;
+            right: 15%;
+        }
+
+        .vision-star-svg {
+            width: 80px;
+            color: var(--gold);
+            bottom: 20%;
+            left: 10%;
+            animation-delay: -2s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-30px) rotate(5deg);
+            }
+        }
+
+        .vision-info-panel {
+            max-width: 600px;
+            text-align: center;
+            margin-top: 40px;
+            z-index: 20;
+        }
+
+        .vision-info-panel p {
+            font-size: 1rem;
+            line-height: 1.8;
+            letter-spacing: 0.05em;
+            font-weight: 200;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .vision-cta-btn {
+            display: inline-block;
+            padding: 15px 45px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            transition: all 0.4s;
+            background: transparent;
+        }
+
+        .vision-cta-btn:hover {
+            background: var(--gold);
+            color: var(--bg-dark);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .vision-sphere {
+                width: 60px;
+                height: 60px;
+            }
+
+            .vision-hero {
+                padding-top: 100px;
+            }
+        }
+
+
+        .nav-center {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 30px 0;
+            display: flex;
+            justify-content: center;
+            /* ⬅ 中间 */
+            align-items: center;
+            z-index: 100;
+            background: linear-gradient(to bottom, rgba(15, 14, 12, 0.8), transparent);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav-center">
+        <div class="logo">BR INNOVATE FUTURE</div>
+    </nav>
+
+
+    <!-- 上面：原本参考的 3D 2026 英文祝贺区块 -->
+    <section class="vision-hero">
+        <div class="vision-bg-text">EXCELLENCE</div>
+
+        <div class="vision-ornament vision-sphere"></div>
+        <svg class="vision-ornament vision-star-svg" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.869 1.4-8.168L.132 9.21l8.2-1.192L12 .587z" />
+        </svg>
+
+        <div class="vision-year-container">
+            <h2 class="vision-year-2026">2026</h2>
+            <div class="vision-new-year-script">New Year Greeting</div>
+        </div>
+
+        <div class="vision-info-panel">
+            <p>
+                Wishing you a successful and fulfilling 2026.
+                May this new year bring new opportunities, confident decisions, and lasting achievements — for you, your
+                team, and your business.
+                Thank you for continuing this journey with us.
+            </p>
+            <a href="index.html" class="vision-cta-btn">Discover Our Website</a>
+        </div>
+    </section>
+
+    <!-- 下面：BRIF 2026 主框（已加 fireworks + 三语切换） -->
+    <div id="canvas-wrap">
+        <div class="frame">
+            <!-- Fireworks Canvas -->
+            <canvas id="fwCanvas" class="fireworks"></canvas>
+
+            <!-- 浮动灯笼 -->
+            <div class="lantern-container">
+                <svg width="60" height="120" viewBox="0 0 60 120" fill="none">
+                    <rect x="25" y="0" width="10" height="20" fill="var(--gold-dark)" />
+                    <ellipse cx="30" cy="60" rx="25" ry="35" fill="var(--red-accent)" />
+                    <rect x="15" y="35" width="30" height="50" rx="5" fill="rgba(0,0,0,0.1)" />
+                    <path d="M30 95V120" stroke="var(--gold-primary)" stroke-width="3" />
+                    <circle cx="30" cy="60" r="10" fill="var(--gold-primary)" opacity="0.4" />
+                </svg>
+            </div>
+
+            <!-- 顶部条：Logo + 语言切换 + 倒数 -->
+            <div class="header-nav">
+                <div style="font-family: 'Plus Jakarta Sans'; font-weight: 800; letter-spacing: 2px;">
+                    BR INNOVATE FUTURE
+                </div>
+                <div class="header-right">
+                    <div id="langBtn" class="lang-switch">EN</div>
+                    <div class="countdown-pill">
+                        <span style="font-size: 10px; opacity: 0.7; text-transform: uppercase;" data-cn="距离 2026 还有"
+                            data-en="Countdown to 2026" data-bm="Kiraan ke 2026">距离 2026 还有</span>
+                        <span id="countdown" class="countdown-time">00 : 00 : 00 : 00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 主内容 Grid -->
+            <div class="hero-layout">
+                <!-- LEFT -->
+                <div class="glass-panel">
+                    <div class="year-container">
+                        <h1 class="year-2026">2026</h1>
+                        <div class="new-year-script" data-cn="新年献词" data-en="New Year Greeting"
+                            data-bm="Ucapan Tahun Baru">新年献词</div>
+                    </div>
+
+                    <h1 class="title-h1">
+                        <span data-cn="迎接" data-en="Embrace" data-bm="Sambut">迎接</span>
+                        <span class="gold-gradient">2026</span><br>
+                        <span data-cn="让企业后台从繁杂" data-en="Transform your back office from chaos"
+                            data-bm="Ubah pejabat belakang anda dari serabut">让企业后台从繁杂</span><br>
+                        <span data-cn="回归" data-en="into" data-bm="kepada">回归</span>
+                        <span class="gold-gradient" data-cn="极简与专业" data-en="clarity & professionalism"
+                            data-bm="ringkas & profesional">极简与专业</span>
+                    </h1>
+
+                    <p class="hero-desc" data-cn="新的一年，不应在账目与合规中迷失。BR Innovate 为您打造自动化的后台系统与精准的财务体系，让您的每一份努力都精准转化为增长。"
+                        data-en="In the new year, you shouldn’t get lost in accounts and compliance. BR Innovate builds automated back-office systems and precise financial structures, so every effort converts clearly into growth."
+                        data-bm="Di tahun baru, anda tidak sepatutnya tenggelam dalam akaun dan pematuhan. BR Innovate membina sistem pejabat belakang automatik dan struktur kewangan yang tepat supaya setiap usaha diterjemah terus kepada pertumbuhan.">
+                        新的一年，不应在账目与合规中迷失。BR Innovate 为您打造自动化的后台系统与精准的财务体系，让您的每一份努力都精准转化为增长。
+                    </p>
+
+                    <div class="bento-grid">
+                        <div class="bento-card">
+                            <div class="icon-box">📊</div>
+                            <h4 style="margin-bottom: 8px; font-size: 15px;" data-cn="财务智能化" data-en="Smart Finance"
+                                data-bm="Kewangan Pintar">财务智能化</h4>
+                            <p style="font-size: 12px; color: var(--text-muted);" data-cn="实时追踪、按月整理，告别“糊涂账”。"
+                                data-en="Real-time tracking and monthly closing to say goodbye to messy books."
+                                data-bm="Jejak masa nyata dan penutupan bulanan, ucap selamat tinggal kepada akaun yang berserabut.">
+                                实时追踪、按月整理，告别“糊涂账”。
+                            </p>
+                        </div>
+                        <div class="bento-card">
+                            <div class="icon-box">🛡️</div>
+                            <h4 style="margin-bottom: 8px; font-size: 15px;" data-cn="全方位合规"
+                                data-en="All-Round Compliance" data-bm="Pematuhan Menyeluruh">全方位合规</h4>
+                            <p style="font-size: 12px; color: var(--text-muted);" data-cn="税务、执照与法律文件，一站式搞定。"
+                                data-en="Tax, licenses and legal documents handled in one place."
+                                data-bm="Cukai, lesen dan dokumen undang-undang diuruskan secara sehenti.">
+                                税务、执照与法律文件，一站式搞定。
+                            </p>
+                        </div>
+                        <div class="bento-card">
+                            <div class="icon-box">🚀</div>
+                            <h4 style="margin-bottom: 8px; font-size: 15px;" data-cn="系统化复制" data-en="Scalable Systems"
+                                data-bm="Sistem Boleh Diskala">系统化复制</h4>
+                            <p style="font-size: 12px; color: var(--text-muted);" data-cn="把复杂的流程变成高效运转的系统。"
+                                data-en="Turn complex workflows into systems that run efficiently."
+                                data-bm="Jadikan aliran kerja yang rumit sebagai sistem yang berjalan cekap.">
+                                把复杂的流程变成高效运转的系统。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT -->
+                <div class="glass-panel side-panel">
+                    <div>
+                        <div class="brand-logo" data-cn="战略伙伴" data-en="Strategic Partner" data-bm="Rakan Strategik">
+                            战略伙伴</div>
+                        <h2 style="font-size: 24px; font-weight: 900; margin-bottom: 15px;" data-cn="您最可靠的<br>商业幕僚"
+                            data-en="Your most reliable<br>business backroom partner"
+                            data-bm="Rakan belakang tabir<br>perniagaan yang paling dipercayai">
+                            您最可靠的<br>商业幕僚
+                        </h2>
+                        <ul
+                            style="list-style: none; font-size: 13px; color: var(--text-muted); display: grid; gap: 10px;">
+                            <li data-cn="✦ 专业会计与审计对接" data-en="✦ Professional accounting & audit liaison"
+                                data-bm="✦ Perakaunan profesional & sokongan audit">✦ 专业会计与审计对接</li>
+                            <li data-cn="✦ 电子发票 (E-Invoicing) 转型" data-en="✦ E-Invoicing transition & setup"
+                                data-bm="✦ Transformasi & tetapan E-Invois">✦ 电子发票 (E-Invoicing) 转型</li>
+                            <li data-cn="✦ 网站与电商后台深度定制" data-en="✦ Deep customisation of web & e-commerce backends"
+                                data-bm="✦ Penyesuaian mendalam backend web & e-dagang">✦ 网站与电商后台深度定制</li>
+                            <li data-cn="✦ 企业运营流程 S.O.P 梳理" data-en="✦ SOP mapping for business operations"
+                                data-bm="✦ Pemetaan SOP operasi perniagaan">✦ 企业运营流程 S.O.P 梳理</li>
+                        </ul>
+                    </div>
+
+                    <!-- 中间放图 -->
+                    <div class="side-visual">
+                        <img src="img/2026.png" alt="2026 Vision" class="side-visual-img">
+                    </div>
+
+                    <div class="year-mark">2026</div>
+
+                    <div class="cta-group" style="margin-top: 30px;">
+                        <a href="https://wa.me/60123011610" class="btn-lux btn-gold" target="_blank"
+                            data-cn="WhatsApp 咨询" data-en="WhatsApp Chat" data-bm="Sembang WhatsApp">WhatsApp 咨询</a>
+                        <a href="index.html" class="btn-lux btn-outline" data-cn="方案详情" data-en="View Solutions"
+                            data-bm="Lihat Solusi">方案详情</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Frame 底部版权 -->
+            <div
+                style="text-align: center; margin-top: 20px; color: var(--text-muted); font-size: 12px; opacity: 0.5; letter-spacing: 1px;">
+                © 2026 BR Innovate Future Sdn. Bhd. ·
+                <span data-cn="合规 · 专业 · 创新" data-en="COMPLIANCE · PROFESSIONAL · INNOVATION"
+                    data-bm="PEMATUHAN · PROFESIONAL · INOVASI">合规 · 专业 · 创新</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ===== 语言切换：中文 -> 英文 -> 马来文 =====
+        let languages = ['cn', 'en', 'bm']; // 当前语言 index = 0 => 中文
+        let langIndex = 0;
+        const langBtn = document.getElementById('langBtn');
+
+        const langBtnLabels = {
+            cn: 'EN', // 现在是中文，按钮显示「EN」代表点了换英文
+            en: 'BM',
+            bm: '中'
+        };
+
+        function applyLanguage() {
+            const lang = languages[langIndex];
+            if (langBtn) langBtn.innerText = langBtnLabels[lang] || 'EN';
+
+            document.querySelectorAll('[data-cn]').forEach(el => {
+                const text = el.getAttribute(`data-${lang}`);
+                if (text !== null) {
+                    el.innerHTML = text; // 保留 <br> 之类
+                }
+            });
+            updateCountdown(); // 切换时顺便更新「Happy 2026」文案语言
+        }
+
+        if (langBtn) {
+            langBtn.addEventListener('click', () => {
+                langIndex = (langIndex + 1) % languages.length;
+                applyLanguage();
+            });
+        }
+
+        // ===== 倒数计时，依语言显示完成后的祝福 =====
+        function updateCountdown() {
+            const targetDate = new Date('January 1, 2026 00:00:00').getTime();
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+            const currentLang = languages[langIndex];
+
+            const countdownEl = document.getElementById('countdown');
+            if (!countdownEl) return;
+
+            if (diff < 0) {
+                const wishes = {
+                    cn: '2026 新年快乐！',
+                    en: 'HAPPY 2026!',
+                    bm: 'SELAMAT TAHUN 2026!'
+                };
+                countdownEl.innerHTML = wishes[currentLang] || 'HAPPY 2026!';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            const pad = (num) => num.toString().padStart(2, '0');
+
+            countdownEl.innerHTML = `${pad(days)}D : ${pad(hours)}H : ${pad(minutes)}M : ${pad(seconds)}S`;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        applyLanguage(); // 初始化一次，保证 data-en / data-bm 正常载入
+
+        // ===== Fireworks Canvas：来自你第二个 code 的效果 =====
+        const canvas = document.getElementById('fwCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            if (!canvas || !canvas.parentElement) return;
+            canvas.width = canvas.parentElement.clientWidth;
+            canvas.height = canvas.parentElement.clientHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor(x, y, color) {
+                this.x = x;
+                this.y = y;
+                this.color = color;
+                this.velocity = {
+                    x: (Math.random() - 0.5) * 10,
+                    y: (Math.random() - 0.5) * 10
+                };
+                this.alpha = 1;
+                this.friction = 0.95;
+                this.gravity = 0.05;
+            }
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                ctx.restore();
+            }
+            update() {
+                this.velocity.x *= this.friction;
+                this.velocity.y *= this.friction;
+                this.velocity.y += this.gravity;
+                this.x += this.velocity.x;
+                this.y += this.velocity.y;
+                this.alpha -= 0.012;
+            }
+        }
+
+        function createFirework(x, y) {
+            const colors = ['#EFC95A', '#ff4b4b', '#fff2c3', '#ff8a8a', '#34e8ff'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            for (let i = 0; i < 50; i++) {
+                particles.push(new Particle(x, y, color));
+            }
+        }
+
+        function animateFireworks() {
+            requestAnimationFrame(animateFireworks);
+            if (!ctx) return;
+            ctx.fillStyle = 'rgba(5, 6, 8, 0.15)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            particles.forEach((p, i) => {
+                if (p.alpha > 0) {
+                    p.update();
+                    p.draw();
+                } else {
+                    particles.splice(i, 1);
+                }
+            });
+
+            if (Math.random() < 0.02) {
+                createFirework(Math.random() * canvas.width, Math.random() * canvas.height * 0.5);
+            }
+        }
+        animateFireworks();
+    </script>
+
+</body>
+
+</html>
