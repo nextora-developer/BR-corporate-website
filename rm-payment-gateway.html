@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Revenue Monster Payment Gateway | BRIF Cloud Partner</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="revenue monster, payment gateway, fpx, duitnow qr, ewallet, card, brif cloud partner"
+        name="keywords">
+    <meta
+        content="Revenue Monster payment gateway integration and support by BRIF Cloud (Partner). Transparent per-transaction fee overview by payment method."
+        name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.svg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Work+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- (Optional) Page-only small tweaks -->
+    <style>
+        .rm-hero {
+            position: relative;
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .rm-hero .rm-bg {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, .35), rgba(0, 0, 0, .85)),
+                url("img/carousel-1.png") center/cover no-repeat;
+            filter: saturate(1.05);
+        }
+
+        .rm-hero .rm-glow {
+            position: absolute;
+            inset: -40% -30%;
+            background: radial-gradient(closest-side, rgba(13, 110, 253, .25), transparent 65%),
+                radial-gradient(closest-side, rgba(255, 193, 7, .18), transparent 65%);
+            pointer-events: none;
+        }
+
+        .rm-hero .rm-card {
+            background: rgba(0, 0, 0, .55);
+            border: 1px solid rgba(255, 255, 255, .12);
+            backdrop-filter: blur(10px);
+            border-radius: 18px;
+        }
+
+        .badge-soft {
+            background: rgba(13, 110, 253, .12);
+            border: 1px solid rgba(13, 110, 253, .25);
+            color: #b9d3ff;
+            padding: .5rem .75rem;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        .table-fees th {
+            font-weight: 700;
+            letter-spacing: .02em;
+        }
+
+        .note-box {
+            border-left: 4px solid #0d6efd;
+            background: rgba(13, 110, 253, .06);
+            border-radius: 12px;
+            padding: 14px 16px;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .cursor-pointer {
+            cursor: pointer;
+        }
+
+        /* FAQ Interaction Styles */
+        .faq-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-card:hover {
+            border-color: var(--bs-primary);
+        }
+
+        .faq-card[open] {
+            border-color: var(--bs-primary);
+        }
+
+        .faq-card[open] .transition-transform {
+            transform: rotate(180deg);
+        }
+
+        .transition-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .transition-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+        }
+
+        .tracking-widest {
+            letter-spacing: 0.15em;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: radial-gradient(700px 360px at 50% 0%, rgba(212, 175, 55, 0.12), rgba(0, 0, 0, 0) 60%), linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.95));
+        }
+
+        .cta-check i {
+            color: var(--brif-gold);
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17838304641"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'AW-17838304641');
+    </script>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Header -->
+    <div class="container-fluid p-0">
+        <div id="site-navbar"></div>
+    </div>
+
+    <!-- Header Start -->
+    <div class="container-fluid p-0">
+        <div id="site-navbar"></div>
+        <div class="page-header pb-5">
+            <div class="container text-center py-5">
+                <div class="text-uppercase text-primary fw-bold mb-3" style="letter-spacing:.18em;">
+                    Payment Gateway • Partner Program
+                </div>
+                <h1 class="display-4 text-uppercase mb-3 animated slideInDown">Revenue Monster Payment Gateway</h1>
+                <nav aria-label="breadcrumb animated slideInDown">
+                    <ol class="breadcrumb justify-content-center text-uppercase mb-0">
+                        <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                        <li class="breadcrumb-item text-primary active" aria-current="page">Revenue Monster
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- WHY -->
+    <div class="container-fluid py-5 bg-dark">
+        <div class="container py-5">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="title-left mb-2">
+                        <h5 class="text-primary">Why Revenue Monster</h5>
+                        <h1>Built for Malaysia Checkout</h1>
+                    </div>
+                    <p class="text-body mb-5">
+                        Revenue Monster provides local payment coverage with enterprise-grade security and scalable
+                        infrastructure,
+                        helping businesses reduce checkout drop-off and improve conversion.
+                    </p>
+
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="d-flex gap-3">
+                                <i class="fa-solid fa-credit-card text-primary mt-1"></i>
+                                <div>
+                                    <div class="fw-bold">Wide Methods</div>
+                                    <div class="small text-body">FPX, DuitNow QR, E-Wallets, Cards</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex gap-3">
+                                <i class="fa-solid fa-lock text-primary mt-1"></i>
+                                <div>
+                                    <div class="fw-bold">Secure Webhooks</div>
+                                    <div class="small text-body">Signature verification & replay protection</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex gap-3">
+                                <i class="fa-solid fa-money-bill-transfer text-primary mt-1"></i>
+                                <div>
+                                    <div class="fw-bold">Settlement</div>
+                                    <div class="small text-body">T+1 / T+2 (method dependent)</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex gap-3">
+                                <i class="fa-solid fa-screwdriver-wrench text-primary mt-1"></i>
+                                <div>
+                                    <div class="fw-bold">Partner Managed</div>
+                                    <div class="small text-body">Integration & support by BRIF Cloud</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 wow fadeInUp text-center" data-wow-delay="0.2s">
+                    <img class="img-fluid rounded mx-auto d-block" src="img/payment.png" alt="Payment Solutions">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Recommended Payment Stack Start -->
+    <section class="container-fluid py-5 bg-secondary" id="recommended-stack">
+        <div class="container py-5">
+
+            <!-- Heading -->
+            <div class="wow fadeInUp mb-4" data-wow-delay="0.1s">
+                <h2 class="fw-bold mb-1">Recommended Payment Stack <span class="text-primary">(by business type)</span>
+                </h2>
+                <p class="text-muted mb-0">
+                    A practical setup that balances conversion, cost, and reconciliation.
+                </p>
+            </div>
+
+            <!-- Cards -->
+            <div class="row g-4">
+
+                <!-- Card 1 -->
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.15s">
+                    <div class="card border-0 rounded-4 shadow-sm h-100">
+                        <div class="card-body p-4 bg-dark rounded-4">
+                            <span class="text-primary">Most SMEs • Best overall</span>
+
+                            <h4 class="fw-bold mt-3 mb-2">FPX + eWallet + Cards</h4>
+                            <p class="text-muted mb-0">
+                                Show FPX/eWallet first to protect margin, keep Cards for convenience and international
+                                buyers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="card border-0 rounded-4 shadow-sm h-100">
+                        <div class="card-body p-4 bg-dark rounded-4">
+                            <span class="text-primary">
+                                Services / B2B
+                            </span>
+
+                            <h4 class="fw-bold mt-3 mb-2">DuitNow + FPX <span class="text-muted">(B2B enabled)</span>
+                            </h4>
+                            <p class="text-muted mb-0">
+                                Lower fee impact and clearer reconciliation. Add Cards only if your clients request it.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.25s">
+                    <div class="card border-0 rounded-4 shadow-sm h-100">
+                        <div class="card-body p-4 bg-dark rounded-4">
+                            <span class="text-primary">
+                                High AOV
+                            </span>
+
+                            <h4 class="fw-bold mt-3 mb-2">Cards + BNPL <span class="text-muted">(selective)</span></h4>
+                            <p class="text-muted mb-0">
+                                Use BNPL only for categories with enough margin. Keep FPX/eWallet as default options.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Optional small note (like screenshot spacing) -->
+            <div class="mt-4 text-muted wow fadeInUp" data-wow-delay="0.3s">
+                Tip: Prioritise FPX/eWallet to reduce MDR impact, then offer Cards/BNPL selectively.
+            </div>
+
+        </div>
+    </section>
+    <!-- Recommended Payment Stack End -->
+
+
+    <!-- FEES -->
+    <section class="container-fluid py-5" id="fees">
+        <div class="container py-5">
+            <div class="text-center wow fadeInUp mb-5" data-wow-delay="0.1s">
+                <h6 class="text-primary text-uppercase fw-bold tracking-widest">Pricing</h6>
+                <h1 class="display-5 fw-bold">Per-Transaction Fees</h1>
+                <div class="mx-auto bg-primary my-3" style="width: 50px; height: 3px;"></div>
+                <p class="lead text-muted mx-auto" style="max-width: 700px;">
+                    Transparent pricing with no hidden costs. Fees apply per successful payment—failed or cancelled
+                    transactions are typically free of charge.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="wow fadeInUp" data-wow-delay="0.15s">
+                    <div class="card border-0 bg-light rounded-4 shadow-sm h-100">
+                        <div class="card-body p-4 bg-secondary">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="bg-primary-soft p-2 rounded-3 me-3">
+                                    <i class="fa-solid fa-globe text-primary fs-4"></i>
+                                </div>
+                                <h4 class="fw-bold mb-0">Online Payments</h4>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table class="table align-middle mb-0 table-borderless">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th class="ps-3 py-3">Category</th>
+                                            <th class="py-3">Type</th>
+                                            <th class="py-3 text-end pe-3">MDR (Reference)</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody class="border-top-0">
+
+                                        <!-- Credit Card Scheme -->
+                                        <tr class="border-top">
+                                            <td class="ps-3 fw-bold text-primary" rowspan="3">
+                                                Credit Card Scheme
+                                            </td>
+                                            <td>Local Visa / Master (Debit)</td>
+                                            <td class="text-end pe-3 fw-bold text-primary">1.3%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Local Visa / Master (Credit)</td>
+                                            <td class="text-end pe-3 fw-bold text-primary">1.8%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Visa / Master (Foreign)</td>
+                                            <td class="text-end pe-3 fw-bold text-primary">
+                                                3.5% – 5%+ <span class="text-muted small">(final approval)</span>
+                                            </td>
+                                        </tr>
+
+                                        <!-- eWallets -->
+                                        <tr class="border-top">
+                                            <td class="ps-3 fw-bold text-primary" rowspan="3">
+                                                eWallets
+                                            </td>
+                                            <td>
+                                                TNG eWallet, MAE, ShopeePay, Boost,<br>
+                                                WeChat Pay, GrabPay, Alipay
+                                            </td>
+                                            <td class="text-end pe-3 fw-bold text-primary">1.2%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Alipay+</td>
+                                            <td class="text-end pe-3 fw-bold text-primary">2.0%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Setel Pay</td>
+                                            <td class="text-end pe-3 fw-bold text-primary">1.5%</td>
+                                        </tr>
+
+                                        <!-- Online Banking -->
+                                        <tr class="border-top">
+                                            <td class="ps-3 fw-bold text-primary" rowspan="2">
+                                                Online Banking
+                                            </td>
+                                            <td>FPX (B2C)</td>
+                                            <td class="text-end pe-3 fw-bold text-primary">
+                                                RM0.70 or 2% <span class="text-muted small">(whichever higher)</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>FPX (B2B)</td>
+                                            <td class="text-end pe-3 fw-bold text-primary">
+                                                RM2.00 or 2% <span class="text-muted small">(whichever higher)</span>
+                                            </td>
+                                        </tr>
+
+                                        <!-- DuitNow -->
+                                        <tr class="border-top">
+                                            <td class="ps-3 fw-bold text-primary">
+                                                DuitNow
+                                            </td>
+                                            <td>DuitNow</td>
+                                            <td class="text-end pe-3 fw-bold text-primary">1.0%</td>
+                                        </tr>
+
+                                        <!-- BNPL -->
+                                        <tr class="border-top">
+                                            <td class="ps-3 fw-bold text-primary" rowspan="2">
+                                                Buy Now Pay Later
+                                            </td>
+                                            <td>Atome</td>
+                                            <td class="text-end pe-3 fw-bold text-primary">
+                                                6% – 7% <span class="text-muted small">(final approval)</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>GrabPay Later</td>
+                                            <td class="text-end pe-3 fw-bold text-primary">6%</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+
+                            <div class="mt-4 p-3 rounded-3 bg-dark border-start border-primary border-4 shadow-sm">
+                                <p class="small mb-0 text-white-200">
+                                    <span class="badge bg-primary me-2">Pro Tip</span>
+                                    To maximize conversion in Malaysia, we recommend enabling <strong>FPX + Top 3
+                                        E-Wallets</strong>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 text-muted">
+                <p class="mb-0 italic">* Indicative rates only. Final rates are subject to <strong>Revenue
+                        Monster</strong> approval based on industry, volume, and risk category.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PROCESS -->
+    <section class="container-fluid py-5 bg-secondary">
+        <div class="container py-5">
+            <div class="text-center wow fadeInUp mb-5" data-wow-delay="0.1s">
+                <h6 class="text-primary text-uppercase fw-bold tracking-widest">Workflow</h6>
+                <h2 class="display-6 fw-bold text-white">How We Go Live</h2>
+                <div class="mx-auto bg-primary mb-3" style="width: 60px; height: 3px;"></div>
+                <p class="lead text-body mx-auto" style="max-width: 600px;">
+                    Simple steps — BRIF Cloud manages the technical heavy lifting so you can focus on your business.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.12s">
+                    <div class="card bg-dark border-0 rounded-4 p-4 h-100 shadow-sm transition-hover">
+                        <div class="card-body">
+                            <div class="display-4 fw-bold text-primary opacity-25 mb-3">01</div>
+                            <h5 class="text-white fw-bold mb-3">Onboarding</h5>
+                            <p class="text-white-50 mb-0">
+                                We collect merchant details, business profiles, and ensure all approval requirements are
+                                met seamlessly.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.18s">
+                    <div class="card bg-dark border-0 rounded-4 p-4 h-100 shadow-sm transition-hover">
+                        <div class="card-body">
+                            <div class="display-4 fw-bold text-primary opacity-25 mb-3">02</div>
+                            <h5 class="text-white fw-bold mb-3">Integration</h5>
+                            <p class="text-white-50 mb-0">
+                                Implementation of Hosted Checkout or API integration with robust Webhook signature
+                                verification.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.24s">
+                    <div class="card bg-dark border-0 rounded-4 p-4 h-100 shadow-sm transition-hover">
+                        <div class="card-body">
+                            <div class="display-4 fw-bold text-primary opacity-25 mb-3">03</div>
+                            <h5 class="text-white fw-bold mb-3">Go Live & Support</h5>
+                            <p class="text-white-50 mb-0">
+                                Production launch, proactive monitoring, and dedicated troubleshooting support to keep
+                                payments flowing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="container-fluid py-5 bg-dark" id="faq">
+        <div class="container py-5">
+            <div class="text-center wow fadeInUp mb-5" data-wow-delay="0.1s">
+                <h6 class="text-primary text-uppercase fw-bold tracking-widest">FAQ</h6>
+                <h2 class="display-5 fw-bold">Common Questions</h2>
+                <div class="mx-auto bg-primary my-3" style="width: 50px; height: 3px;"></div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-8 mx-auto wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="faq-container">
+
+                        <details class="faq-card mb-3 shadow-sm rounded-4 bg-secondary overflow-hidden" open>
+                            <summary
+                                class="p-4 d-flex align-items-center justify-content-between fw-bold text-white list-unstyled cursor-pointer">
+                                Do you charge setup fees?
+                                <div class="faq-icon-box rounded-circle p-2">
+                                    <i class="fa-solid fa-chevron-down text-primary small transition-transform"></i>
+                                </div>
+                            </summary>
+                            <div class="px-4 pb-4 text-white-200 border-top pt-3">
+                                In most cases, there’s no setup fee. The final scope depends on your specific
+                                integration requirements and business type.
+                            </div>
+                        </details>
+
+                        <details class="faq-card mb-3 shadow-sm rounded-4 bg-secondary overflow-hidden">
+                            <summary
+                                class="p-4 d-flex align-items-center justify-content-between fw-bold text-white list-unstyled cursor-pointer">
+                                Are failed/cancelled payments charged?
+                                <div class="faq-icon-box rounded-circle p-2">
+                                    <i class="fa-solid fa-chevron-down text-primary small transition-transform"></i>
+                                </div>
+                            </summary>
+                            <div class="px-4 pb-4 text-white-200 border-top pt-3">
+                                Typically, fees apply only to successful captured payments. Failed or cancelled
+                                transactions are usually not charged.
+                            </div>
+                        </details>
+
+                        <details class="faq-card mb-3 shadow-sm rounded-4 bg-secondary overflow-hidden">
+                            <summary
+                                class="p-4 d-flex align-items-center justify-content-between fw-bold text-white list-unstyled cursor-pointer">
+                                How long does settlement take?
+                                <div class="faq-icon-box rounded-circle p-2">
+                                    <i class="fa-solid fa-chevron-down text-primary small transition-transform"></i>
+                                </div>
+                            </summary>
+                            <div class="px-4 pb-4 text-white-200 border-top pt-3">
+                                Settlement is usually <strong>T+1</strong> or <strong>T+2</strong> working days,
+                                depending on the payment method and your specific approval settings.
+                            </div>
+                        </details>
+
+                        <details class="faq-card mb-4 shadow-sm rounded-4 bg-secondary overflow-hidden">
+                            <summary
+                                class="p-4 d-flex align-items-center justify-content-between fw-bold text-white list-unstyled cursor-pointer">
+                                Can you integrate with Laravel / custom systems?
+                                <div class="faq-icon-box rounded-circle p-2">
+                                    <i class="fa-solid fa-chevron-down text-primary small transition-transform"></i>
+                                </div>
+                            </summary>
+                            <div class="px-4 pb-4 text-white-200 border-top pt-3">
+                                Yes. We can integrate seamlessly into Laravel, Node.js, or other custom stacks,
+                                including full implementation of secure webhook signature verification.
+                            </div>
+                        </details>
+
+                        <div class="bg-dark text-white rounded-4 p-4 d-flex align-items-start gap-3 shadow">
+                            <i class="fa-solid fa-circle-info text-primary fs-4 mt-1"></i>
+                            <div>
+                                <p class="mb-0 small opacity-75">
+                                    <strong class="text-white">Partner Note:</strong>
+                                    If you have existing contracted rates, let us know! We can update your integration
+                                    to reflect your exact fee percentages per method.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="container-fluid cta-section py-5">
+        <div class="container text-center py-5 ">
+            <h2 class="text-white mb-3">Request Your Final Rate Card</h2>
+            <p class="text-white-50 mb-4">
+                Share your business type and estimated monthly volume — we’ll propose the best rate structure and help
+                you go live.
+            </p>
+
+
+            <!-- Buttons -->
+            <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
+                <a href="../../contact.html" class="btn btn-primary cta-btn mb-3 mb-md-0">
+                    <i class="fa fa-envelope me-2"></i> Talk to Our Team
+                </a>
+
+                <a href="https://wa.me/60123011610" target="_blank" class="btn btn-outline-light cta-btn">
+                    <i class="fab fa-whatsapp me-2"></i> WhatsApp Us
+                </a>
+            </div>
+
+            <div class="mt-4 small text-white-50">
+                * Indicative rates only. Final rates subject to Revenue Monster approval and merchant profile.
+            </div>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-outline-primary border-2 btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+        // Optional: change plus icon on FAQ open
+        document.querySelectorAll(".faq-item").forEach(d => {
+            d.addEventListener("toggle", () => {
+                const icon = d.querySelector("i");
+                if (!icon) return;
+                icon.classList.toggle("fa-plus", !d.open);
+                icon.classList.toggle("fa-minus", d.open);
+            });
+        });
+    </script>
+</body>
+
+</html>
