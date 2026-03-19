@@ -174,6 +174,17 @@
   color: var(--bs-white);
 }
 
+.acca-page-header {
+  padding-top: 200px;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../img/acca/acca-bg.png) top center no-repeat;
+  background-size: cover;
+}
+
+.acca-page-header .breadcrumb-item + .breadcrumb-item::before {
+  color: var(--bs-white);
+}
+
 /*** Title ***/
 .title {
   margin-bottom: 2rem;

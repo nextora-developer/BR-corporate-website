@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>BRIF - ACCA Professional Courses</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ACCA Professional Courses Malaysia, Mandarin-led ACCA, ACCA course package" name="keywords">
+    <meta
+        content="Start or advance your accounting career with Malaysia's leading Mandarin-led ACCA program. Flexible, exam-focused, and designed for working adults."
+        name="description">
+
+    <!-- Favicon -->
+    <link href="../img/favicon.svg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Work+Sans:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17838304641"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'AW-17838304641');
+    </script>
+
+    <style>
+        :root {
+            --gold: #d4af37;
+            --gold-dark: #8f6a10;
+            --gold-soft: #f3d46a;
+            --bg: #0b0b0c;
+            --bg-soft: #101114;
+            --card: #15161a;
+            --card-2: #1a1c20;
+            --text: #f8fafc;
+            --muted: #9ca3af;
+            --muted-2: #cbd5e1;
+            --border: rgba(255, 255, 255, 0.08);
+            --border-gold: rgba(212, 175, 55, 0.28);
+            --shadow-dark: 0 25px 60px rgba(0, 0, 0, 0.35);
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        .display-4 {
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        .acca-header-wrap {
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at top center, rgba(212, 175, 55, 0.14), transparent 38%),
+                linear-gradient(180deg, #090909 0%, #0f1013 100%);
+            padding-top: 50px;
+        }
+
+        .acca-header-wrap::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.08), transparent 22%),
+                radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.04), transparent 20%);
+            pointer-events: none;
+        }
+
+        .acca-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 18px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--gold);
+            border: 1px solid var(--border);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+            backdrop-filter: blur(10px);
+        }
+
+        .acca-badge .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--gold);
+            box-shadow: 0 0 0 8px rgba(212, 175, 55, 0.12);
+            animation: accaPulse 1.8s infinite;
+        }
+
+        @keyframes accaPulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, .35);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+            }
+        }
+
+        .acca-hero-title {
+            font-size: clamp(2.7rem, 6vw, 5rem);
+            font-weight: 900;
+            line-height: 1.03;
+            letter-spacing: -.04em;
+            color: var(--gold);
+        }
+
+        .acca-hero-title span {
+            color: #fff;
+        }
+
+        .acca-hero-subtitle {
+            max-width: 760px;
+            margin: 0 auto;
+            font-size: 1.08rem;
+            color: var(--muted);
+            line-height: 1.9;
+        }
+
+        .acca-brand-line {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            color: #7d8593;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .acca-brand-line::before,
+        .acca-brand-line::after {
+            content: "";
+            display: block;
+            width: 42px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .acca-btn-dark {
+            background: var(--gold);
+            color: #000;
+            border-radius: 999px;
+            padding: 16px 34px;
+            font-size: 14px;
+            font-weight: 800;
+            border: none;
+            box-shadow: 0 18px 40px rgba(212, 175, 55, 0.22);
+            transition: .3s ease;
+        }
+
+        .acca-btn-dark:hover {
+            background: #e6c85c;
+            color: #000;
+            transform: translateY(-2px);
+        }
+
+        .acca-btn-light {
+            background: transparent;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 999px;
+            padding: 15px 32px;
+            font-size: 14px;
+            font-weight: 800;
+            transition: .3s ease;
+        }
+
+        .acca-btn-light:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .acca-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.12), transparent);
+        }
+
+        .acca-why {
+            position: relative;
+            overflow: hidden;
+            padding: 110px 0;
+            color: #fff;
+            background:
+                linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.92)),
+                url('../img/acca/acca-bg.png') center center / cover no-repeat;
+        }
+
+        .acca-why h2 {
+            font-size: clamp(2rem, 4vw, 3.7rem);
+            font-weight: 900;
+            line-height: 1.08;
+            letter-spacing: -.03em;
+        }
+
+        .acca-why h2 .highlight {
+            color: var(--gold-soft);
+        }
+
+        .acca-why-card {
+            position: relative;
+            height: 100%;
+            padding: 36px 30px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            backdrop-filter: blur(12px);
+            transition: .35s ease;
+            overflow: hidden;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .acca-why-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(212, 175, 55, 0.48);
+        }
+
+        .acca-why-num {
+            position: absolute;
+            top: 16px;
+            right: 24px;
+            font-size: 72px;
+            font-weight: 900;
+            color: rgba(255, 255, 255, .05);
+            line-height: 1;
+        }
+
+        .acca-why-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.28rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        .acca-why-title .bar {
+            width: 5px;
+            height: 28px;
+            border-radius: 99px;
+            background: var(--gold);
+        }
+
+        .acca-why-note {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 22px;
+            border-radius: 20px;
+            background: rgba(212, 175, 55, 0.10);
+            border: 1px solid rgba(212, 175, 55, 0.20);
+            color: #f8d981;
+            font-weight: 500;
+        }
+
+        .acca-section-title {
+            font-size: clamp(2rem, 3vw, 2.9rem);
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: -.03em;
+        }
+
+        .acca-package-card {
+            height: 100%;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 2rem;
+            box-shadow: 0 12px 34px rgba(0, 0, 0, 0.22);
+            transition: .35s ease;
+            overflow: hidden;
+        }
+
+        .acca-package-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.28);
+            border-color: rgba(212, 175, 55, 0.35);
+        }
+
+        .acca-card-inner {
+            padding: 34px 28px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .acca-icon-box {
+            width: 56px;
+            height: 56px;
+            border-radius: 18px;
+            background: rgba(212, 175, 55, 0.10);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            margin: 0 auto 18px;
+            transition: .3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.18);
+        }
+
+        .acca-package-card:hover .acca-icon-box {
+            transform: rotate(6deg);
+        }
+
+        .acca-tag {
+            display: inline-block;
+            padding: 7px 13px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--muted);
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .14em;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .acca-list-check,
+        .acca-list-info,
+        .acca-list-note {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .acca-list-check+.acca-list-check,
+        .acca-list-info+.acca-list-info,
+        .acca-list-note+.acca-list-note {
+            margin-top: 14px;
+        }
+
+        .acca-check-icon {
+            width: 20px;
+            height: 20px;
+            flex: 0 0 20px;
+            color: #10b981;
+            margin-top: 2px;
+        }
+
+        .acca-info-icon {
+            width: 22px;
+            height: 22px;
+            flex: 0 0 22px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.12);
+            color: var(--gold);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            margin-top: 1px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .acca-note-icon {
+            width: 22px;
+            height: 22px;
+            flex: 0 0 22px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.06);
+            color: #d1d5db;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            margin-top: 1px;
+        }
+
+        .acca-price {
+            font-size: 2.1rem;
+            font-weight: 900;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .acca-price-sub {
+            font-size: 11px;
+            font-weight: 800;
+            color: #7d8593;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        .acca-btn-card {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            border-radius: 14px;
+            padding: 14px 18px;
+            background: rgba(212, 175, 55, 0.10);
+            color: var(--gold);
+            border: 1px solid rgba(212, 175, 55, 0.30);
+            font-size: 14px;
+            font-weight: 800;
+            transition: .3s ease;
+            text-decoration: none;
+        }
+
+        .acca-btn-card:hover {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: #000;
+        }
+
+        .acca-soft-section {
+            background: linear-gradient(180deg, #0b0b0c 0%, #0f1114 100%);
+            padding: 50px 0;
+        }
+
+        .acca-audience-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 2.5rem;
+            padding: 42px 38px;
+            height: 100%;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+        }
+
+        .acca-audience-title {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 32px;
+        }
+
+        .acca-qmark {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--gold);
+            color: #000;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 16px;
+        }
+
+        .acca-audience-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .acca-audience-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 22px;
+            color: var(--muted-2);
+            font-weight: 500;
+        }
+
+        .acca-audience-list .circle {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 2px solid rgba(212, 175, 55, 0.55);
+            position: relative;
+            flex: 0 0 22px;
+            margin-top: 2px;
+        }
+
+        .acca-audience-list .circle::after {
+            content: "";
+            position: absolute;
+            inset: 4px;
+            border-radius: 50%;
+            background: var(--gold);
+        }
+
+        .acca-quote-box {
+            margin-top: 30px;
+            padding: 20px 22px;
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
+            font-size: 14px;
+            color: var(--muted);
+            font-style: italic;
+        }
+
+        .acca-value-card {
+            height: 100%;
+            padding: 26px;
+            border-radius: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.03);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+            transition: .3s ease;
+        }
+
+        .acca-value-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 40px rgba(0, 0, 0, 0.22);
+            border-color: rgba(212, 175, 55, 0.28);
+        }
+
+        .acca-value-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            font-size: 18px;
+        }
+
+        .bg-amber-soft {
+            background: rgba(212, 175, 55, 0.12);
+            color: var(--gold);
+        }
+
+        .bg-blue-soft {
+            background: rgba(37, 99, 235, 0.12);
+            color: #60a5fa;
+        }
+
+        .bg-emerald-soft {
+            background: rgba(16, 185, 129, 0.12);
+            color: #34d399;
+        }
+
+        .bg-purple-soft {
+            background: rgba(124, 58, 237, 0.12);
+            color: #a78bfa;
+        }
+
+        .acca-gallery-img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #121212;
+            transition: .35s ease;
+        }
+
+        .acca-gallery-img:hover {
+            transform: translateY(-4px) scale(1.01);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+
+        .acca-final-cta {
+            position: relative;
+            overflow: hidden;
+            padding: 110px 0;
+            background: linear-gradient(135deg, #090909 0%, #111214 55%, #0d0e11 100%);
+        }
+
+        .acca-final-cta::before,
+        .acca-final-cta::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: 0;
+        }
+
+        .acca-final-cta::before {
+            width: 280px;
+            height: 280px;
+            background: rgba(212, 175, 55, 0.18);
+            top: -80px;
+            left: -80px;
+        }
+
+        .acca-final-cta::after {
+            width: 280px;
+            height: 280px;
+            background: rgba(255, 255, 255, 0.06);
+            bottom: -100px;
+            right: -80px;
+        }
+
+        .acca-final-card {
+            position: relative;
+            z-index: 1;
+            background: rgba(20, 20, 22, 0.86);
+            border: 1px solid rgba(212, 175, 55, 0.24);
+            backdrop-filter: blur(12px);
+            border-radius: 2.5rem;
+            padding: 52px 40px;
+            box-shadow: 0 25px 60px -30px rgba(0, 0, 0, 0.45);
+            text-align: center;
+        }
+
+        .acca-mini-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 16px;
+            border-radius: 999px;
+            background: rgba(212, 175, 55, 0.10);
+            color: var(--gold);
+            border: 1px solid rgba(212, 175, 55, 0.18);
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        .acca-mini-badge .mini-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gold);
+        }
+
+        .text-gold {
+            color: var(--gold);
+        }
+
+        .text-white-soft {
+            color: var(--muted-2) !important;
+        }
+
+        .text-muted-dark {
+            color: var(--muted) !important;
+        }
+
+        .acca-sticky-wa {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            z-index: 9999;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #25D366, #1ebe5d);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 18px 35px rgba(37, 211, 102, 0.28);
+            font-size: 24px;
+            transition: .3s ease;
+        }
+
+        .acca-sticky-wa:hover {
+            transform: translateY(-3px) scale(1.03);
+            color: #fff;
+        }
+
+        @media (max-width: 767.98px) {
+            .acca-header-wrap {
+                padding-top: 6px;
+            }
+
+            .acca-hero-title {
+                font-size: 2.5rem;
+            }
+
+            .acca-why {
+                padding: 80px 0;
+            }
+
+            .acca-card-inner,
+            .acca-audience-box,
+            .acca-final-card {
+                padding: 28px 22px;
+            }
+
+            .acca-section-title,
+            .acca-audience-title {
+                font-size: 1.8rem;
+            }
+
+            .acca-why-note {
+                padding: 14px 18px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Header / Navbar Start -->
+    <div class="container-fluid p-0">
+        <div id="site-navbar"></div>
+    </div>
+    <!-- Header / Navbar End -->
+
+    <!-- Hero Start -->
+    <section class="acca-header-wrap">
+        <div class="container py-5 py-lg-6">
+            <div class="row justify-content-center">
+                <div class="col-xl-10 text-center pt-5 pb-4">
+                    <div class="mb-4 wow fadeInUp" data-wow-delay="0.1s">
+                        <span class="acca-badge">
+                            <span class="dot"></span>
+                            Professional Courses
+                        </span>
+                    </div>
+
+                    <h1 class="acca-hero-title mb-4 wow fadeInUp" data-wow-delay="0.2s">
+                        ACCA Professional <span>Courses</span>
+                    </h1>
+
+                    <p class="acca-hero-subtitle mb-4 wow fadeInUp" data-wow-delay="0.3s">
+                        Start or advance your accounting career with Malaysia's leading Mandarin-led ACCA program.
+                        Designed for clarity, flexibility, and exam success.
+                    </p>
+
+                    <div class="mb-5 wow fadeInUp" data-wow-delay="0.35s">
+                        <div class="acca-brand-line">
+                            Edufluence <span class="text-gold">×</span> BR Innovate Future
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3 wow fadeInUp"
+                        data-wow-delay="0.4s">
+                        <a href="https://wa.me/60123011610?text=Hi%20BRIF%2C%20I%20want%20to%20know%20more%20about%20the%20ACCA%20courses."
+                            target="_blank" rel="noopener" class="acca-btn-dark">
+                            Get Course Details (Free)
+                            <i class="fa-solid fa-arrow-right ms-2"></i>
+                        </a>
+
+                        <a href="#pathways" class="acca-btn-light">
+                            View Course Pathways
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+
+    <!-- Why ACCA Start -->
+    <section class="acca-why">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-xl-10 wow fadeInUp" data-wow-delay="0.1s">
+                    <h2 class="mb-4">
+                        Why are more professionals <br class="d-none d-md-block">
+                        choosing <span class="highlight">ACCA?</span>
+                    </h2>
+                    <p class="fs-5 text-white-soft mx-auto" style="max-width: 840px; line-height: 1.8;">
+                        ACCA is one of the world’s leading professional accounting qualifications, recognised in over
+                        <span class="fw-bold text-white text-decoration-underline"
+                            style="text-decoration-color: rgba(212,175,55,.55)!important;">170 countries</span>
+                        and highly valued by the world's most prestigious firms.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="acca-why-card">
+                        <div class="acca-why-num">01</div>
+                        <div class="acca-why-title">
+                            <span class="bar"></span>
+                            Seen in most job listings
+                        </div>
+                        <p class="text-white-soft mb-0" style="line-height: 1.8;">
+                            Accounting, audit, and finance roles frequently state “ACCA / Degree preferred”.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="acca-why-card">
+                        <div class="acca-why-num">02</div>
+                        <div class="acca-why-title">
+                            <span class="bar"></span>
+                            Stronger salary potential
+                        </div>
+                        <p class="text-white-soft mb-0" style="line-height: 1.8;">
+                            ACCA holders generally earn more than those with basic accounting diplomas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="acca-why-card">
+                        <div class="acca-why-num">03</div>
+                        <div class="acca-why-title">
+                            <span class="bar"></span>
+                            Clearer career progression
+                        </div>
+                        <p class="text-white-soft mb-0" style="line-height: 1.8;">
+                            More opportunities, faster promotions, and long-term career stability.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 pt-3 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="acca-why-note">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>Without a recognised qualification, many professionals struggle to even get
+                        shortlisted.</span>
+                </div>
+                <p class="small text-white-50 mt-4 mb-0">
+                    * Based on global industry standards and employer preferences in Malaysia.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Why ACCA End -->
+
+    <!-- <div class="container my-5">
+        <div class="acca-divider"></div>
+    </div> -->
+
+    <!-- Packages Start -->
+    <section id="pathways" class="py-5">
+        <div class="container py-2">
+            <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <h2 class="acca-section-title">Choose the ACCA Package That Fits You</h2>
+            </div>
+
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-md-6 col-xl-3 wow fadeInUp" data-wow-delay="0.15s">
+                    <div class="acca-package-card">
+                        <div class="acca-card-inner">
+                            <div class="text-center mb-4">
+                                <div class="acca-icon-box">
+                                    <i class="fa-solid fa-graduation-cap fa-lg"></i>
+                                </div>
+                                <h3 class="h4 fw-bold text-white mb-2">Knowledge Level</h3>
+                                <span class="acca-tag">Starter Package</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="acca-list-check">
+                                    <i class="fa-solid fa-check acca-check-icon"></i>
+                                    <span class="text-white-soft">Business and Technology (BT)</span>
+                                </div>
+                                <div class="acca-list-check">
+                                    <i class="fa-solid fa-check acca-check-icon"></i>
+                                    <span class="text-white-soft">Management Accounting (MA)</span>
+                                </div>
+                                <div class="acca-list-check">
+                                    <i class="fa-solid fa-check acca-check-icon"></i>
+                                    <span class="text-white-soft">Financial Accounting (FA)</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="acca-list-info">
+                                    <span class="acca-info-icon"><i class="fa-solid fa-info"></i></span>
+                                    <div>
+                                        <div class="fw-semibold text-white">Mandarin-led classes</div>
+                                        <div class="small text-muted-dark">Beginner-friendly foundation for first-time
+                                            ACCA students.</div>
+                                    </div>
+                                </div>
+                                <div class="acca-list-info">
+                                    <span class="acca-info-icon"><i class="fa-solid fa-info"></i></span>
+                                    <div>
+                                        <div class="fw-semibold text-white">Replay access included</div>
+                                        <div class="small text-muted-dark">Review every lesson again anytime you need.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="my-4" style="border-color: rgba(255,255,255,.08);">
+
+                            <div class="mb-4">
+                                <div class="acca-list-note">
+                                    <span class="acca-note-icon"><i class="fa-solid fa-clock"></i></span>
+                                    <span class="small fw-semibold text-muted-dark">Flexible learning schedule for
+                                        working adults</span>
+                                </div>
+                                <div class="acca-list-note">
+                                    <span class="acca-note-icon"><i class="fa-solid fa-clock"></i></span>
+                                    <span class="small fw-semibold text-muted-dark">Structured lessons and guided
+                                        revision</span>
+                                </div>
+                            </div>
+
+                            <p class="small text-muted-dark fst-italic mb-4">
+                                A great starting point if you are new to ACCA and want a clear, guided path.
+                            </p>
+
+                            <hr class="my-4" style="border-color: rgba(255,255,255,.06);">
+
+                            <div class="mt-auto text-center">
+                                <div class="acca-price">RM 1,999</div>
+                                <div class="acca-price-sub mt-2">3 Papers Included</div>
+                                <a href="https://wa.me/60123011610?text=Hi%20BRIF%2C%20I%20am%20interested%20in%20the%20Knowledge%20Level%20ACCA%20package."
+                                    target="_blank" rel="noopener" class="acca-btn-card mt-4">
+                                    Enquire Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="acca-package-card">
+                        <div class="acca-card-inner">
+                            <div class="text-center mb-4">
+                                <div class="acca-icon-box">
+                                    <i class="fa-solid fa-book-open fa-lg"></i>
+                                </div>
+                                <h3 class="h4 fw-bold text-white mb-2">Skills Level</h3>
+                                <span class="acca-tag">Core Progression</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="acca-list-check">
+                                    <i class="fa-solid fa-check acca-check-icon"></i>
+                                    <span class="text-white-soft">Corporate and Business Law (LW)</span>
+                                </div>
+                                <div class="acca-list-check">
+                                    <i class="fa-solid fa-check acca-check-icon"></i>
+                                    <span class="text-white-soft">Performance Management (PM)</span>
+                                </div>
+                                <div class="acca-list-check">
+                                    <i class="fa-solid fa-check acca-check-icon"></i>
+                                    <span class="text-white-soft">Taxation (TX)</span>
+                                </div>
+                                <div class="acca-list-check">
+                                    <i class="fa-solid fa-check acca-check-icon"></i>
+                                    <span class="text-white-soft">Financial Reporting (FR)</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="acca-list-info">
+                                    <span class="acca-info-icon"><i class="fa-solid fa-info"></i></span>
+                                    <div>
+                                        <div class="fw-semibold text-white">Exam-oriented teaching</div>
+                                        <div class="small text-muted-dark">Focused training with practical examples and
+                                            drills.</div>
+                                    </div>
+                                </div>
+                                <div class="acca-list-info">
+                                    <span class="acca-info-icon"><i class="fa-solid fa-info"></i></span>
+                                    <div>
+                                        <div class="fw-semibold text-white">Support for busy learners</div>
+                                        <div class="small text-muted-dark">Suitable for those studying while working
+                                            full-time.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="my-4" style="border-color: rgba(255,255,255,.08);">
+
+                            <div class="mb-4">
+                                <div class="acca-list-note">
+                                    <span class="acca-note-icon"><i class="fa-solid fa-clock"></i></span>
+                                    <span class="small fw-semibold text-muted-dark">Revision support and mock guidance
+                                        included</span>
+                                </div>
+                                <div class="acca-list-note">
+                                    <span class="acca-note-icon"><i class="fa-solid fa-clock"></i></span>
+                                    <span class="small fw-semibold text-muted-dark">Step-by-step concept breakdown in
+                                        Mandarin</span>
+                                </div>
+                            </div>
+
+                            <p class="small text-muted-dark fst-italic mb-4">
+                                Ideal for students who want to progress steadily with strong paper-by-paper support.
+                            </p>
+
+                            <hr class="my-4" style="border-color: rgba(255,255,255,.06);">
+
+                            <div class="mt-auto text-center">
+                                <div class="acca-price">RM 2,999</div>
+                                <div class="acca-price-sub mt-2">4 Papers Included</div>
+                                <a href="https://wa.me/60123456789?text=Hi%20BRIF%2C%20I%20am%20interested%20in%20the%20Skills%20Level%20ACCA%20package."
+                                    target="_blank" rel="noopener" class="acca-btn-card mt-4">
+                                    Enquire Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-md-6 col-xl-3 wow fadeInUp" data-wow-delay="0.25s">
+                    <div class="acca-package-card">
+                        <div class="acca-card-inner">
+                            <div class="text-center mb-4">
+                                <div class="acca-icon-box">
+                                    <i class="fa-solid fa-chart-line fa-lg"></i>
+                                </div>
+                                <h3 class="h4 fw-bold text-white mb-2">Strategic Professional</h3>
+                                <span class="acca-tag">Advanced Level</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="acca-list-check">
+                                    <i class="fa-solid fa-check acca-check-icon"></i>
+                                    <span class="text-white-soft">Strategic Business Leader (SBL)</span>
+                                </div>
+                                <div class="acca-list-check">
+                                    <i class="fa-solid fa-check acca-check-icon"></i>
+                                    <span class="text-white-soft">Strategic Business Reporting (SBR)</span>
+                                </div>
+                                <div class="acca-list-check">
+                                    <i class="fa-solid fa-check acca-check-icon"></i>
+                                    <span class="text-white-soft">Advanced optional paper guidance</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="acca-list-info">
+                                    <span class="acca-info-icon"><i class="fa-solid fa-info"></i></span>
+                                    <div>
+                                        <div class="fw-semibold text-white">Case-based exam preparation</div>
+                                        <div class="small text-muted-dark">High-level coaching for complex professional
+                                            papers.</div>
+                                    </div>
+                                </div>
+                                <div class="acca-list-info">
+                                    <span class="acca-info-icon"><i class="fa-solid fa-info"></i></span>
+                                    <div>
+                                        <div class="fw-semibold text-white">Technique + writing structure</div>
+                                        <div class="small text-muted-dark">Learn how to answer strategically for better
+                                            marks.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="my-4" style="border-color: rgba(255,255,255,.08);">
+
+                            <div class="mb-4">
+                                <div class="acca-list-note">
+                                    <span class="acca-note-icon"><i class="fa-solid fa-clock"></i></span>
+                                    <span class="small fw-semibold text-muted-dark">Strong exam techniques for
+                                        final-stage learners</span>
+                                </div>
+                                <div class="acca-list-note">
+                                    <span class="acca-note-icon"><i class="fa-solid fa-clock"></i></span>
+                                    <span class="small fw-semibold text-muted-dark">Mock review and answer-structure
+                                        coaching</span>
+                                </div>
+                            </div>
+
+                            <p class="small text-muted-dark fst-italic mb-4">
+                                Best for students who want to complete the final ACCA stage with confidence.
+                            </p>
+
+                            <hr class="my-4" style="border-color: rgba(255,255,255,.06);">
+
+                            <div class="mt-auto text-center">
+                                <div class="acca-price">RM 3,699</div>
+                                <div class="acca-price-sub mt-2">2 Core Papers + Guidance</div>
+                                <a href="https://wa.me/60123456789?text=Hi%20BRIF%2C%20I%20am%20interested%20in%20the%20Strategic%20Professional%20ACCA%20package."
+                                    target="_blank" rel="noopener" class="acca-btn-card mt-4">
+                                    Enquire Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-md-6 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="acca-package-card">
+                        <div class="acca-card-inner">
+                            <div class="text-center mb-4">
+                                <div class="acca-icon-box">
+                                    <i class="fa-solid fa-crown fa-lg"></i>
+                                </div>
+                                <h3 class="h4 fw-bold text-white mb-2">Complete Pathway</h3>
+                                <span class="acca-tag">Best Value</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="acca-list-check">
+                                    <i class="fa-solid fa-check acca-check-icon"></i>
+                                    <span class="text-white-soft">Knowledge to Professional pathway</span>
+                                </div>
+                                <div class="acca-list-check">
+                                    <i class="fa-solid fa-check acca-check-icon"></i>
+                                    <span class="text-white-soft">Multiple paper planning support</span>
+                                </div>
+                                <div class="acca-list-check">
+                                    <i class="fa-solid fa-check acca-check-icon"></i>
+                                    <span class="text-white-soft">Long-term guided study roadmap</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="acca-list-info">
+                                    <span class="acca-info-icon"><i class="fa-solid fa-info"></i></span>
+                                    <div>
+                                        <div class="fw-semibold text-white">All-in progression strategy</div>
+                                        <div class="small text-muted-dark">Designed for serious learners who want a full
+                                            pathway.</div>
+                                    </div>
+                                </div>
+                                <div class="acca-list-info">
+                                    <span class="acca-info-icon"><i class="fa-solid fa-info"></i></span>
+                                    <div>
+                                        <div class="fw-semibold text-white">Consistent learning system</div>
+                                        <div class="small text-muted-dark">Replay access, exam focus, and structured
+                                            study direction.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="my-4" style="border-color: rgba(255,255,255,.08);">
+
+                            <div class="mb-4">
+                                <div class="acca-list-note">
+                                    <span class="acca-note-icon"><i class="fa-solid fa-clock"></i></span>
+                                    <span class="small fw-semibold text-muted-dark">Recommended for long-term ACCA
+                                        completion plans</span>
+                                </div>
+                                <div class="acca-list-note">
+                                    <span class="acca-note-icon"><i class="fa-solid fa-clock"></i></span>
+                                    <span class="small fw-semibold text-muted-dark">Speak with us for a custom study
+                                        arrangement</span>
+                                </div>
+                            </div>
+
+                            <p class="small text-muted-dark fst-italic mb-4">
+                                The most complete option for students ready to take ACCA seriously from start to finish.
+                            </p>
+
+                            <hr class="my-4" style="border-color: rgba(255,255,255,.06);">
+
+                            <div class="mt-auto text-center">
+                                <div class="acca-price">Custom</div>
+                                <div class="acca-price-sub mt-2">Personalised Study Plan</div>
+                                <a href="https://wa.me/60123456789?text=Hi%20BRIF%2C%20I%20want%20to%20know%20more%20about%20the%20Complete%20Pathway%20ACCA%20package."
+                                    target="_blank" rel="noopener" class="acca-btn-card mt-4">
+                                    Enquire Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Packages End -->
+
+    <!-- Audience / Value Start -->
+    <section class="acca-soft-section">
+        <div class="container">
+            <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <h2 class="acca-section-title mb-3">
+                    Is this ACCA program <span class="text-gold">right for you?</span>
+                </h2>
+                <p class="text-muted-dark fs-5 mx-auto" style="max-width: 760px; line-height: 1.8;">
+                    We focus on clarity and career transformation — helping you bridge the gap between where you are and
+                    where you want to be.
+                </p>
+            </div>
+
+            <div class="row g-5 align-items-start">
+                <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.15s">
+                    <div class="acca-audience-box">
+                        <div class="acca-audience-title">
+                            <span class="acca-qmark">?</span>
+                            This is for you if:
+                        </div>
+
+                        <ul class="acca-audience-list">
+                            <li><span class="circle"></span><span>Want to upgrade your skills & career prospects</span>
+                            </li>
+                            <li><span class="circle"></span><span>Feel stuck in low-paying or long-hour jobs</span></li>
+                            <li><span class="circle"></span><span>Plan to switch into accounting or audit</span></li>
+                            <li><span class="circle"></span><span>Need a globally recognised qualification</span></li>
+                            <li><span class="circle"></span><span>Must study while working full-time</span></li>
+                            <li><span class="circle"></span><span>Lack confidence in English-only environments</span>
+                            </li>
+                        </ul>
+
+                        <div class="acca-quote-box">
+                            "If you checked more than 3 boxes, this program was built specifically for your success."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.2s">
+                    <h3 class="fw-bold text-white mb-4" style="font-size: 2rem;">Why our program works better</h3>
+
+                    <div class="row g-4">
+                        <div class="col-sm-6">
+                            <div class="acca-value-card">
+                                <div class="acca-value-icon bg-amber-soft">
+                                    <i class="fa-solid fa-language"></i>
+                                </div>
+                                <h4 class="h5 fw-bold text-white mb-3">Mandarin-led</h4>
+                                <p class="small text-muted-dark mb-0" style="line-height: 1.8;">
+                                    Complex concepts explained in Mandarin to ensure stronger understanding.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="acca-value-card">
+                                <div class="acca-value-icon bg-blue-soft">
+                                    <i class="fa-solid fa-circle-play"></i>
+                                </div>
+                                <h4 class="h5 fw-bold text-white mb-3">Unlimited Replays</h4>
+                                <p class="small text-muted-dark mb-0" style="line-height: 1.8;">
+                                    Perfect for busy professionals. Rewatch any lesson until you master it.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="acca-value-card">
+                                <div class="acca-value-icon bg-emerald-soft">
+                                    <i class="fa-solid fa-file-lines"></i>
+                                </div>
+                                <h4 class="h5 fw-bold text-white mb-3">Exam Focused</h4>
+                                <p class="small text-muted-dark mb-0" style="line-height: 1.8;">
+                                    Structured notes and mocks designed specifically to help you pass.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="acca-value-card">
+                                <div class="acca-value-icon bg-purple-soft">
+                                    <i class="fa-solid fa-chart-column"></i>
+                                </div>
+                                <h4 class="h5 fw-bold text-white mb-3">High Pass Rate</h4>
+                                <p class="small text-muted-dark mb-0" style="line-height: 1.8;">
+                                    A proven system that helps students perform with more confidence.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <div class="container py-5 pb-5">
+            <div class="row g-4">
+                <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <img src="../img/acca/acca-1.png" alt="ACCA class image 1" class="acca-gallery-img">
+                </div>
+                <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.2s">
+                    <img src="../img/acca/acca-2.png" alt="ACCA class image 2" class="acca-gallery-img">
+                </div>
+                <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.3s">
+                    <img src="../img/acca/acca-3.png" alt="ACCA class image 3" class="acca-gallery-img">
+                </div>
+                <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.4s">
+                    <img src="../img/acca/acca-4.png" alt="ACCA class image 4" class="acca-gallery-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Audience / Value End -->
+
+
+    <!-- Final CTA Start -->
+    <section class="acca-final-cta">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-10 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="acca-final-card">
+                        <div class="mb-4">
+                            <span class="acca-mini-badge">
+                                <span class="mini-dot"></span>
+                                Free Course Info
+                            </span>
+                        </div>
+
+                        <h2 class="acca-section-title mb-4">Ready to change your future?</h2>
+
+                        <p class="text-muted-dark fs-5 mx-auto mb-5" style="max-width: 760px; line-height: 1.8;">
+                            Staying where you are keeps life the same. Choosing ACCA opens the door to a more stable,
+                            professional, and higher-value career.
+                        </p>
+
+                        <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3">
+                            <a href="https://wa.me/60123011610?text=Hi%20BRIF%2C%20I%20want%20to%20know%20more%20about%20the%20ACCA%20courses."
+                                target="_blank" rel="noopener" class="acca-btn-dark">
+                                WhatsApp
+                                <i class="fa-solid fa-arrow-right ms-2"></i>
+                            </a>
+
+                            <a href="#pathways" class="acca-btn-light">
+                                View Packages
+                            </a>
+                        </div>
+
+                        <div class="small text-muted-dark mt-4">
+                            Response within business hours • Malaysia (Mandarin-led)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Final CTA End -->
+
+    <!-- Footer -->
+    <div id="site-footer"></div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-outline-primary border-2 btn-lg-square back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
