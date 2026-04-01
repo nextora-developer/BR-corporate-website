@@ -1,0 +1,1500 @@
+<div class="brx-merchant-page">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap');
+
+    .brx-merchant-page {
+      --bg-cream: #f6edd1;
+      --bg-cream-2: #efe1b4;
+      --bg-soft: #f8f8f8;
+      --bg-sky: #eaf4ff;
+      --bg-sky-2: #dcecff;
+      --white: #ffffff;
+      --text: #121212;
+      --text-soft: #4d4d4d;
+      --text-muted: #6f6f6f;
+      --gold: #d6a126;
+      --gold-2: #efc95a;
+      --gold-3: #b98016;
+      --border: rgba(18, 18, 18, 0.1);
+      --border-gold: rgba(214, 161, 38, 0.35);
+      --shadow: 0 18px 50px rgba(18, 18, 18, 0.08);
+      --shadow-soft: 0 10px 30px rgba(18, 18, 18, 0.06);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --maxw: 1240px;
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(239, 201, 90, 0.18), transparent 26%),
+        radial-gradient(circle at top right, rgba(185, 223, 255, 0.45), transparent 34%),
+        linear-gradient(180deg, #fbf6e6 0%, #f6f7fb 48%, #eaf4ff 100%);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .brx-merchant-page * {
+      box-sizing: border-box;
+    }
+
+    .brx-merchant-page a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brx-merchant-page img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .brx-merchant-page .brx-wrap {
+      width: min(var(--maxw), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .brx-merchant-page .brx-section {
+      position: relative;
+      padding: 88px 0;
+    }
+
+    .brx-merchant-page .brx-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 40px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: rgba(214, 161, 38, 0.1);
+      border: 1px solid rgba(214, 161, 38, 0.22);
+      color: var(--gold-3);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 18px;
+    }
+
+    .brx-merchant-page .brx-center {
+      text-align: center;
+    }
+
+    .brx-merchant-page .brx-title {
+      margin: 0 0 16px;
+      font-size: clamp(34px, 5vw, 60px);
+      line-height: 1.03;
+      letter-spacing: -0.04em;
+      font-weight: 900;
+    }
+
+    .brx-merchant-page .brx-title.serif {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .brx-merchant-page .brx-subtitle {
+      max-width: 840px;
+      margin: 0 auto;
+      color: var(--text-soft);
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .brx-merchant-page .brx-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .brx-merchant-page .brx-btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .brx-merchant-page .brx-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: 16px;
+      font-size: 15px;
+      font-weight: 800;
+      transition: all 0.28s ease;
+      border: 1px solid transparent;
+      box-shadow: var(--shadow-soft);
+      cursor: pointer;
+    }
+
+    .brx-merchant-page .brx-btn-primary {
+      background: linear-gradient(135deg, #f5cf65 0%, #efbc25 45%, #cf9314 100%);
+      color: #1b1403;
+    }
+
+    .brx-merchant-page .brx-btn-primary:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.02);
+    }
+
+    .brx-merchant-page .brx-btn-secondary {
+      background: rgba(255,255,255,0.72);
+      color: var(--text);
+      border-color: rgba(18,18,18,0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .brx-merchant-page .brx-btn-secondary:hover {
+      transform: translateY(-2px);
+      border-color: var(--border-gold);
+      background: rgba(255,255,255,0.95);
+    }
+
+    .brx-merchant-page .brx-card {
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(18,18,18,0.08);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .brx-merchant-page .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* HERO */
+    .brx-merchant-page .brx-hero {
+      padding: 28px 0 78px;
+    }
+
+    .brx-merchant-page .brx-hero-shell {
+      position: relative;
+      border-radius: 34px;
+      padding: 38px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255, 214, 96, 0.3), transparent 28%),
+        radial-gradient(circle at 90% 15%, rgba(197, 227, 255, 0.75), transparent 30%),
+        linear-gradient(180deg, rgba(248, 240, 211, 0.9), rgba(255, 255, 255, 0.82));
+      border: 1px solid rgba(214, 161, 38, 0.16);
+      box-shadow: var(--shadow);
+    }
+
+    .brx-merchant-page .brx-hero-shell:before {
+      content: "";
+      position: absolute;
+      inset: auto auto -160px -90px;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(214, 161, 38, 0.18), transparent 66%);
+      pointer-events: none;
+    }
+
+    .brx-merchant-page .brx-hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .brx-merchant-page .brx-hero-title {
+      font-size: clamp(42px, 6.3vw, 72px);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      font-weight: 900;
+      margin: 0 0 14px;
+      max-width: 720px;
+    }
+
+    .brx-merchant-page .brx-hero-lead {
+      font-size: 18px;
+      line-height: 1.9;
+      color: var(--text-soft);
+      margin: 0;
+      max-width: 700px;
+    }
+
+    .brx-merchant-page .brx-trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .brx-merchant-page .brx-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.68);
+      border: 1px solid rgba(18,18,18,0.08);
+      color: var(--text-soft);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .brx-merchant-page .brx-hero-side {
+      position: relative;
+      display: grid;
+      gap: 18px;
+    }
+
+    .brx-merchant-page .brx-mini-panel {
+      padding: 22px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(18,18,18,0.08);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .brx-merchant-page .brx-mini-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .brx-merchant-page .brx-mini-head h3 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .brx-merchant-page .brx-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: rgba(214,161,38,0.12);
+      color: var(--gold-3);
+      border: 1px solid rgba(214,161,38,0.2);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .brx-merchant-page .brx-benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .brx-merchant-page .brx-benefit-box {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(18,18,18,0.06);
+    }
+
+    .brx-merchant-page .brx-benefit-box strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .brx-merchant-page .brx-benefit-box span {
+      display: block;
+      color: var(--text-soft);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .brx-merchant-page .brx-plan-peek {
+      display: grid;
+      gap: 12px;
+    }
+
+    .brx-merchant-page .brx-plan-mini {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 15px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.66);
+      border: 1px solid rgba(18,18,18,0.06);
+    }
+
+    .brx-merchant-page .brx-plan-mini strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 900;
+      margin-bottom: 4px;
+    }
+
+    .brx-merchant-page .brx-plan-mini span {
+      display: block;
+      color: var(--text-soft);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .brx-merchant-page .brx-plan-mini em {
+      font-style: normal;
+      white-space: nowrap;
+      color: var(--gold-3);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    /* HOW IT WORKS */
+    .brx-merchant-page .brx-how-shell {
+      position: relative;
+      overflow: hidden;
+      border-radius: 32px;
+      padding: 50px 38px 34px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(18,18,18,0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .brx-merchant-page .brx-path-wrap {
+      position: relative;
+      margin-top: 44px;
+    }
+
+    .brx-merchant-page .brx-path-svg {
+      position: absolute;
+      top: 18px;
+      left: 0;
+      width: 100%;
+      height: 110px;
+      pointer-events: none;
+    }
+
+    .brx-merchant-page .brx-path-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .brx-merchant-page .brx-step-item {
+      position: relative;
+      text-align: center;
+      padding-top: 12px;
+    }
+
+    .brx-merchant-page .brx-step-circle {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, #f9edd1, #f8f1e5);
+      border: 2px solid rgba(214, 161, 38, 0.45);
+      color: var(--gold);
+      font-size: 28px;
+      font-weight: 900;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 10px 22px rgba(214,161,38,0.12);
+    }
+
+    .brx-merchant-page .brx-step-item h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .brx-merchant-page .brx-step-item p {
+      margin: 0 auto;
+      color: var(--text-soft);
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 290px;
+    }
+
+    .brx-merchant-page .brx-journey-note {
+      margin-top: 34px;
+      text-align: center;
+      color: var(--text-soft);
+      font-style: italic;
+      font-size: 17px;
+      letter-spacing: 0.02em;
+    }
+
+    /* GOAL + BENEFITS */
+    .brx-merchant-page .brx-goal-shell {
+      border-radius: 34px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(18,18,18,0.08);
+      background: rgba(255,255,255,0.8);
+    }
+
+    .brx-merchant-page .brx-goal-top {
+      padding: 46px 34px 42px;
+      background: linear-gradient(180deg, rgba(246,237,209,0.95), rgba(249,244,226,0.92));
+    }
+
+    .brx-merchant-page .brx-goal-bottom {
+      position: relative;
+      padding: 34px 28px 34px;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255,215,120,0.18), transparent 16%),
+        radial-gradient(circle at 90% 14%, rgba(255,215,120,0.2), transparent 15%),
+        linear-gradient(180deg, rgba(255,255,255,0.92), rgba(248,251,255,0.95));
+    }
+
+    .brx-merchant-page .brx-benefit-heading {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 56px;
+      padding: 0 26px;
+      border-radius: 20px;
+      background: #ffffff;
+      border: 3px solid rgba(18,18,18,0.75);
+      box-shadow: 8px 8px 0 rgba(18,18,18,0.12);
+      font-size: 18px;
+      font-weight: 900;
+      margin: 0 auto 28px;
+    }
+
+    .brx-merchant-page .brx-benefits-6 {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+    }
+
+    .brx-merchant-page .brx-benefit-col {
+      text-align: center;
+      padding: 10px 8px;
+    }
+
+    .brx-merchant-page .brx-benefit-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 18px;
+      margin: 0 auto 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, rgba(255,248,225,0.9), rgba(248,235,195,0.92));
+      border: 1px solid rgba(214,161,38,0.25);
+      color: var(--gold);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .brx-merchant-page .brx-benefit-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .brx-merchant-page .brx-benefit-col h4 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.25;
+      font-weight: 900;
+    }
+
+    .brx-merchant-page .brx-benefit-col p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* PLANS */
+    .brx-merchant-page .brx-pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 42px;
+    }
+
+    .brx-merchant-page .brx-price-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 30px 24px 24px;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.86);
+      border: 1px solid rgba(18,18,18,0.08);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .brx-merchant-page .brx-price-card.highlight {
+      transform: translateY(-8px);
+      border-color: rgba(214,161,38,0.32);
+      background:
+        radial-gradient(circle at top, rgba(255,223,122,0.2), transparent 44%),
+        rgba(255,255,255,0.9);
+    }
+
+    .brx-merchant-page .brx-price-badge {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: rgba(214,161,38,0.12);
+      border: 1px solid rgba(214,161,38,0.26);
+      color: var(--gold-3);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brx-merchant-page .brx-plan-name {
+      margin: 0 0 10px;
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .brx-merchant-page .brx-plan-text {
+      margin: 0 0 22px;
+      color: var(--text-soft);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .brx-merchant-page .brx-price-line {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .brx-merchant-page .brx-price-line strong {
+      font-size: clamp(40px, 6vw, 56px);
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -0.05em;
+    }
+
+    .brx-merchant-page .brx-price-line span {
+      font-size: 14px;
+      color: var(--text-soft);
+      font-weight: 700;
+    }
+
+    .brx-merchant-page .brx-commission {
+      display: inline-block;
+      margin-bottom: 22px;
+      color: var(--gold-3);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .brx-merchant-page .brx-feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px;
+    }
+
+    .brx-merchant-page .brx-feature-list li {
+      position: relative;
+      padding-left: 24px;
+      color: var(--text-soft);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .brx-merchant-page .brx-feature-list li + li {
+      margin-top: 10px;
+    }
+
+    .brx-merchant-page .brx-feature-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--gold);
+      font-weight: 900;
+    }
+
+    .brx-merchant-page .brx-plan-footer {
+      margin-top: auto;
+    }
+
+    /* ACCORDION */
+    .brx-merchant-page .brx-accordion-wrap {
+      max-width: 940px;
+      margin: 42px auto 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .brx-merchant-page details.brx-acc {
+      border-radius: 22px;
+      background: rgba(255,255,255,0.85);
+      border: 2px solid rgba(214,161,38,0.75);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .brx-merchant-page details.brx-acc summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 24px 26px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 18px;
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    .brx-merchant-page details.brx-acc summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .brx-merchant-page .brx-acc-no {
+      color: var(--gold);
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+    }
+
+    .brx-merchant-page .brx-acc-icon {
+      font-size: 24px;
+      line-height: 1;
+      transition: transform 0.25s ease;
+      color: var(--text-soft);
+    }
+
+    .brx-merchant-page details[open] .brx-acc-icon {
+      transform: rotate(180deg);
+    }
+
+    .brx-merchant-page .brx-acc-body {
+      padding: 0 26px 24px 88px;
+      color: var(--text-soft);
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+    /* LOGO WALL */
+    .brx-merchant-page .brx-logo-stage {
+      position: relative;
+      border-radius: 34px;
+      overflow: hidden;
+      padding: 54px 32px 52px;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255,255,255,0.78), transparent 36%),
+        linear-gradient(180deg, rgba(222,238,255,0.9), rgba(235,245,255,0.95));
+      border: 1px solid rgba(18,18,18,0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .brx-merchant-page .brx-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 10px auto 30px;
+      max-width: 420px;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .brx-merchant-page .brx-divider:before,
+    .brx-merchant-page .brx-divider:after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(18,18,18,0.18);
+    }
+
+    .brx-merchant-page .brx-logo-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .brx-merchant-page .brx-logo-box {
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      border-radius: 26px;
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(18,18,18,0.08);
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      overflow: hidden;
+    }
+
+    .brx-merchant-page .brx-logo-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 30px rgba(18,18,18,0.08);
+    }
+
+    .brx-merchant-page .brx-logo-placeholder {
+      width: 100%;
+      height: 100%;
+      border-radius: 18px;
+      background:
+        linear-gradient(135deg, rgba(239,201,90,0.16), rgba(255,255,255,0.8)),
+        #fff;
+      border: 1px dashed rgba(18,18,18,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 10px;
+      color: var(--text-soft);
+      font-size: 14px;
+      line-height: 1.45;
+      font-weight: 800;
+    }
+
+    .brx-merchant-page .brx-logo-note {
+      margin-top: 36px;
+      text-align: center;
+      font-size: clamp(24px, 4vw, 40px);
+      line-height: 1.2;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .brx-merchant-page .brx-logo-note small {
+      display: block;
+      margin-top: 10px;
+      color: var(--text-soft);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    /* CTA FORM */
+    .brx-merchant-page .brx-cta-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 28px;
+      align-items: center;
+      margin-top: 24px;
+    }
+
+    .brx-merchant-page .brx-ribbon-stack {
+      display: grid;
+      gap: 26px;
+      padding: 10px 0;
+    }
+
+    .brx-merchant-page .brx-ribbon {
+      position: relative;
+      min-height: 98px;
+      display: flex;
+      align-items: center;
+      padding: 16px 34px 16px 118px;
+      color: #ffffff;
+      font-size: clamp(26px, 3vw, 38px);
+      line-height: 1.15;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #a96a08 0%, #f3cb64 16%, #d5aa45 56%, #bc8a23 100%);
+      clip-path: polygon(0 0, 94% 0, 100% 50%, 94% 100%, 0 100%, 0 0);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .brx-merchant-page .brx-ribbon:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 112px;
+      height: 100%;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.35), rgba(255,255,255,0.05)),
+        linear-gradient(180deg, #8f5808, #e8bc48);
+      clip-path: polygon(0 0, 100% 0, 54% 50%, 100% 100%, 0 100%);
+    }
+
+    .brx-merchant-page .brx-form-card {
+      padding: 34px 28px 28px;
+      border-radius: 30px;
+      background: linear-gradient(180deg, rgba(246,237,209,0.94), rgba(240,228,190,0.9));
+      border: 1px solid rgba(214,161,38,0.18);
+      box-shadow: var(--shadow);
+    }
+
+    .brx-merchant-page .brx-form-card h3 {
+      margin: 0 0 20px;
+      text-align: center;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.04;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .brx-merchant-page .brx-form-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .brx-merchant-page .brx-input,
+    .brx-merchant-page .brx-textarea,
+    .brx-merchant-page .brx-select {
+      width: 100%;
+      background: rgba(255,255,255,0.88);
+      color: var(--text);
+      padding: 0 16px;
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      border: 1px solid rgba(18,18,18,0.08);
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .brx-merchant-page .brx-input,
+    .brx-merchant-page .brx-select {
+      min-height: 54px;
+      border-radius: 14px;
+    }
+
+    .brx-merchant-page .brx-textarea {
+      min-height: 130px;
+      padding-top: 14px;
+      resize: vertical;
+      border-radius: 14px;
+    }
+
+    .brx-merchant-page .brx-input:focus,
+    .brx-merchant-page .brx-textarea:focus,
+    .brx-merchant-page .brx-select:focus {
+      border-color: rgba(214,161,38,0.7);
+      box-shadow: 0 0 0 4px rgba(239, 201, 90, 0.18);
+    }
+
+    .brx-merchant-page .brx-form-note {
+      margin-top: 12px;
+      color: var(--text-muted);
+      font-size: 12px;
+      line-height: 1.7;
+      text-align: left;
+    }
+
+    .brx-merchant-page .brx-form-btn {
+      margin-top: 14px;
+      text-align: center;
+    }
+
+    /* FOOTER */
+    .brx-merchant-page .brx-footer {
+      padding: 30px 0 44px;
+    }
+
+    .brx-merchant-page .brx-footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      padding-top: 22px;
+      border-top: 1px solid rgba(18,18,18,0.1);
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1180px) {
+      .brx-merchant-page .brx-benefits-6,
+      .brx-merchant-page .brx-logo-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .brx-merchant-page .brx-pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .brx-merchant-page .brx-price-card.highlight {
+        transform: none;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .brx-merchant-page .brx-hero-grid,
+      .brx-merchant-page .brx-cta-grid,
+      .brx-merchant-page .brx-path-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .brx-merchant-page .brx-path-svg {
+        display: none;
+      }
+
+      .brx-merchant-page .brx-step-item {
+        padding: 18px 0 0;
+      }
+
+      .brx-merchant-page .brx-step-item + .brx-step-item {
+        border-top: 1px dashed rgba(18,18,18,0.16);
+        margin-top: 8px;
+        padding-top: 28px;
+      }
+
+      .brx-merchant-page .brx-benefits-6 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .brx-merchant-page .brx-accordion-wrap {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .brx-merchant-page .brx-wrap {
+        width: min(var(--maxw), calc(100% - 20px));
+      }
+
+      .brx-merchant-page .brx-section {
+        padding: 62px 0;
+      }
+
+      .brx-merchant-page .brx-hero {
+        padding: 18px 0 56px;
+      }
+
+      .brx-merchant-page .brx-hero-shell,
+      .brx-merchant-page .brx-how-shell,
+      .brx-merchant-page .brx-goal-top,
+      .brx-merchant-page .brx-goal-bottom,
+      .brx-merchant-page .brx-logo-stage,
+      .brx-merchant-page .brx-form-card {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .brx-merchant-page .brx-benefit-grid,
+      .brx-merchant-page .brx-benefits-6,
+      .brx-merchant-page .brx-logo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .brx-merchant-page .brx-btn-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .brx-merchant-page .brx-btn {
+        width: 100%;
+      }
+
+      .brx-merchant-page details.brx-acc summary {
+        grid-template-columns: auto 1fr auto;
+        padding: 20px 18px;
+        gap: 14px;
+        font-size: 16px;
+      }
+
+      .brx-merchant-page .brx-acc-body {
+        padding: 0 18px 20px 18px;
+      }
+
+      .brx-merchant-page .brx-ribbon {
+        min-height: 82px;
+        padding: 16px 22px 16px 90px;
+        font-size: 24px;
+      }
+
+      .brx-merchant-page .brx-ribbon:before {
+        width: 84px;
+      }
+
+      .brx-merchant-page .brx-footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+
+  <!-- HERO -->
+  <section class="brx-hero">
+    <div class="brx-wrap">
+      <div class="brx-hero-shell">
+        <div class="brx-hero-grid">
+          <div>
+            <div class="brx-eyebrow">BR Innovate Future Merchant Program</div>
+            <h1 class="brx-hero-title">BR Innovate Merchant Growth Program</h1>
+            <p class="brx-hero-lead">
+              A connected business ecosystem designed to help merchants, service providers, and business partners gain visibility, attract enquiries, strengthen positioning, and unlock more sales opportunities.
+            </p>
+
+            <div class="brx-trust-row">
+              <div class="brx-pill">Promote Products & Services</div>
+              <div class="brx-pill">Start Free, Upgrade Anytime</div>
+              <div class="brx-pill">Built for Real Business Growth</div>
+            </div>
+
+            <div class="brx-btn-row">
+              <a href="https://brinnovatefuture.my" class="brx-btn brx-btn-primary" aria-label="Become a merchant with BR Innovate Future">Become a Merchant</a>
+              <a href="https://wa.me/60123011610" class="brx-btn brx-btn-secondary" aria-label="Chat with BR Innovate Future on WhatsApp">WhatsApp Us Now</a>
+            </div>
+          </div>
+
+          <div class="brx-hero-side">
+            <div class="brx-mini-panel">
+              <div class="brx-mini-head">
+                <h3>What You Get</h3>
+                <span class="brx-chip">Exposure + Growth</span>
+              </div>
+              <div class="brx-benefit-grid">
+                <div class="brx-benefit-box">
+                  <strong>More Visibility</strong>
+                  <span>Be discovered by a wider audience inside one connected ecosystem.</span>
+                </div>
+                <div class="brx-benefit-box">
+                  <strong>Extra Sales Channel</strong>
+                  <span>Add another platform to generate enquiries and opportunities.</span>
+                </div>
+                <div class="brx-benefit-box">
+                  <strong>Professional Positioning</strong>
+                  <span>Present your business more clearly, credibly, and professionally.</span>
+                </div>
+                <div class="brx-benefit-box">
+                  <strong>Flexible Upgrade Path</strong>
+                  <span>Start with FREE and move to PRO or VIP whenever you are ready.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="brx-mini-panel">
+              <div class="brx-mini-head">
+                <h3>Plan Snapshot</h3>
+                <span class="brx-chip">Clear & Practical</span>
+              </div>
+              <div class="brx-plan-peek">
+                <div class="brx-plan-mini">
+                  <div>
+                    <strong>FREE Plan</strong>
+                    <span>RM0 join · Max 5 listings · No featured promotion</span>
+                  </div>
+                  <em>15%</em>
+                </div>
+                <div class="brx-plan-mini">
+                  <div>
+                    <strong>PRO Plan</strong>
+                    <span>RM99/month · 30 listings · Featured placement</span>
+                  </div>
+                  <em>8%</em>
+                </div>
+                <div class="brx-plan-mini">
+                  <div>
+                    <strong>VIP Plan</strong>
+                    <span>RM199/month · Unlimited listings · Marketing support</span>
+                  </div>
+                  <em>5%</em>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="brx-section">
+    <div class="brx-wrap">
+      <div class="brx-how-shell">
+        <div class="brx-center">
+          <h2 class="brx-title serif">How It Works</h2>
+          <p class="brx-subtitle">A simple 3-step journey toward smarter business growth.</p>
+        </div>
+
+        <div class="brx-path-wrap">
+          <svg class="brx-path-svg" viewBox="0 0 1200 140" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M70 55 C 190 10, 255 120, 400 100 S 625 20, 790 62 S 990 116, 1130 50" fill="none" stroke="#111111" stroke-width="5" stroke-linecap="round" stroke-dasharray="12 18"/>
+          </svg>
+
+          <div class="brx-path-grid">
+            <div class="brx-step-item">
+              <div class="brx-step-circle">1</div>
+              <h3>Join The Ecosystem</h3>
+              <p>Register your business, choose the plan that suits your needs, and become part of the BR Innovate marketplace network.</p>
+            </div>
+
+            <div class="brx-step-item">
+              <div class="brx-step-circle">2</div>
+              <h3>List & Get Discovered</h3>
+              <p>Your products or services are showcased to help improve visibility, strengthen presence, and attract more customer interest.</p>
+            </div>
+
+            <div class="brx-step-item">
+              <div class="brx-step-circle">3</div>
+              <h3>Grow & Convert</h3>
+              <p>Turn visibility into real enquiries, stronger branding, repeat purchases, and better long-term business opportunities.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="brx-journey-note">
+          One ecosystem. One connection. More opportunities.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOAL + BENEFITS -->
+  <section class="brx-section">
+    <div class="brx-wrap">
+      <div class="brx-goal-shell">
+        <div class="brx-goal-top brx-center">
+          <h2 class="brx-title">Our Goal Is Simple</h2>
+          <p class="brx-subtitle">
+            To help every merchant strengthen brand visibility, customer confidence, and long-term business growth through a practical ecosystem that combines exposure, support, and scalable opportunities.
+            <br><br>
+            Through the BR Innovate ecosystem, businesses can also connect with solutions such as accounting, website development, digital marketing, design, internet services, insurance, and broader business support.
+            <br><br>
+            At BR Innovate, our goal is not only to support your business — but to help you grow smarter, safer, and stronger.
+          </p>
+        </div>
+
+        <div class="brx-goal-bottom">
+          <div class="brx-center">
+            <div class="brx-benefit-heading">What’s In It For You?</div>
+          </div>
+
+          <div class="brx-benefits-6">
+            <div class="brx-benefit-col">
+              <div class="brx-benefit-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
+              </div>
+              <h4>Attract New Customers</h4>
+              <p>Gain stronger visibility and bring more people to your business through marketplace exposure.</p>
+            </div>
+
+            <div class="brx-benefit-col">
+              <div class="brx-benefit-icon">
+                <svg viewBox="0 0 24 24"><path d="M4 12h16M12 4l8 8-8 8"/></svg>
+              </div>
+              <h4>Wider Reach</h4>
+              <p>Promote your products or services to a broader audience inside one connected ecosystem.</p>
+            </div>
+
+            <div class="brx-benefit-col">
+              <div class="brx-benefit-icon">
+                <svg viewBox="0 0 24 24"><path d="M4 16l5-5 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+              </div>
+              <h4>Boost Retention</h4>
+              <p>Stay visible, relevant, and accessible so customers remember and return to your business.</p>
+            </div>
+
+            <div class="brx-benefit-col">
+              <div class="brx-benefit-icon">
+                <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M4 9h16"/></svg>
+              </div>
+              <h4>More Enquiries</h4>
+              <p>Turn stronger placement and clearer positioning into real sales conversations.</p>
+            </div>
+
+            <div class="brx-benefit-col">
+              <div class="brx-benefit-icon">
+                <svg viewBox="0 0 24 24"><path d="M4 19h16"/><path d="M7 15V9"/><path d="M12 15V5"/><path d="M17 15v-3"/></svg>
+              </div>
+              <h4>Better Business Structure</h4>
+              <p>Operate within a more organised ecosystem with clearer listing and growth opportunities.</p>
+            </div>
+
+            <div class="brx-benefit-col">
+              <div class="brx-benefit-icon">
+                <svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><circle cx="12" cy="16" r="3"/><path d="M10.5 10.5l1 2M13.5 10.5l-1 2"/></svg>
+              </div>
+              <h4>Community Collaboration</h4>
+              <p>Be part of a network where merchants, partners, and businesses grow together.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="brx-section">
+    <div class="brx-wrap">
+      <div class="brx-center">
+        <div class="brx-eyebrow">Plans & Pricing</div>
+        <h2 class="brx-title">Choose The Right Plan For Your Business</h2>
+        <p class="brx-subtitle">
+          Start with the FREE plan or upgrade for stronger placement, lower commission, and more growth support.
+        </p>
+      </div>
+
+      <div class="brx-pricing-grid">
+        <div class="brx-price-card">
+          <h3 class="brx-plan-name">FREE</h3>
+          <p class="brx-plan-text">
+            Best for businesses who want to test the marketplace with zero monthly commitment.
+          </p>
+          <div class="brx-price-line">
+            <strong>RM0</strong>
+            <span>/ join</span>
+          </div>
+          <span class="brx-commission">15% commission per successful transaction</span>
+
+          <ul class="brx-feature-list">
+            <li>Up to 5 listings</li>
+            <li>Basic marketplace exposure</li>
+            <li>No monthly fee</li>
+            <li>No featured placement</li>
+            <li>No homepage promotion</li>
+            <li>Ideal for testing the platform</li>
+          </ul>
+
+          <div class="brx-plan-footer">
+            <a href="https://brinnovatefuture.my" class="brx-btn brx-btn-secondary">Start Free</a>
+          </div>
+        </div>
+
+        <div class="brx-price-card highlight">
+          <span class="brx-price-badge">Most Popular</span>
+          <h3 class="brx-plan-name">PRO</h3>
+          <p class="brx-plan-text">
+            Ideal for active businesses that want stronger visibility and better conversion potential.
+          </p>
+          <div class="brx-price-line">
+            <strong>RM99</strong>
+            <span>/ month</span>
+          </div>
+          <span class="brx-commission">8% commission per successful transaction</span>
+
+          <ul class="brx-feature-list">
+            <li>Up to 30 listings</li>
+            <li>Featured placement</li>
+            <li>Higher category visibility</li>
+            <li>Priority support</li>
+            <li>Better conversion potential</li>
+            <li>Best for serious growing merchants</li>
+          </ul>
+
+          <div class="brx-plan-footer">
+            <a href="https://wa.me/60123011610" class="brx-btn brx-btn-primary">Choose PRO</a>
+          </div>
+        </div>
+
+        <div class="brx-price-card">
+          <h3 class="brx-plan-name">VIP</h3>
+          <p class="brx-plan-text">
+            Built for serious partners and brands that want maximum exposure, stronger support, and wider promotion.
+          </p>
+          <div class="brx-price-line">
+            <strong>RM199</strong>
+            <span>/ month</span>
+          </div>
+          <span class="brx-commission">5% commission per successful transaction</span>
+
+          <ul class="brx-feature-list">
+            <li>Unlimited listings</li>
+            <li>Priority placement</li>
+            <li>Marketing push support</li>
+            <li>Faster onboarding assistance</li>
+            <li>Strong ecosystem visibility</li>
+            <li>Best for high-volume businesses</li>
+          </ul>
+
+          <div class="brx-plan-footer">
+            <a href="https://wa.me/60123011610" class="brx-btn brx-btn-secondary">Go VIP</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY JOIN -->
+  <section class="brx-section">
+    <div class="brx-wrap">
+      <div class="brx-center">
+        <div class="brx-eyebrow">Why Join BR Innovate?</div>
+        <h2 class="brx-title">Why Businesses Want In</h2>
+      </div>
+
+      <div class="brx-accordion-wrap">
+        <details class="brx-acc" open>
+          <summary>
+            <span class="brx-acc-no">01</span>
+            <span>Business Exposure & Marketplace Reach</span>
+            <span class="brx-acc-icon">⌄</span>
+          </summary>
+          <div class="brx-acc-body">
+            Join a marketplace designed to help businesses become more visible, easier to discover, and better positioned to attract new customers.
+          </div>
+        </details>
+
+        <details class="brx-acc">
+          <summary>
+            <span class="brx-acc-no">02</span>
+            <span>Professional Support Ecosystem</span>
+            <span class="brx-acc-icon">⌄</span>
+          </summary>
+          <div class="brx-acc-body">
+            BR Innovate offers more than listing space. The ecosystem can connect businesses to services such as design, web development, digital marketing, accounting, internet solutions, insurance, and broader operational support.
+          </div>
+        </details>
+
+        <details class="brx-acc">
+          <summary>
+            <span class="brx-acc-no">03</span>
+            <span>Lower Barrier To Start</span>
+            <span class="brx-acc-icon">⌄</span>
+          </summary>
+          <div class="brx-acc-body">
+            Start with RM0 through the FREE plan, validate the platform first, and only scale up when you are ready for stronger visibility and lower commission.
+          </div>
+        </details>
+
+        <details class="brx-acc">
+          <summary>
+            <span class="brx-acc-no">04</span>
+            <span>Upgrade For More Visibility</span>
+            <span class="brx-acc-icon">⌄</span>
+          </summary>
+          <div class="brx-acc-body">
+            PRO and VIP plans unlock stronger placement, better category visibility, and more promotional value for businesses that want faster growth.
+          </div>
+        </details>
+
+        <details class="brx-acc">
+          <summary>
+            <span class="brx-acc-no">05</span>
+            <span>Cross-Selling & Partnership Opportunities</span>
+            <span class="brx-acc-icon">⌄</span>
+          </summary>
+          <div class="brx-acc-body">
+            Being inside one ecosystem creates more room for referrals, bundled offers, merchant collaboration, and long-term strategic business connections.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNER WALL -->
+  <section class="brx-section">
+    <div class="brx-wrap">
+      <div class="brx-logo-stage">
+        <div class="brx-center">
+          <div class="brx-eyebrow">Ecosystem Trust</div>
+          <h2 class="brx-title">Featured Partners & Merchants</h2>
+          <div class="brx-divider">Growing Together</div>
+          <p class="brx-subtitle">
+            Showcase trusted brands, merchants, service providers, or business categories here to build confidence and ecosystem credibility.
+          </p>
+        </div>
+
+        <div class="brx-logo-grid">
+          <div class="brx-logo-box"><div class="brx-logo-placeholder">Your Merchant Logo</div></div>
+          <div class="brx-logo-box"><div class="brx-logo-placeholder">Partner Brand</div></div>
+          <div class="brx-logo-box"><div class="brx-logo-placeholder">Business Service</div></div>
+          <div class="brx-logo-box"><div class="brx-logo-placeholder">Retail Merchant</div></div>
+          <div class="brx-logo-box"><div class="brx-logo-placeholder">Insurance Partner</div></div>
+          <div class="brx-logo-box"><div class="brx-logo-placeholder">Internet Partner</div></div>
+
+          <div class="brx-logo-box"><div class="brx-logo-placeholder">Design Service</div></div>
+          <div class="brx-logo-box"><div class="brx-logo-placeholder">Accounting Service</div></div>
+          <div class="brx-logo-box"><div class="brx-logo-placeholder">Marketing Partner</div></div>
+          <div class="brx-logo-box"><div class="brx-logo-placeholder">Merchant Category</div></div>
+          <div class="brx-logo-box"><div class="brx-logo-placeholder">Business Solution</div></div>
+          <div class="brx-logo-box"><div class="brx-logo-placeholder">Featured Brand</div></div>
+        </div>
+
+        <div class="brx-logo-note">
+          Ready to Grow Your Business?
+          <small>Join BR Innovate Today.</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / FORM -->
+  <section class="brx-section">
+    <div class="brx-wrap">
+      <div class="brx-center">
+        <h2 class="brx-title" style="font-size:clamp(32px,4vw,52px);">Ready to Grow Your Business?</h2>
+        <p class="brx-subtitle">
+          Join the BR Innovate Merchant Growth Program and start building stronger visibility, better reach, and more business opportunities.
+        </p>
+      </div>
+
+      <div class="brx-cta-grid">
+        <div class="brx-ribbon-stack">
+          <div class="brx-ribbon">Empowering<br>Businesses</div>
+          <div class="brx-ribbon">Expanding<br>Visibility</div>
+          <div class="brx-ribbon">Turning Exposure<br>Into Sales</div>
+        </div>
+
+        <div class="brx-form-card">
+          <h3>Let’s Grow Together</h3>
+
+          <form class="brx-form-grid" action="#" method="post">
+            <label class="sr-only" for="company-name">Company name</label>
+            <input id="company-name" class="brx-input" type="text" name="company_name" placeholder="Company name" required>
+
+            <label class="sr-only" for="person-in-charge">Person In Charge Name</label>
+            <input id="person-in-charge" class="brx-input" type="text" name="person_in_charge" placeholder="Person In Charge Name" required>
+
+            <label class="sr-only" for="email-address">Email Address</label>
+            <input id="email-address" class="brx-input" type="email" name="email" placeholder="Email Address" required>
+
+            <label class="sr-only" for="phone-number">Phone Number</label>
+            <input id="phone-number" class="brx-input" type="text" name="phone" placeholder="Phone Number" required>
+
+            <label class="sr-only" for="business-type">Business Type</label>
+            <select id="business-type" class="brx-select" name="business_type">
+              <option value="">Select business type</option>
+              <option>Retail</option>
+              <option>Service Provider</option>
+              <option>Insurance</option>
+              <option>Internet / Telecom</option>
+              <option>Design / Marketing</option>
+              <option>Food & Beverage</option>
+              <option>Other</option>
+            </select>
+
+            <label class="sr-only" for="business-description">Brief description of your business</label>
+            <textarea id="business-description" class="brx-textarea" name="business_description" placeholder="Brief description of your business"></textarea>
+
+            <div class="brx-form-note">
+              By submitting this form, you agree to your website’s Privacy Policy and any applicable merchant program terms.
+            </div>
+
+            <div class="brx-form-btn">
+              <button type="submit" class="brx-btn brx-btn-primary">Apply Now</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="brx-footer">
+    <div class="brx-wrap">
+      <div class="brx-footer-inner">
+        <div>© BR Innovate Future Sdn. Bhd. All rights reserved.</div>
+        <div>Merchant Growth Program · Marketplace Ecosystem · Business Visibility</div>
+      </div>
+    </div>
+  </section>
+</div>

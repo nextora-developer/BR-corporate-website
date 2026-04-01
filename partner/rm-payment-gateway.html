@@ -36,108 +36,137 @@
     <!-- Template Stylesheet -->
     <link href="../css/style.css" rel="stylesheet">
 
-    <!-- (Optional) Page-only small tweaks -->
     <style>
-        .rm-hero {
+        .hover-lift {
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.3) !important;
+            background: rgba(255, 255, 255, 0.05) !important;
+        }
+
+        .service-card {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(212, 175, 55, 0.4) !important;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+            background: linear-gradient(145deg, #161616, #0a0a0a) !important;
+        }
+
+        .service-card:hover .fw-bold.text-white {
+            color: #D4AF37 !important;
+        }
+
+        .hover-glow-light:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.1) !important;
+            transition: 0.3s ease;
+        }
+
+        /* .col-6 div:hover {
+            background: rgba(212, 175, 55, 0.08) !important;
+            border-color: rgba(212, 175, 55, 0.4) !important;
+            transform: translateY(-5px);
+            transition: 0.3s ease;
+        } */
+
+        @media (min-width: 992px) {
+            .journey-wrapper::before {
+                content: "";
+                position: absolute;
+                top: 35%;
+                left: 10%;
+                right: 10%;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+                z-index: 1;
+            }
+        }
+
+        .journey-card {
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .journey-card:hover {
+            transform: translateY(-12px);
+            border-color: rgba(212, 175, 55, 0.4) !important;
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.05);
+            background: linear-gradient(145deg, #111, #000) !important;
+        }
+
+        .journey-card:hover .step-num {
+            opacity: 0.6 !important;
+            transform: scale(1.05);
+            transition: 0.4s ease;
+        }
+
+        .step-num {
+            display: inline-block;
+            transition: 0.4s ease;
+        }
+
+        .fw-black {
+            font-weight: 900;
+        }
+
+
+        .btn-gold-pulse {
             position: relative;
-            min-height: 520px;
-            display: flex;
-            align-items: center;
-            background: #000;
-            overflow: hidden;
-        }
-
-        .rm-hero .rm-bg {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, .35), rgba(0, 0, 0, .85)),
-                url("img/carousel-1.png") center/cover no-repeat;
-            filter: saturate(1.05);
-        }
-
-        .rm-hero .rm-glow {
-            position: absolute;
-            inset: -40% -30%;
-            background: radial-gradient(closest-side, rgba(13, 110, 253, .25), transparent 65%),
-                radial-gradient(closest-side, rgba(255, 193, 7, .18), transparent 65%);
-            pointer-events: none;
-        }
-
-        .rm-hero .rm-card {
-            background: rgba(0, 0, 0, .55);
-            border: 1px solid rgba(255, 255, 255, .12);
-            backdrop-filter: blur(10px);
-            border-radius: 18px;
-        }
-
-        .badge-soft {
-            background: rgba(13, 110, 253, .12);
-            border: 1px solid rgba(13, 110, 253, .25);
-            color: #b9d3ff;
-            padding: .5rem .75rem;
-            border-radius: 999px;
-            font-weight: 600;
-            font-size: 12px;
-        }
-
-        .table-fees th {
-            font-weight: 700;
-            letter-spacing: .02em;
-        }
-
-        .note-box {
-            border-left: 4px solid #0d6efd;
-            background: rgba(13, 110, 253, .06);
-            border-radius: 12px;
-            padding: 14px 16px;
-        }
-
-        summary::-webkit-details-marker {
-            display: none;
-        }
-
-        .cursor-pointer {
-            cursor: pointer;
-        }
-
-        /* FAQ Interaction Styles */
-        .faq-card {
             transition: all 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+            animation: pulse-gold 2s infinite;
         }
 
-        .faq-card:hover {
-            border-color: var(--bs-primary);
+        .btn-gold-pulse:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #f7e09a 0%, #D4AF37 100%);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
         }
 
-        .faq-card[open] {
-            border-color: var(--bs-primary);
+        /* Premium Hover States */
+        .btn-gold-action:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3) !important;
+            background: linear-gradient(135deg, #D4AF37 0%, #f7e09a 50%, #D4AF37 100%) !important;
+            color: #000;
         }
 
-        .faq-card[open] .transition-transform {
-            transform: rotate(180deg);
+        .btn-outline-glass:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #D4AF37 !important;
+            color: #D4AF37 !important;
+            transform: translateY(-3px);
         }
 
-        .transition-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* Active click effect */
+        .btn:active {
+            transform: translateY(0px) scale(0.98) !important;
         }
 
-        .transition-hover:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+        @keyframes pulse-gold {
+            0% {
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+            }
         }
 
-        .tracking-widest {
-            letter-spacing: 0.15em;
-        }
-
-        /* CTA SECTION */
-        .cta-section {
-            background: radial-gradient(700px 360px at 50% 0%, rgba(212, 175, 55, 0.12), rgba(0, 0, 0, 0) 60%), linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.95));
-        }
-
-        .cta-check i {
-            color: var(--brif-gold);
+        /* Card hover refinement */
+        .col-md-4 div:hover {
+            background: rgba(212, 175, 55, 0.05) !important;
+            border-color: rgba(212, 175, 55, 0.3) !important;
+            transform: translateY(-5px);
         }
     </style>
 
@@ -189,454 +218,982 @@
     </div>
     <!-- Header End -->
 
-    <!-- WHY -->
-    <div class="container-fluid py-5 bg-dark">
+    <section class="container-fluid bg-dark py-5"
+        style="background: radial-gradient(circle at top right, #1a1a1a, #000); min-height: 80vh;">
         <div class="container py-5">
-            <div class="row g-4 align-items-center">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="title-left mb-2">
-                        <h5 class="text-primary">Why Revenue Monster</h5>
-                        <h1>Built for Malaysia Checkout</h1>
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6 text-white">
+                    <span class="badge rounded-pill px-3 py-2 mb-4" style="background: rgba(212, 175, 55, 0.12); 
+           color: #d4af37; 
+           border: 1px solid rgba(212, 175, 55, 0.25); 
+           letter-spacing: 1px; 
+           font-size: 0.75rem;">
+                        ● OFFICIAL MERCHANT PARTNERSHIP
+                    </span>
+
+                    <div class="d-flex gap-3 mb-4 align-items-center">
+                        <div class="rounded-3 px-3 py-2"
+                            style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+                            <img src="../img/logo-1.png" height="28" alt="Company Logo">
+                        </div>
+                        <div class="text-white opacity-50">×</div>
+                        <div class="rounded-3 px-3 py-2"
+                            style="background: #ffffff; border: 1px solid rgba(212,175,55,0.2);">
+                            <img src="../img/revenue-monster.png" height="28" alt="Revenue Monster">
+                        </div>
                     </div>
-                    <p class="text-body mb-5">
-                        Revenue Monster provides local payment coverage with enterprise-grade security and scalable
-                        infrastructure,
-                        helping businesses reduce checkout drop-off and improve conversion.
+
+                    <h1 class="fw-bold display-5 mb-3 lh-sm text-white">
+                        Help your business collect payments
+                        <span style="background: linear-gradient(90deg, #d4af37, #f5d76e); 
+               -webkit-background-clip: text; 
+               -webkit-text-fill-color: transparent;">
+                            faster & smarter.
+                        </span>
+                    </h1>
+
+                    <p class="text-light mb-5 fs-5" style="max-width: 500px; line-height: 1.6;">
+                        Upgrade to a modern payment ecosystem. From online checkouts to physical terminals, get total
+                        visibility in one place.
                     </p>
 
-                    <div class="row g-3">
-                        <div class="col-sm-6">
-                            <div class="d-flex gap-3">
-                                <i class="fa-solid fa-credit-card text-primary mt-1"></i>
-                                <div>
-                                    <div class="fw-bold">Wide Methods</div>
-                                    <div class="small text-body">FPX, DuitNow QR, E-Wallets, Cards</div>
-                                </div>
+                    <div class="d-flex gap-3 flex-wrap align-items-center">
+
+                        <a href="../contact.html"
+                            class="btn btn-gold-action px-5 py-3 fw-bold text-uppercase shadow-lg transition-all" style="background: linear-gradient(135deg, #b08d1a 0%, #D4AF37 50%, #b08d1a 100%); 
+              color: #000; 
+              border: none; 
+              border-radius: 12px; 
+              font-size: 0.9rem; 
+              letter-spacing: 1.5px; 
+              min-width: 220px;">
+                            Apply as Merchant
+                        </a>
+
+                        <a href="#service" class="btn btn-outline-glass px-5 py-3 fw-bold text-uppercase transition-all"
+                            style="background: rgba(255, 255, 255, 0.05); 
+              backdrop-filter: blur(10px); 
+              -webkit-backdrop-filter: blur(10px); 
+              color: #ffffff; 
+              border: 1px solid rgba(255, 255, 255, 0.2); 
+              border-radius: 12px; 
+              font-size: 0.9rem; 
+              letter-spacing: 1.5px; 
+              min-width: 220px;">
+                            Explore Services
+                        </a>
+
+                    </div>
+
+                    <div class="row mt-5 g-3">
+                        <div class="col-6">
+                            <div class="p-3 rounded-4 h-100"
+                                style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
+                                <small class="text-primary text-uppercase fw-bold"
+                                    style="font-size: 0.7rem; letter-spacing: 1px;">Complete Setup</small>
+                                <h6 class="mt-2 mb-1 text-white">Online + Offline</h6>
+                                <p class="small text-light mb-0">QR, eWallet, cards, and payment links.</p>
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex gap-3">
-                                <i class="fa-solid fa-lock text-primary mt-1"></i>
-                                <div>
-                                    <div class="fw-bold">Secure Webhooks</div>
-                                    <div class="small text-body">Signature verification & replay protection</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex gap-3">
-                                <i class="fa-solid fa-money-bill-transfer text-primary mt-1"></i>
-                                <div>
-                                    <div class="fw-bold">Settlement</div>
-                                    <div class="small text-body">T+1 / T+2 (method dependent)</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex gap-3">
-                                <i class="fa-solid fa-screwdriver-wrench text-primary mt-1"></i>
-                                <div>
-                                    <div class="fw-bold">Partner Managed</div>
-                                    <div class="small text-body">Integration & support by BRIF Cloud</div>
-                                </div>
+                        <div class="col-6">
+                            <div class="p-3 rounded-4 h-100"
+                                style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
+                                <small class="text-primary text-uppercase fw-bold"
+                                    style="font-size: 0.7rem; letter-spacing: 1px;">Built for Growth</small>
+                                <h6 class="mt-2 mb-1 text-white">Scalable Tech</h6>
+                                <p class="small text-light mb-0">SME to enterprise-ready solutions.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-6 wow fadeInUp text-center" data-wow-delay="0.2s">
-                    <img class="img-fluid rounded mx-auto d-block" src="../img/payment.png" alt="Payment Solutions">
+                <div class="col-lg-6">
+                    <div class="position-relative">
+
+                        <!-- Glow（蓝 → 金） -->
+                        <div class="position-absolute top-50 start-50 translate-middle" style="width: 300px; height: 300px; 
+                   background: rgba(212,175,55,0.15); 
+                   filter: blur(100px); 
+                   border-radius: 50%;">
+                        </div>
+
+                        <!-- Card -->
+                        <div class="card bg-dark text-white border-0 shadow-lg rounded-4 overflow-hidden" style="background: linear-gradient(145deg, #1e1e1e, #141414) !important; 
+                   border: 1px solid rgba(212,175,55,0.15) !important;">
+
+                            <div class="card-body p-4">
+
+                                <!-- Header -->
+                                <div class="d-flex justify-content-between align-items-start mb-4">
+                                    <div>
+                                        <small class="text-primary text-uppercase mb-1 d-block"
+                                            style="font-size: 0.7rem;">
+                                            Business Overview
+                                        </small>
+                                        <h3 class="fw-bold mb-0">RM 12,480.00</h3>
+                                    </div>
+
+                                    <!-- Badge 改金 -->
+                                    <span class="badge border px-3 py-2" style="background: rgba(212,175,55,0.12);
+                               color: #d4af37;
+                               border-color: rgba(212,175,55,0.3);">
+                                        ● Live Tracking
+                                    </span>
+                                </div>
+
+                                <!-- Chart（蓝 → 金） -->
+                                <div class="d-flex align-items-end gap-3 mb-4" style="height:120px;">
+                                    <div class="bg-white opacity-25 w-100 rounded-top-2" style="height:30%"></div>
+                                    <div class="bg-white opacity-25 w-100 rounded-top-2" style="height:50%"></div>
+
+                                    <!-- 主 bar -->
+                                    <div class="w-100 rounded-top-2 shadow"
+                                        style="height:90%; background: linear-gradient(to top, #d4af37, #f5d76e);">
+                                    </div>
+
+                                    <div class="bg-white opacity-25 w-100 rounded-top-2" style="height:60%"></div>
+                                    <div class="bg-white opacity-25 w-100 rounded-top-2" style="height:75%"></div>
+                                    <div class="bg-white opacity-25 w-100 rounded-top-2" style="height:40%"></div>
+                                </div>
+
+                                <!-- Stats -->
+                                <div class="row g-3 mb-4">
+                                    <div class="col-4">
+                                        <div class="p-3 rounded-3 text-center"
+                                            style="background: rgba(255,255,255,0.03);">
+                                            <div class="text-primary small mb-1">QR</div>
+                                            <div class="fw-bold">RM 5,960</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="p-3 rounded-3 text-center"
+                                            style="background: rgba(255,255,255,0.03);">
+                                            <div class="text-primary small mb-1">Cards</div>
+                                            <div class="fw-bold">RM 3,820</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="p-3 rounded-3 text-center"
+                                            style="background: rgba(255,255,255,0.03);">
+                                            <div class="text-primary small mb-1">Online</div>
+                                            <div class="fw-bold">RM 2,700</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Footer List -->
+                                <div class="row g-3 pt-3 border-top border-secondary border-opacity-25">
+
+                                    <!-- Card 1 -->
+                                    <div class="col-6">
+                                        <div class="p-3 rounded-4 h-100"
+                                            style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+
+                                            <!-- icon -->
+                                            <div class="mb-3">
+                                                <div class="d-inline-flex align-items-center justify-content-center rounded-3"
+                                                    style="width:40px; height:40px; background: rgba(212,175,55,0.15); color:#d4af37;">
+                                                    <i class="bi bi-check-circle"></i>
+                                                </div>
+                                            </div>
+
+                                            <!-- label -->
+                                            <div class="text-primary small text-uppercase mb-1"
+                                                style="letter-spacing:1px;">
+                                                Visibility
+                                            </div>
+
+                                            <!-- title -->
+                                            <div class="fw-semibold mb-1">
+                                                Cleaner tracking
+                                            </div>
+
+                                            <!-- desc -->
+                                            <div class="small text-white-50">
+                                                See activity across collection channels and merchant tools more clearly.
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <!-- Card 2 -->
+                                    <div class="col-6">
+                                        <div class="p-3 rounded-4 h-100"
+                                            style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+
+                                            <!-- icon -->
+                                            <div class="mb-3">
+                                                <div class="d-inline-flex align-items-center justify-content-center rounded-3"
+                                                    style="width:40px; height:40px; background: rgba(212,175,55,0.15); color:#d4af37;">
+                                                    <i class="bi bi-gear"></i>
+                                                </div>
+                                            </div>
+
+                                            <!-- label -->
+                                            <div class="text-primary small text-uppercase mb-1"
+                                                style="letter-spacing:1px;">
+                                                Operations
+                                            </div>
+
+                                            <!-- title -->
+                                            <div class="fw-semibold mb-1">
+                                                Built for daily use
+                                            </div>
+
+                                            <!-- desc -->
+                                            <div class="small text-white-50">
+                                                Bring payment collection and merchant-side tools into one connected
+                                                environment.
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Recommended Payment Stack Start -->
-    <section class="container-fluid py-5 bg-secondary" id="recommended-stack">
+    <section class="container-fluid py-3" style="background: #0a0a0a;">
+        <div class="container py-4">
+
+            <div class="mb-5 text-center">
+                <small class="text-uppercase fw-bold" style="color: #D4AF37; letter-spacing: 3px; font-size: 0.8rem;">
+                    Our Strategic Network
+                </small>
+                <h2 class="text-white fw-bold mt-2">Supported Payment Methods</h2>
+                <div class="mx-auto mt-3"
+                    style="width: 50px; height: 2px; background: linear-gradient(90deg, transparent, #D4AF37, transparent);">
+                </div>
+            </div>
+
+            <div class="p-2 p-md-5 rounded-5 shadow-lg"
+                style="background: #000; border: 1px solid rgba(212, 175, 55, 0.15); box-shadow: 0 0 40px rgba(0,0,0,0.5);">
+
+                <div class="row g-4 justify-content-center">
+
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="payment-item border rounded-4 text-center p-4 h-100 transition-all"
+                            style="background: linear-gradient(145deg, #111, #050505); border-color: rgba(212, 175, 55, 0.1) !important; transition: 0.3s;">
+                            <div class="img-container mb-3 d-flex align-items-center justify-content-center"
+                                style="height: 40px;">
+                                <img src="../img/partner/rm/visa.png" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="payment-item border rounded-4 text-center p-4 h-100"
+                            style="background: linear-gradient(145deg, #111, #050505); border-color: rgba(212, 175, 55, 0.1) !important;">
+                            <div class="img-container mb-3 d-flex align-items-center justify-content-center"
+                                style="height: 40px;">
+                                <img src="../img/partner/rm/mastercard.png" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="payment-item border rounded-4 text-center p-4 h-100"
+                            style="background: linear-gradient(145deg, #111, #050505); border-color: rgba(212, 175, 55, 0.1) !important;">
+                            <div class="img-container mb-3 d-flex align-items-center justify-content-center"
+                                style="height: 40px;">
+                                <img src="../img/partner/rm/wechatpay.png" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="payment-item border rounded-4 text-center p-4 h-100"
+                            style="background: linear-gradient(145deg, #111, #050505); border-color: rgba(212, 175, 55, 0.1) !important;">
+                            <div class="img-container mb-3 d-flex align-items-center justify-content-center"
+                                style="height: 40px;">
+                                <img src="../img/partner/rm/mcash.png" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="payment-item border rounded-4 text-center p-4 h-100"
+                            style="background: linear-gradient(145deg, #111, #050505); border-color: rgba(212, 175, 55, 0.1) !important;">
+                            <div class="img-container mb-3 d-flex align-items-center justify-content-center"
+                                style="height: 40px;">
+                                <img src="../img/partner/rm/tng.png" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="payment-item border rounded-4 text-center p-4 h-100"
+                            style="background: linear-gradient(145deg, #111, #050505); border-color: rgba(212, 175, 55, 0.1) !important;">
+                            <div class="img-container mb-3 d-flex align-items-center justify-content-center"
+                                style="height: 40px;">
+                                <img src="../img/partner/rm/shopeepay.png" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="payment-item border rounded-4 text-center p-4 h-100"
+                            style="background: linear-gradient(145deg, #111, #050505); border-color: rgba(212, 175, 55, 0.1) !important;">
+                            <div class="img-container mb-3 d-flex align-items-center justify-content-center"
+                                style="height: 40px;">
+                                <img src="../img/partner/rm/mae.png" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="payment-item border rounded-4 text-center p-4 h-100"
+                            style="background: linear-gradient(145deg, #111, #050505); border-color: rgba(212, 175, 55, 0.1) !important;">
+                            <div class="img-container mb-3 d-flex align-items-center justify-content-center"
+                                style="height: 40px;">
+                                <img src="../img/partner/rm/alipay.png" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="payment-item border rounded-4 text-center p-4 h-100"
+                            style="background: linear-gradient(145deg, #111, #050505); border-color: rgba(212, 175, 55, 0.1) !important;">
+                            <div class="img-container mb-3 d-flex align-items-center justify-content-center"
+                                style="height: 40px;">
+                                <img src="../img/partner/rm/grabpay.png" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="payment-item border rounded-4 text-center p-4 h-100"
+                            style="background: linear-gradient(145deg, #111, #050505); border-color: rgba(212, 175, 55, 0.1) !important;">
+                            <div class="img-container mb-3 d-flex align-items-center justify-content-center"
+                                style="height: 40px;">
+                                <img src="../img/partner/rm/boost.png" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="payment-item border rounded-4 text-center p-4 h-100"
+                            style="background: linear-gradient(145deg, #111, #050505); border-color: rgba(212, 175, 55, 0.1) !important;">
+                            <div class="img-container mb-3 d-flex align-items-center justify-content-center"
+                                style="height: 40px;">
+                                <img src="../img/partner/rm/fpx.png" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid py-5" style="background: #0a0a0a;">
         <div class="container py-5">
 
-            <!-- Heading -->
-            <div class="wow fadeInUp mb-4" data-wow-delay="0.1s">
-                <h2 class="fw-bold mb-1">Recommended Payment Stack <span class="text-primary">(by business type)</span>
+            <div class="row g-4 align-items-stretch">
+
+                <!-- LEFT (已改为 dark) -->
+                <div class="col-lg-6">
+                    <div class="rounded-5 h-100 p-4 p-xl-5 shadow-lg position-relative overflow-hidden" style="background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+                           border: 1px solid rgba(212,175,55,0.15);">
+
+                        <!-- glow -->
+                        <!-- <div class="position-absolute end-0 p-5 opacity-25" style="top: -40px;">
+                            <i class="bi bi-shield-check display-1" style="color:#d4af37;"></i>
+                        </div> -->
+
+                        <!-- badge -->
+                        <span class="badge rounded-pill text-uppercase fw-bold mb-4" style="background: rgba(212,175,55,0.1);
+                               color: #d4af37;
+                               border: 1px solid rgba(212,175,55,0.2);
+                               letter-spacing: 1px;
+                               padding: 10px 20px;">
+                            Our Service Advantage
+                        </span>
+
+                        <!-- title -->
+                        <h2 class="fw-bold display-5 lh-sm text-white mb-4">
+                            A payment solution is only valuable when it fits your real
+                            <span style="color: #d4af37;">business workflow.</span>
+                        </h2>
+
+                        <!-- desc -->
+                        <p class="text-white-50 fs-5 lh-base mb-5">
+                            We do not just pass you a signup link. We help merchants understand what they need, which
+                            setup fits their business, and how to move from manual collection into a more structured and
+                            professional payment system.
+                        </p>
+
+                        <!-- points -->
+                        <div class="d-flex mb-4">
+                            <div class="me-3">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 34px; height: 34px;
+                                       background: rgba(212,175,55,0.15);
+                                       color: #d4af37;">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="text-white fs-5">
+                                Solution matching based on business type, collection style, and operational needs.
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-4">
+                            <div class="me-3">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 34px; height: 34px;
+                                       background: rgba(212,175,55,0.15);
+                                       color: #d4af37;">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="text-white fs-5">
+                                Better merchant onboarding guidance with clearer explanation and structure.
+                            </div>
+                        </div>
+
+                        <div class="d-flex">
+                            <div class="me-3">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 34px; height: 34px;
+                                       background: rgba(212,175,55,0.15);
+                                       color: #d4af37;">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="text-white fs-5">
+                                A stronger customer-facing payment experience that helps build trust and convenience.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- RIGHT (保持 + 微调统一) -->
+                <div class="col-lg-6">
+                    <div class="rounded-5 h-100 p-4 p-xl-5 shadow-lg text-white" style="background: linear-gradient(135deg, #000, #0d0d0d);
+                           border: 1px solid rgba(212,175,55,0.2);">
+
+                        <!-- badge -->
+                        <span class="badge rounded-pill text-uppercase fw-bold mb-4" style="background: rgba(212,175,55,0.08);
+                               color: #d4af37;
+                               border: 1px solid rgba(212,175,55,0.25);
+                               letter-spacing: 1px;
+                               padding: 10px 20px;">
+                            About Revenue Monster
+                        </span>
+
+                        <!-- title -->
+                        <h2 class="fw-bold display-5 lh-sm mb-4" style="background: linear-gradient(90deg, #d4af37, #f5d76e);
+                               -webkit-background-clip: text;
+                               -webkit-text-fill-color: transparent;">
+                            More than a payment gateway.
+                        </h2>
+
+                        <!-- desc -->
+                        <p class="text-white-50 fs-5 lh-base mb-5">
+                            Revenue Monster is positioned as a broader merchant ecosystem that combines payment
+                            collection, digital tools, payment links, merchant visibility, and integration possibilities
+                            â€” helping businesses operate more efficiently, not just collect money.
+                        </p>
+
+                        <!-- card 1 -->
+                        <div class="p-4 mb-3 rounded-4" style="background: rgba(255,255,255,0.04);
+                               border: 1px solid rgba(255,255,255,0.08);">
+                            <div class="text-uppercase fw-bold mb-2"
+                                style="color: #d4af37; font-size: 0.75rem; letter-spacing: 2px;">
+                                For Merchants
+                            </div>
+                            <div class="fs-5 text-white-50">
+                                Built to support retail, service businesses, eCommerce, and businesses moving into
+                                digital payment workflows.
+                            </div>
+                        </div>
+
+                        <!-- card 2 -->
+                        <div class="p-4 rounded-4" style="background: rgba(255,255,255,0.04);
+                               border: 1px solid rgba(255,255,255,0.08);">
+                            <div class="text-uppercase fw-bold mb-2"
+                                style="color: #d4af37; font-size: 0.75rem; letter-spacing: 2px;">
+                                For Growth
+                            </div>
+                            <div class="fs-5 text-white-50">
+                                Helps businesses improve convenience, reduce friction, and move toward a more scalable
+                                merchant setup.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="service" class="container-fluid py-5" style="background: #000;">
+        <div class="container py-5">
+
+            <div class="text-center mb-5">
+                <span class="badge rounded-pill text-uppercase fw-bold mb-3"
+                    style="background: rgba(212, 175, 55, 0.1); color: #D4AF37; border: 1px solid rgba(212, 175, 55, 0.3); letter-spacing: 2px; padding: 8px 20px;">
+                    Our Core Services
+                </span>
+
+                <h2 class="fw-bold display-5 text-white mb-3">
+                    Designed to help merchants collect <span style="color: #D4AF37;">better</span>, sell <span
+                        style="color: #D4AF37;">faster</span>.
                 </h2>
-                <p class="text-muted mb-0">
-                    A practical setup that balances conversion, cost, and reconciliation.
+
+                <p class="text-light mx-auto fs-5" style="max-width:750px; opacity: 0.8;">
+                    Revenue Monster supports multiple merchant needs under one connected ecosystem, giving your business
+                    more flexibility and better tools for modern payment collection.
                 </p>
             </div>
 
-            <!-- Cards -->
             <div class="row g-4">
 
-                <!-- Card 1 -->
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.15s">
-                    <div class="card border-0 rounded-4 shadow-sm h-100">
-                        <div class="card-body p-4 bg-dark rounded-4">
-                            <span class="text-primary">Most SMEs • Best overall</span>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card h-100 p-4 rounded-4 transition-all"
+                        style="background: linear-gradient(145deg, #111, #080808); border: 1px solid rgba(255,255,255,0.05);">
+                        <div class="mb-4 d-inline-block">
+                            <span class="fs-4 fw-bold"
+                                style="color: #D4AF37; border-bottom: 2px solid #D4AF37;">01</span>
+                        </div>
+                        <h5 class="fw-bold text-white mb-3 mt-2">Online Payment</h5>
+                        <p class="text-light small lh-base">
+                            Accept payments online with a more professional checkout experience across web, mobile, and
+                            online store environments.
+                        </p>
+                    </div>
+                </div>
 
-                            <h4 class="fw-bold mt-3 mb-2">FPX + eWallet + Cards</h4>
-                            <p class="text-muted mb-0">
-                                Show FPX/eWallet first to protect margin, keep Cards for convenience and international
-                                buyers.
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card h-100 p-4 rounded-4 transition-all"
+                        style="background: linear-gradient(145deg, #111, #080808); border: 1px solid rgba(255,255,255,0.05);">
+                        <div class="mb-4 d-inline-block">
+                            <span class="fs-4 fw-bold"
+                                style="color: #D4AF37; border-bottom: 2px solid #D4AF37;">02</span>
+                        </div>
+                        <h5 class="fw-bold text-white mb-3 mt-2">Payment Link & Invoice</h5>
+                        <p class="text-light small lh-base">
+                            Create payment requests quickly and share them through chat, email, social media, or SMS for
+                            faster collection.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card h-100 p-4 rounded-4 transition-all"
+                        style="background: linear-gradient(145deg, #111, #080808); border: 1px solid rgba(255,255,255,0.05);">
+                        <div class="mb-4 d-inline-block">
+                            <span class="fs-4 fw-bold"
+                                style="color: #D4AF37; border-bottom: 2px solid #D4AF37;">03</span>
+                        </div>
+                        <h5 class="fw-bold text-white mb-3 mt-2">Smart Terminal</h5>
+                        <p class="text-light small lh-base">
+                            Improve in-store collection with modern terminal hardware and a more complete payment
+                            environment for customers.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card h-100 p-4 rounded-4 transition-all"
+                        style="background: linear-gradient(145deg, #111, #080808); border: 1px solid rgba(255,255,255,0.05);">
+                        <div class="mb-4 d-inline-block">
+                            <span class="fs-4 fw-bold"
+                                style="color: #D4AF37; border-bottom: 2px solid #D4AF37;">04</span>
+                        </div>
+                        <h5 class="fw-bold text-white mb-3 mt-2">Merchant Dashboard</h5>
+                        <p class="text-light small lh-base">
+                            Track payment activities, monitor collection channels, and improve visibility across your
+                            merchant operations.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card h-100 p-4 rounded-4 transition-all"
+                        style="background: linear-gradient(145deg, #111, #080808); border: 1px solid rgba(255,255,255,0.05);">
+                        <div class="mb-4 d-inline-block">
+                            <span class="fs-4 fw-bold"
+                                style="color: #D4AF37; border-bottom: 2px solid #D4AF37;">05</span>
+                        </div>
+                        <h5 class="fw-bold text-white mb-3 mt-2">Ã la carte Store</h5>
+                        <p class="text-light small lh-base">
+                            Combine ordering and collection into a digital store experience for delivery, pickup, or
+                            contactless ordering.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card h-100 p-4 rounded-4 transition-all"
+                        style="background: linear-gradient(145deg, #111, #080808); border: 1px solid rgba(255,255,255,0.05);">
+                        <div class="mb-4 d-inline-block">
+                            <span class="fs-4 fw-bold"
+                                style="color: #D4AF37; border-bottom: 2px solid #D4AF37;">06</span>
+                        </div>
+                        <h5 class="fw-bold text-white mb-3 mt-2">Loyalty & Retention</h5>
+                        <p class="text-light small lh-base">
+                            Encourage repeat business with merchant-led loyalty features and stronger customer
+                            engagement options.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card h-100 p-4 rounded-4 transition-all"
+                        style="background: linear-gradient(145deg, #111, #080808); border: 1px solid rgba(255,255,255,0.05);">
+                        <div class="mb-4 d-inline-block">
+                            <span class="fs-4 fw-bold"
+                                style="color: #D4AF37; border-bottom: 2px solid #D4AF37;">07</span>
+                        </div>
+                        <h5 class="fw-bold text-white mb-3 mt-2">eVoucher Campaigns</h5>
+                        <p class="text-light small lh-base">
+                            Launch promotional voucher campaigns that create stronger incentives for customers to buy
+                            and return.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card h-100 p-4 rounded-4 transition-all"
+                        style="background: linear-gradient(145deg, #111, #080808); border: 1px solid rgba(255,255,255,0.05);">
+                        <div class="mb-4 d-inline-block">
+                            <span class="fs-4 fw-bold"
+                                style="color: #D4AF37; border-bottom: 2px solid #D4AF37;">08</span>
+                        </div>
+                        <h5 class="fw-bold text-white mb-3 mt-2">Integration & Growth</h5>
+                        <p class="text-light small lh-base">
+                            Connect payment capabilities with accounting tools, POS systems, or internal business
+                            workflows as you scale.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="container-fluid py-5" style="background: #0a0a0a;">
+        <div class="container py-5">
+            <div class="row g-4 align-items-stretch">
+
+                <!-- LEFT -->
+                <div class="col-lg-6">
+                    <div class="rounded-5 h-100 p-4 p-xl-5 shadow-lg position-relative"
+                        style="background: linear-gradient(135deg, #181818, #0f0f0f); border: 1px solid rgba(212, 175, 55, 0.15);">
+
+                        <span class="badge text-uppercase fw-bold mb-4"
+                            style="background: rgba(212, 175, 55, 0.1); color: #d4af37; border: 1px solid rgba(212, 175, 55, 0.2); letter-spacing: 1px; padding: 10px 20px;">
+                            Why Clients Like It
+                        </span>
+
+                        <h2 class="fw-bold display-5 text-white mb-4">
+                            A smoother payment experience for your <span style="color: #D4AF37;">customers.</span>
+                        </h2>
+
+                        <p class="text-white-50 fs-5 mb-5">
+                            A better payment journey does not only help you collect money faster â€” it also improves
+                            trust, convenience, and the professionalism of your business.
+                        </p>
+
+                        <div class="mb-3 p-4 rounded-4"
+                            style="background: rgba(255,255,255,0.03); border: 1px solid rgba(212, 175, 55, 0.12);">
+                            <h6 class="fw-bold mb-1 text-white">Less hassle</h6>
+                            <p class="small text-white-50 mb-0">
+                                Customers do not need to copy bank details manually or deal with unnecessary steps.
+                            </p>
+                        </div>
+
+                        <div class="mb-3 p-4 rounded-4"
+                            style="background: rgba(255,255,255,0.03); border: 1px solid rgba(212, 175, 55, 0.12);">
+                            <h6 class="fw-bold mb-1 text-white">More convenience</h6>
+                            <p class="small text-white-50 mb-0">
+                                Payment can happen more smoothly through links, online channels, terminals, and digital
+                                methods customers already use.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-4"
+                            style="background: rgba(255,255,255,0.03); border: 1px solid rgba(212, 175, 55, 0.12);">
+                            <h6 class="fw-bold mb-1 text-white">More confidence</h6>
+                            <p class="small text-white-50 mb-0">
+                                A structured and modern payment experience helps your business appear more professional
+                                and trustworthy.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="card border-0 rounded-4 shadow-sm h-100">
-                        <div class="card-body p-4 bg-dark rounded-4">
-                            <span class="text-primary">
-                                Services / B2B
+                <!-- RIGHT -->
+                <div class="col-lg-6">
+                    <div class="rounded-5 h-100 p-4 p-xl-5 shadow-lg text-white position-relative"
+                        style="background: linear-gradient(135deg, #000000, #0d0d0d); border: 1px solid rgba(212, 175, 55, 0.2);">
+
+                        <span class="badge text-uppercase fw-bold mb-4"
+                            style="background: rgba(212, 175, 55, 0.08); color: #D4AF37; border: 1px solid rgba(212, 175, 55, 0.25); letter-spacing: 1px; padding: 10px 20px;">
+                            Why Choose Us
+                        </span>
+
+                        <h2 class="fw-bold display-5 mb-4"
+                            style="background: linear-gradient(90deg, #D4AF37, #f7e09a); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            We help you choose the setup that actually fits your business.
+                        </h2>
+
+                        <p class="text-white-50 fs-5 mb-5">
+                            We do more than introduce a solution. We help merchants understand which RM services make
+                            sense for their workflow, business model, and growth stage.
+                        </p>
+
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="p-4 h-100 rounded-4"
+                                    style="background: rgba(255,255,255,0.03); border: 1px solid rgba(212, 175, 55, 0.15);">
+                                    <h5 class="fw-bold mb-2" style="color: #D4AF37;">Business Matching</h5>
+                                    <p class="medium text-white-50 mb-0">
+                                        Identify whether online payment, terminal, payment link, or a broader RM setup
+                                        fits best.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="p-4 h-100 rounded-4"
+                                    style="background: rgba(255,255,255,0.03); border: 1px solid rgba(212, 175, 55, 0.15);">
+                                    <h5 class="fw-bold mb-2" style="color: #D4AF37;">Merchant Guidance</h5>
+                                    <p class="medium text-white-50 mb-0">
+                                        Clearer onboarding explanation and more structured service presentation for
+                                        merchants.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="p-4 h-100 rounded-4"
+                                    style="background: rgba(255,255,255,0.03); border: 1px solid rgba(212, 175, 55, 0.15);">
+                                    <h5 class="fw-bold mb-2" style="color: #D4AF37;">Professional Image</h5>
+                                    <p class="medium text-white-50 mb-0">
+                                        Upgrade your payment flow to look more modern, capable, and business-ready.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="p-4 h-100 rounded-4"
+                                    style="background: rgba(255,255,255,0.03); border: 1px solid rgba(212, 175, 55, 0.15);">
+                                    <h5 class="fw-bold mb-2" style="color: #D4AF37;">Growth Mindset</h5>
+                                    <p class="medium text-white-50 mb-0">
+                                        Choose a setup that supports both your current operations and your future scale.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="container-fluid py-5" style="background: #000; overflow: hidden;">
+        <div class="container py-5">
+
+            <div class="text-center pb-lg-4">
+                <span class="badge text-uppercase fw-bold mb-3"
+                    style="background: rgba(212, 175, 55, 0.1); color: #D4AF37; border: 1px solid rgba(212, 175, 55, 0.3); letter-spacing: 2px; padding: 12px 30px; border-radius: 50px;">
+                    Simple Merchant Journey
+                </span>
+
+                <h2 class="display-4 fw-bold text-white mb-3">
+                    From enquiry to application in a <span style="color: #D4AF37;">clearer flow.</span>
+                </h2>
+
+                <p class="text-light mx-auto fs-5" style="max-width: 760px; opacity: 0.8;">
+                    Make it easier for potential clients to understand the process and take action with confidence.
+                </p>
+            </div>
+
+            <div class="row g-4 position-relative">
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="journey-card h-100 p-4 p-xxl-5 rounded-5 border transition-all position-relative"
+                        style="background: linear-gradient(145deg, #0f0f0f, #050505); border-color: rgba(255, 255, 255, 0.05) !important; z-index: 2;">
+
+                        <div class="mb-4">
+                            <span class="step-num display-3 fw-black opacity-25"
+                                style="background: linear-gradient(#D4AF37, #000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900;">
+                                01
                             </span>
-
-                            <h4 class="fw-bold mt-3 mb-2">DuitNow + FPX <span class="text-muted">(B2B enabled)</span>
-                            </h4>
-                            <p class="text-muted mb-0">
-                                Lower fee impact and clearer reconciliation. Add Cards only if your clients request it.
-                            </p>
                         </div>
+
+                        <h4 class="fw-bold text-white mb-3" style="letter-spacing: -0.5px;">Understand <br><span
+                                style="color: #D4AF37;">Your Needs</span></h4>
+                        <p class="text-light small lh-lg mb-0">
+                            We identify your business type, collection style, and operational needs.
+                        </p>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.25s">
-                    <div class="card border-0 rounded-4 shadow-sm h-100">
-                        <div class="card-body p-4 bg-dark rounded-4">
-                            <span class="text-primary">
-                                High AOV
+                <div class="col-md-6 col-lg-3">
+                    <div class="journey-card h-100 p-4 p-xxl-5 rounded-5 border transition-all"
+                        style="background: linear-gradient(145deg, #0f0f0f, #050505); border-color: rgba(255, 255, 255, 0.05) !important; z-index: 2;">
+
+                        <div class="mb-4">
+                            <span class="step-num display-3 fw-black opacity-25"
+                                style="background: linear-gradient(#D4AF37, #000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900;">
+                                02
                             </span>
-
-                            <h4 class="fw-bold mt-3 mb-2">Cards + BNPL <span class="text-muted">(selective)</span></h4>
-                            <p class="text-muted mb-0">
-                                Use BNPL only for categories with enough margin. Keep FPX/eWallet as default options.
-                            </p>
                         </div>
+
+                        <h4 class="fw-bold text-white mb-3" style="letter-spacing: -0.5px;">Match the <br><span
+                                style="color: #D4AF37;">Right Service</span></h4>
+                        <p class="text-light small lh-lg mb-0">
+                            We help match you with the most suitable payment and merchant tools.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="journey-card h-100 p-4 p-xxl-5 rounded-5 border transition-all"
+                        style="background: linear-gradient(145deg, #0f0f0f, #050505); border-color: rgba(255, 255, 255, 0.05) !important; z-index: 2;">
+
+                        <div class="mb-4">
+                            <span class="step-num display-3 fw-black opacity-25"
+                                style="background: linear-gradient(#D4AF37, #000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900;">
+                                03
+                            </span>
+                        </div>
+
+                        <h4 class="fw-bold text-white mb-3" style="letter-spacing: -0.5px;">Submit Your<br><span
+                                style="color: #D4AF37;">Application</span></h4>
+                        <p class="text-light small lh-lg mb-0">
+                            Use the dedicated merchant link to proceed with a more structured onboarding journey.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="journey-card h-100 p-4 p-xxl-5 rounded-5 border transition-all"
+                        style="background: linear-gradient(145deg, #0f0f0f, #050505); border-color: rgba(255, 255, 255, 0.05) !important; z-index: 2;">
+
+                        <div class="mb-4">
+                            <span class="step-num display-3 fw-black opacity-25"
+                                style="background: linear-gradient(#D4AF37, #000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900;">
+                                04
+                            </span>
+                        </div>
+
+                        <h4 class="fw-bold text-white mb-3" style="letter-spacing: -0.5px;">Start <br><span
+                                style="color: #D4AF37;">Collecting Better</span></h4>
+                        <p class="text-light small lh-lg mb-0">
+                            Move toward smoother collections, stronger customer convenience, and better merchant
+                            operations.
+                        </p>
                     </div>
                 </div>
 
             </div>
-
-            <!-- Optional small note (like screenshot spacing) -->
-            <div class="mt-4 text-muted wow fadeInUp" data-wow-delay="0.3s">
-                Tip: Prioritise FPX/eWallet to reduce MDR impact, then offer Cards/BNPL selectively.
-            </div>
-
         </div>
     </section>
-    <!-- Recommended Payment Stack End -->
 
 
-    <!-- FEES -->
-    <section class="container-fluid py-5" id="fees">
-        <div class="container py-5">
-            <div class="text-center wow fadeInUp mb-5" data-wow-delay="0.1s">
-                <h6 class="text-primary text-uppercase fw-bold tracking-widest">Pricing</h6>
-                <h1 class="display-5 fw-bold">Per-Transaction Fees</h1>
-                <div class="mx-auto bg-primary my-3" style="width: 50px; height: 3px;"></div>
-                <p class="lead text-muted mx-auto" style="max-width: 700px;">
-                    Transparent pricing with no hidden costs. Fees apply per successful payment—failed or cancelled
-                    transactions are typically free of charge.
+    <section class="container-fluid position-relative overflow-hidden" style="background: #000;">
+
+        <div class="position-absolute top-50 start-50 translate-middle opacity-25"
+            style="width: 600px; height: 600px; background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%); z-index: 0;">
+        </div>
+
+        <div class="container py-5 position-relative" style="z-index: 1;">
+            <div class="text-center mb-5">
+
+                <span class="badge text-uppercase fw-bold mb-4"
+                    style="background: rgba(212, 175, 55, 0.1); color: #D4AF37; border: 1px solid rgba(212, 175, 55, 0.3); letter-spacing: 2px; padding: 12px 30px; border-radius: 50px;">
+                    Start Your Merchant Journey
+                </span>
+
+                <h2 class="display-3 fw-bold text-white mb-4">
+                    Ready to grow with <br><span
+                        style="background: linear-gradient(90deg, #D4AF37, #f7e09a); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Revenue
+                        Monster?</span>
+                </h2>
+
+                <p class="text-light mx-auto mb-5 fs-5" style="max-width:720px; opacity: 0.8;">
+                    Use our dedicated merchant sign-up link to start your application and explore a more connected way
+                    to manage payments, collections, and merchant growth.
                 </p>
-            </div>
 
-            <div class="row g-4">
-                <div class="wow fadeInUp" data-wow-delay="0.15s">
-                    <div class="card border-0 bg-light rounded-4 shadow-sm h-100">
-                        <div class="card-body p-4 bg-secondary">
-                            <div class="d-flex align-items-center mb-4">
-                                <div class="bg-primary-soft p-2 rounded-3 me-3">
-                                    <i class="fa-solid fa-globe text-primary fs-4"></i>
-                                </div>
-                                <h4 class="fw-bold mb-0">Online Payments</h4>
+                <div class="d-flex justify-content-center gap-3 flex-wrap mb-5 pb-4">
+                    <a href="../contact.html" class="btn btn-gold-pulse px-5 py-3 fw-bold text-uppercase border-0"
+                        style="background: linear-gradient(135deg, #D4AF37 0%, #b08d1a 100%); color: #000; border-radius: 12px; letter-spacing: 1px;">
+                        Sign Up Now
+                    </a>
+                    <a href="#service" class="btn btn-outline-light px-5 py-3 fw-bold text-uppercase"
+                        style="border-radius: 12px; letter-spacing: 1px; border: 1px solid rgba(255,255,255,0.2);">
+                        Review Services
+                    </a>
+                </div>
+
+                <div class="row g-4 justify-content-center">
+
+                    <div class="col-md-4">
+                        <div class="p-4 h-100 rounded-4 transition-all"
+                            style="background: rgba(255,255,255,0.02); border: 1px solid rgba(212, 175, 55, 0.1);">
+                            <div class="mb-2">
+                                <i class="bi bi-globe2 fs-3" style="color: #D4AF37;"></i>
                             </div>
-
-                            <div class="table-responsive">
-                                <table class="table align-middle mb-0 table-borderless">
-                                    <thead class="table-dark">
-                                        <tr>
-                                            <th class="ps-3 py-3">Category</th>
-                                            <th class="py-3">Type</th>
-                                            <th class="py-3 text-end pe-3">MDR (Reference)</th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody class="border-top-0">
-
-                                        <!-- Credit Card Scheme -->
-                                        <tr class="border-top">
-                                            <td class="ps-3 fw-bold text-primary" rowspan="3">
-                                                Credit Card Scheme
-                                            </td>
-                                            <td>Local Visa / Master (Debit)</td>
-                                            <td class="text-end pe-3 fw-bold text-primary">1.3%</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Local Visa / Master (Credit)</td>
-                                            <td class="text-end pe-3 fw-bold text-primary">1.8%</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Visa / Master (Foreign)</td>
-                                            <td class="text-end pe-3 fw-bold text-primary">
-                                                3.5% – 5%+ <span class="text-muted small">(final approval)</span>
-                                            </td>
-                                        </tr>
-
-                                        <!-- eWallets -->
-                                        <tr class="border-top">
-                                            <td class="ps-3 fw-bold text-primary" rowspan="3">
-                                                eWallets
-                                            </td>
-                                            <td>
-                                                TNG eWallet, MAE, ShopeePay, Boost,<br>
-                                                WeChat Pay, GrabPay, Alipay
-                                            </td>
-                                            <td class="text-end pe-3 fw-bold text-primary">1.2%</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Alipay+</td>
-                                            <td class="text-end pe-3 fw-bold text-primary">2.0%</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Setel Pay</td>
-                                            <td class="text-end pe-3 fw-bold text-primary">1.5%</td>
-                                        </tr>
-
-                                        <!-- Online Banking -->
-                                        <tr class="border-top">
-                                            <td class="ps-3 fw-bold text-primary" rowspan="2">
-                                                Online Banking
-                                            </td>
-                                            <td>FPX (B2C)</td>
-                                            <td class="text-end pe-3 fw-bold text-primary">
-                                                RM0.70 or 2% <span class="text-muted small">(whichever higher)</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>FPX (B2B)</td>
-                                            <td class="text-end pe-3 fw-bold text-primary">
-                                                RM2.00 or 2% <span class="text-muted small">(whichever higher)</span>
-                                            </td>
-                                        </tr>
-
-                                        <!-- DuitNow -->
-                                        <tr class="border-top">
-                                            <td class="ps-3 fw-bold text-primary">
-                                                DuitNow
-                                            </td>
-                                            <td>DuitNow</td>
-                                            <td class="text-end pe-3 fw-bold text-primary">1.0%</td>
-                                        </tr>
-
-                                        <!-- BNPL -->
-                                        <tr class="border-top">
-                                            <td class="ps-3 fw-bold text-primary" rowspan="2">
-                                                Buy Now Pay Later
-                                            </td>
-                                            <td>Atome</td>
-                                            <td class="text-end pe-3 fw-bold text-primary">
-                                                6% – 7% <span class="text-muted small">(final approval)</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>GrabPay Later</td>
-                                            <td class="text-end pe-3 fw-bold text-primary">6%</td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-
-                            </div>
-
-                            <div class="mt-4 p-3 rounded-3 bg-dark border-start border-primary border-4 shadow-sm">
-                                <p class="small mb-0 text-white-200">
-                                    <span class="badge bg-primary me-2">Pro Tip</span>
-                                    To maximize conversion in Malaysia, we recommend enabling <strong>FPX + Top 3
-                                        E-Wallets</strong>.
-                                </p>
-                            </div>
+                            <h6 class="text-uppercase fw-bold mb-2"
+                                style="color: #D4AF37; font-size: 0.8rem; letter-spacing: 1px;">Online Payment</h6>
+                            <p class="small text-white-50 mb-0">Support eCommerce and digital payment acceptance with a
+                                more complete merchant ecosystem.</p>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="text-center mt-5 text-muted">
-                <p class="mb-0 italic">* Indicative rates only. Final rates are subject to <strong>Revenue
-                        Monster</strong> approval based on industry, volume, and risk category.</p>
-            </div>
-        </div>
-    </section>
+                    <div class="col-md-4">
+                        <div class="p-4 h-100 rounded-4 transition-all"
+                            style="background: rgba(255,255,255,0.02); border: 1px solid rgba(212, 175, 55, 0.1);">
+                            <div class="mb-2">
+                                <i class="bi bi-link-45deg fs-3" style="color: #D4AF37;"></i>
+                            </div>
+                            <h6 class="text-uppercase fw-bold mb-2"
+                                style="color: #D4AF37; font-size: 0.8rem; letter-spacing: 1px;">Payment Link</h6>
+                            <p class="small text-white-50 mb-0">Create invoice links, share instantly, and reduce
+                                friction in customer collection.</p>
+                        </div>
+                    </div>
 
-
-    <!-- PROCESS -->
-    <section class="container-fluid py-5 bg-secondary">
-        <div class="container py-5">
-            <div class="text-center wow fadeInUp mb-5" data-wow-delay="0.1s">
-                <h6 class="text-primary text-uppercase fw-bold tracking-widest">Workflow</h6>
-                <h2 class="display-6 fw-bold text-white">How We Go Live</h2>
-                <div class="mx-auto bg-primary mb-3" style="width: 60px; height: 3px;"></div>
-                <p class="lead text-body mx-auto" style="max-width: 600px;">
-                    Simple steps — BRIF Cloud manages the technical heavy lifting so you can focus on your business.
-                </p>
-            </div>
-
-            <div class="row g-4">
-                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.12s">
-                    <div class="card bg-dark border-0 rounded-4 p-4 h-100 shadow-sm transition-hover">
-                        <div class="card-body">
-                            <div class="display-4 fw-bold text-primary opacity-25 mb-3">01</div>
-                            <h5 class="text-white fw-bold mb-3">Onboarding</h5>
-                            <p class="text-white-50 mb-0">
-                                We collect merchant details, business profiles, and ensure all approval requirements are
-                                met seamlessly.
+                    <div class="col-md-4">
+                        <div class="p-4 h-100 rounded-4 transition-all"
+                            style="background: rgba(255,255,255,0.02); border: 1px solid rgba(212, 175, 55, 0.1);">
+                            <div class="mb-2">
+                                <i class="bi bi-grid-1x2 fs-3" style="color: #D4AF37;"></i>
+                            </div>
+                            <h6 class="text-uppercase fw-bold mb-2"
+                                style="color: #D4AF37; font-size: 0.8rem; letter-spacing: 1px;">Merchant Platform</h6>
+                            <p class="small text-white-50 mb-0">Dashboard, terminal, app, merchant tools, and
+                                integration possibilities for business growth.
                             </p>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.18s">
-                    <div class="card bg-dark border-0 rounded-4 p-4 h-100 shadow-sm transition-hover">
-                        <div class="card-body">
-                            <div class="display-4 fw-bold text-primary opacity-25 mb-3">02</div>
-                            <h5 class="text-white fw-bold mb-3">Integration</h5>
-                            <p class="text-white-50 mb-0">
-                                Implementation of Hosted Checkout or API integration with robust Webhook signature
-                                verification.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.24s">
-                    <div class="card bg-dark border-0 rounded-4 p-4 h-100 shadow-sm transition-hover">
-                        <div class="card-body">
-                            <div class="display-4 fw-bold text-primary opacity-25 mb-3">03</div>
-                            <h5 class="text-white fw-bold mb-3">Go Live & Support</h5>
-                            <p class="text-white-50 mb-0">
-                                Production launch, proactive monitoring, and dedicated troubleshooting support to keep
-                                payments flowing.
-                            </p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="container-fluid py-5 bg-dark" id="faq">
-        <div class="container py-5">
-            <div class="text-center wow fadeInUp mb-5" data-wow-delay="0.1s">
-                <h6 class="text-primary text-uppercase fw-bold tracking-widest">FAQ</h6>
-                <h2 class="display-5 fw-bold">Common Questions</h2>
-                <div class="mx-auto bg-primary my-3" style="width: 50px; height: 3px;"></div>
-            </div>
-
-            <div class="row g-4">
-                <div class="col-lg-8 mx-auto wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="faq-container">
-
-                        <details class="faq-card mb-3 shadow-sm rounded-4 bg-secondary overflow-hidden" open>
-                            <summary
-                                class="p-4 d-flex align-items-center justify-content-between fw-bold text-white list-unstyled cursor-pointer">
-                                Do you charge setup fees?
-                                <div class="faq-icon-box rounded-circle p-2">
-                                    <i class="fa-solid fa-chevron-down text-primary small transition-transform"></i>
-                                </div>
-                            </summary>
-                            <div class="px-4 pb-4 text-white-200 border-top pt-3">
-                                In most cases, there’s no setup fee. The final scope depends on your specific
-                                integration requirements and business type.
-                            </div>
-                        </details>
-
-                        <details class="faq-card mb-3 shadow-sm rounded-4 bg-secondary overflow-hidden">
-                            <summary
-                                class="p-4 d-flex align-items-center justify-content-between fw-bold text-white list-unstyled cursor-pointer">
-                                Are failed/cancelled payments charged?
-                                <div class="faq-icon-box rounded-circle p-2">
-                                    <i class="fa-solid fa-chevron-down text-primary small transition-transform"></i>
-                                </div>
-                            </summary>
-                            <div class="px-4 pb-4 text-white-200 border-top pt-3">
-                                Typically, fees apply only to successful captured payments. Failed or cancelled
-                                transactions are usually not charged.
-                            </div>
-                        </details>
-
-                        <details class="faq-card mb-3 shadow-sm rounded-4 bg-secondary overflow-hidden">
-                            <summary
-                                class="p-4 d-flex align-items-center justify-content-between fw-bold text-white list-unstyled cursor-pointer">
-                                How long does settlement take?
-                                <div class="faq-icon-box rounded-circle p-2">
-                                    <i class="fa-solid fa-chevron-down text-primary small transition-transform"></i>
-                                </div>
-                            </summary>
-                            <div class="px-4 pb-4 text-white-200 border-top pt-3">
-                                Settlement is usually <strong>T+1</strong> or <strong>T+2</strong> working days,
-                                depending on the payment method and your specific approval settings.
-                            </div>
-                        </details>
-
-                        <details class="faq-card mb-4 shadow-sm rounded-4 bg-secondary overflow-hidden">
-                            <summary
-                                class="p-4 d-flex align-items-center justify-content-between fw-bold text-white list-unstyled cursor-pointer">
-                                Can you integrate with Laravel / custom systems?
-                                <div class="faq-icon-box rounded-circle p-2">
-                                    <i class="fa-solid fa-chevron-down text-primary small transition-transform"></i>
-                                </div>
-                            </summary>
-                            <div class="px-4 pb-4 text-white-200 border-top pt-3">
-                                Yes. We can integrate seamlessly into Laravel, Node.js, or other custom stacks,
-                                including full implementation of secure webhook signature verification.
-                            </div>
-                        </details>
-
-                        <div class="bg-dark text-white rounded-4 p-4 d-flex align-items-start gap-3 shadow">
-                            <i class="fa-solid fa-circle-info text-primary fs-4 mt-1"></i>
-                            <div>
-                                <p class="mb-0 small opacity-75">
-                                    <strong class="text-white">Partner Note:</strong>
-                                    If you have existing contracted rates, let us know! We can update your integration
-                                    to reflect your exact fee percentages per method.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- CTA -->
-
-    <section class="container-fluid cta-section py-5">
-        <div class="container text-center py-5 ">
-            <h2 class="text-white mb-3">Request Your Final Rate Card</h2>
-            <p class="text-white-50 mb-4">
-                Share your business type and estimated monthly volume — we’ll propose the best rate structure and help
-                you go live.
-            </p>
-
-
-            <!-- Buttons -->
-            <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
-                <a href="../contact.html" class="btn btn-primary cta-btn mb-3 mb-md-0">
-                    <i class="fa fa-envelope me-2"></i> Talk to Our Team
-                </a>
-
-                <a href="https://wa.me/60123011610" target="_blank" class="btn btn-outline-light cta-btn">
-                    <i class="fab fa-whatsapp me-2"></i> WhatsApp Us
-                </a>
-            </div>
-
-            <div class="mt-4 small text-white-50">
-                * Indicative rates only. Final rates subject to Revenue Monster approval and merchant profile.
-            </div>
-        </div>
-    </section>
 
     <div id="site-footer"></div>
 

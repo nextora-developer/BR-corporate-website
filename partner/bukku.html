@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Bukku | BRIF Cloud Partner</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="revenue monster, payment gateway, fpx, duitnow qr, ewallet, card, brif cloud partner"
+        name="keywords">
+    <meta
+        content="Revenue Monster payment gateway integration and support by BRIF Cloud (Partner). Transparent per-transaction fee overview by payment method."
+        name="description">
+
+    <!-- Favicon -->
+    <link href="../img/favicon.svg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Work+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+
+    <!-- (Optional) Page-only small tweaks -->
+    <style>
+        /* FAQ Interaction Styles */
+        .faq-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-card:hover {
+            border-color: var(--bs-primary);
+        }
+
+        .faq-card[open] {
+            border-color: var(--bs-primary);
+        }
+
+        .faq-card[open] .transition-transform {
+            transform: rotate(180deg);
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: radial-gradient(800px 400px at 50% 0%, rgba(212, 175, 55, 0.35), transparent 60%),
+                linear-gradient(180deg, #0a0a0a, #000);
+        }
+
+        .cta-check i {
+            color: var(--brif-gold);
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17838304641"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'AW-17838304641');
+    </script>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid p-0">
+        <div id="site-navbar"></div>
+        <div class="page-header pb-5">
+            <div class="container text-center py-5">
+                <div class="text-uppercase text-primary fw-bold mb-3" style="letter-spacing:.18em;">
+                    Cloud Accounting • Partner Program
+                </div>
+                <h1 class="display-4 text-uppercase mb-3 animated slideInDown">
+                    Bukku Cloud Accounting
+                </h1>
+
+                <nav aria-label="breadcrumb" class="animated slideInDown">
+                    <ol class="breadcrumb justify-content-center text-uppercase mb-0">
+                        <li class="breadcrumb-item">
+                            <a class="text-white" href="../index.html">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a class="text-white" href="../partner.html">Partner</a>
+                        </li>
+                        <li class="breadcrumb-item text-primary active" aria-current="page">
+                            Bukku
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <div class="container-fluid py-5 bg-dark">
+        <div class="container py-5">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="title-left mb-2">
+                        <h5 class="text-primary">Why Bukku</h5>
+                        <h1>Built for Malaysia Accounting</h1>
+                    </div>
+                    <p class="text-body mb-5">
+                        Bukku is a cloud accounting software designed for Malaysian businesses, helping you simplify
+                        invoicing,
+                        automate bookkeeping, and stay compliant with SST requirements.
+                    </p>
+
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="d-flex gap-3">
+                                <i class="fa-solid fa-file-invoice text-primary mt-1"></i>
+                                <div>
+                                    <div class="fw-bold">Easy Invoicing</div>
+                                    <div class="small text-body">Create, send & track invoices</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="d-flex gap-3">
+                                <i class="fa-solid fa-calculator text-primary mt-1"></i>
+                                <div>
+                                    <div class="fw-bold">Auto Accounting</div>
+                                    <div class="small text-body">Real-time reports & bookkeeping</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="d-flex gap-3">
+                                <i class="fa-solid fa-receipt text-primary mt-1"></i>
+                                <div>
+                                    <div class="fw-bold">SST Ready</div>
+                                    <div class="small text-body">Malaysia tax compliance built-in</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="d-flex gap-3">
+                                <i class="fa-solid fa-cloud text-primary mt-1"></i>
+                                <div>
+                                    <div class="fw-bold">Cloud Access</div>
+                                    <div class="small text-body">Access anytime, anywhere</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 wow fadeInUp text-center" data-wow-delay="0.2s">
+                    <img class="img-fluid rounded mx-auto d-block" src="../img/accounting.png" alt="Bukku Accounting">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Recommended Usage Start -->
+    <section class="container-fluid py-5 bg-secondary" id="recommended-bukku">
+        <div class="container py-5">
+
+            <!-- Heading -->
+            <div class="wow fadeInUp mb-4" data-wow-delay="0.1s">
+                <h2 class="fw-bold mb-1">
+                    Who is Bukku for <span class="text-primary">(best fit)</span>
+                </h2>
+                <p class="text-muted mb-0">
+                    Designed for Malaysian businesses that want simple, compliant, and scalable accounting.
+                </p>
+            </div>
+
+            <!-- Cards -->
+            <div class="row g-4">
+
+                <!-- SME -->
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.15s">
+                    <div class="card border-0 rounded-4 shadow-sm h-100">
+                        <div class="card-body p-4 bg-dark rounded-4">
+                            <span class="text-primary">Most SMEs • Best fit</span>
+
+                            <h4 class="fw-bold mt-3 mb-2">SME / Small Business</h4>
+                            <p class="text-muted mb-0">
+                                Manage invoices, expenses, and reports in one place without complex accounting setup.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service -->
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="card border-0 rounded-4 shadow-sm h-100">
+                        <div class="card-body p-4 bg-dark rounded-4">
+                            <span class="text-primary">Service / Agency</span>
+
+                            <h4 class="fw-bold mt-3 mb-2">Consultant / Agency</h4>
+                            <p class="text-muted mb-0">
+                                Easily track client invoices, recurring billing, and payments with clear reporting.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ecommerce -->
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.25s">
+                    <div class="card border-0 rounded-4 shadow-sm h-100">
+                        <div class="card-body p-4 bg-dark rounded-4">
+                            <span class="text-primary">Growing Business</span>
+
+                            <h4 class="fw-bold mt-3 mb-2">Ecommerce / Scaling</h4>
+                            <p class="text-muted mb-0">
+                                Sync your sales, track cash flow, and prepare financial reports as your business grows.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Tip -->
+            <div class="mt-4 text-muted wow fadeInUp" data-wow-delay="0.3s">
+                Tip: Start with invoicing + expense tracking, then expand to full accounting reports.
+            </div>
+
+        </div>
+    </section>
+    <!-- Recommended Usage End -->
+
+    <!-- Features Start -->
+    <section class="container-fluid py-5 bg-dark" id="features">
+        <div class="container py-5">
+
+            <!-- Heading -->
+            <div class="text-center wow fadeInUp mb-5" data-wow-delay="0.1s">
+                <h6 class="text-primary text-uppercase fw-bold tracking-widest">Features</h6>
+                <h1 class="display-5 fw-bold">Everything You Need to Run Your Accounting</h1>
+                <div class="mx-auto bg-primary my-3" style="width: 50px; height: 3px;"></div>
+                <p class="lead text-muted mx-auto" style="max-width: 700px;">
+                    From invoicing to financial reporting, Bukku simplifies your entire accounting workflow.
+                </p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="row g-4">
+
+                <!-- Feature 1 -->
+                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="card bg-secondary border-0 rounded-4 p-4 h-100 shadow-sm">
+                        <i class="fa-solid fa-file-invoice text-primary fs-2 mb-3"></i>
+                        <h5 class="fw-bold">Smart Invoicing</h5>
+                        <p class="text-muted mb-0">
+                            Create professional invoices, automate recurring billing, and track payments easily.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.15s">
+                    <div class="card bg-secondary border-0 rounded-4 p-4 h-100 shadow-sm">
+                        <i class="fa-solid fa-wallet text-primary fs-2 mb-3"></i>
+                        <h5 class="fw-bold">Expense Management</h5>
+                        <p class="text-muted mb-0">
+                            Record expenses, upload receipts, and keep your financial records organized.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="card bg-secondary border-0 rounded-4 p-4 h-100 shadow-sm">
+                        <i class="fa-solid fa-chart-line text-primary fs-2 mb-3"></i>
+                        <h5 class="fw-bold">Financial Reports</h5>
+                        <p class="text-muted mb-0">
+                            Get real-time profit & loss, balance sheet, and business insights instantly.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.25s">
+                    <div class="card bg-secondary border-0 rounded-4 p-4 h-100 shadow-sm">
+                        <i class="fa-solid fa-building-columns text-primary fs-2 mb-3"></i>
+                        <h5 class="fw-bold">Bank Reconciliation</h5>
+                        <p class="text-muted mb-0">
+                            Match transactions with your bank statements for accurate bookkeeping.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="card bg-secondary border-0 rounded-4 p-4 h-100 shadow-sm">
+                        <i class="fa-solid fa-receipt text-primary fs-2 mb-3"></i>
+                        <h5 class="fw-bold">SST Compliance</h5>
+                        <p class="text-muted mb-0">
+                            Automatically handle SST calculations and generate compliant reports.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.35s">
+                    <div class="card bg-secondary border-0 rounded-4 p-4 h-100 shadow-sm">
+                        <i class="fa-solid fa-cloud text-primary fs-2 mb-3"></i>
+                        <h5 class="fw-bold">Cloud Access</h5>
+                        <p class="text-muted mb-0">
+                            Access your accounting system anytime, anywhere with secure cloud storage.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- Features End -->
+
+    <!-- FAQ -->
+    <section class="container-fluid py-5 bg-secondary" id="faq">
+        <div class="container py-5">
+            <div class="text-center wow fadeInUp mb-5" data-wow-delay="0.1s">
+                <h6 class="text-primary text-uppercase fw-bold tracking-widest">FAQ</h6>
+                <h2 class="display-5 fw-bold">Common Questions</h2>
+                <div class="mx-auto bg-primary my-3" style="width: 50px; height: 3px;"></div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-8 mx-auto wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="faq-container">
+
+                        <!-- Q1 -->
+                        <details class="faq-card mb-3 shadow-sm rounded-4 bg-dark overflow-hidden" open>
+                            <summary
+                                class="p-4 d-flex align-items-center justify-content-between fw-bold text-white cursor-pointer">
+                                Is Bukku suitable for small businesses?
+                                <i class="fa-solid fa-chevron-down text-primary small transition-transform"></i>
+                            </summary>
+                            <div class="px-4 pb-4 text-white-200 border-top pt-3">
+                                Yes. Bukku is designed for SMEs, startups, and service businesses. It simplifies
+                                invoicing,
+                                expense tracking, and reporting without requiring accounting knowledge.
+                            </div>
+                        </details>
+
+                        <!-- Q2 -->
+                        <details class="faq-card mb-3 shadow-sm rounded-4 bg-dark overflow-hidden">
+                            <summary
+                                class="p-4 d-flex align-items-center justify-content-between fw-bold text-white cursor-pointer">
+                                Do I need accounting knowledge to use Bukku?
+                                <i class="fa-solid fa-chevron-down text-primary small transition-transform"></i>
+                            </summary>
+                            <div class="px-4 pb-4 text-white-200 border-top pt-3">
+                                No. Bukku is built to be user-friendly. Most business owners can manage invoices,
+                                expenses,
+                                and basic reports without accounting background.
+                            </div>
+                        </details>
+
+                        <!-- Q3 -->
+                        <details class="faq-card mb-3 shadow-sm rounded-4 bg-dark overflow-hidden">
+                            <summary
+                                class="p-4 d-flex align-items-center justify-content-between fw-bold text-white cursor-pointer">
+                                Can Bukku handle SST in Malaysia?
+                                <i class="fa-solid fa-chevron-down text-primary small transition-transform"></i>
+                            </summary>
+                            <div class="px-4 pb-4 text-white-200 border-top pt-3">
+                                Yes. Bukku supports SST calculations and reporting, helping you stay compliant with
+                                Malaysia tax requirements.
+                            </div>
+                        </details>
+
+                        <!-- Q4 -->
+                        <details class="faq-card mb-3 shadow-sm rounded-4 bg-dark overflow-hidden">
+                            <summary
+                                class="p-4 d-flex align-items-center justify-content-between fw-bold text-white cursor-pointer">
+                                Can Bukku integrate with my system or payment gateway?
+                                <i class="fa-solid fa-chevron-down text-primary small transition-transform"></i>
+                            </summary>
+                            <div class="px-4 pb-4 text-white-200 border-top pt-3">
+                                Yes. Bukku can be integrated with your business workflow, including payment gateways
+                                like Revenue Monster,
+                                and other systems via API or custom integration.
+                            </div>
+                        </details>
+
+                        <!-- Q5 -->
+                        <details class="faq-card mb-4 shadow-sm rounded-4 bg-dark overflow-hidden">
+                            <summary
+                                class="p-4 d-flex align-items-center justify-content-between fw-bold text-white cursor-pointer">
+                                Do you provide setup and support?
+                                <i class="fa-solid fa-chevron-down text-primary small transition-transform"></i>
+                            </summary>
+                            <div class="px-4 pb-4 text-white-200 border-top pt-3">
+                                Yes. BRIF Cloud provides full onboarding, system setup, training, and ongoing support to
+                                ensure
+                                your accounting runs smoothly.
+                            </div>
+                        </details>
+
+                        <!-- Partner Note -->
+                        <div class="bg-dark text-white rounded-4 p-4 d-flex align-items-start gap-3 shadow">
+                            <i class="fa-solid fa-circle-info text-primary fs-4 mt-1"></i>
+                            <div>
+                                <p class="mb-0 small opacity-75">
+                                    <strong class="text-white">Partner Note:</strong>
+                                    We can customize your Bukku setup based on your business workflow, including
+                                    invoicing structure,
+                                    chart of accounts, and reporting needs.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Start -->
+    <section class="container-fluid cta-section py-5">
+        <div class="container text-center py-5">
+
+            <!-- Heading -->
+            <h2 class="text-white mb-3">
+                Start Your Bukku Accounting Setup Today
+            </h2>
+
+            <p class="text-white-50 mb-4" style="max-width:700px; margin:auto;">
+                Tell us about your business — we’ll set up your Bukku system, configure your accounting structure,
+                and guide you step-by-step.
+            </p>
+
+            <!-- Value Points -->
+            <div class="d-flex flex-column flex-md-row justify-content-center gap-4 mb-4 text-white-50">
+                <div class="cta-check">
+                    <i class="fa-solid fa-check me-2"></i> Free consultation
+                </div>
+                <div class="cta-check">
+                    <i class="fa-solid fa-check me-2"></i> Full setup & onboarding
+                </div>
+                <div class="cta-check">
+                    <i class="fa-solid fa-check me-2"></i> Ongoing support
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
+
+                <a href="../contact.html" class="btn btn-primary px-4 py-3">
+                    <i class="fa fa-envelope me-2"></i> Talk to Our Team
+                </a>
+
+                <a href="https://wa.me/60123011610" target="_blank" class="btn px-4 py-3 text-white"
+                    style="background:#25D366; border-color:#25D366;">
+                    <i class="fab fa-whatsapp me-2"></i> WhatsApp Us
+                </a>
+
+            </div>
+
+            <!-- Trust line -->
+            <div class="mt-4 small text-white-50">
+                Trusted by SMEs and growing businesses in Malaysia.
+            </div>
+
+        </div>
+    </section>
+    <!-- CTA End -->
+
+
+    <div id="site-footer"></div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-outline-primary border-2 btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+
+    <script>
+        // Optional: change plus icon on FAQ open
+        document.querySelectorAll(".faq-item").forEach(d => {
+            d.addEventListener("toggle", () => {
+                const icon = d.querySelector("i");
+                if (!icon) return;
+                icon.classList.toggle("fa-plus", !d.open);
+                icon.classList.toggle("fa-minus", d.open);
+            });
+        });
+    </script>
+</body>
+
+</html>
